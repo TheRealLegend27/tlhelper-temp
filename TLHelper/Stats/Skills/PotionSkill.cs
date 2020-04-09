@@ -32,7 +32,7 @@ namespace TLHelper.Stats.Skills
             if (IsActive && CanPress(false, ScreenTools.GetPixelColor(Coords.Potion50.x, Coords.Potion50.y).Item1))
             {
                 (bool isMouse, Keys key, string button) = GetKey();
-                SendKeys.SendWait((char)key + "");
+                HardwareRobot.PressKey((char)key);
             }
         }
 
