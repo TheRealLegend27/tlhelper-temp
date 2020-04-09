@@ -59,6 +59,16 @@
   Get notified if the Bot is done
   Send Actions to the Bot's Diablo (Automatically invite someone, make a new Game, etc.)
   
+- [ ] Multiple Auto-Ports:  
+  Set multiple Hotkeys to port to different Locations
+  
+- [ ] Add Cube-Functionality to reforge
+  Add functionality to reforge the Item in the top-left Corner of the Inventory
+  
+- [ ] Hotkeys to launch / kill 4th-Party programs
+  Add a Window to define Programs to be launched / killed on Hotkey
+  Let scripts start / kill Processes and Programs
+  
 ## Bugs to be fixed:
 - [x] Fix Auto Potion  
   Fix the way the Potion key is pressed to not interfere Shift
@@ -71,6 +81,12 @@
   
 - [ ] Create config if not existing  
   If no config exists in documents/TLHelper/config.ini, create an empty one
+
+- [ ] Fix Skill-Slot 2:  
+  Skill Slot 2 not working for any Reason
+  
+- [ ] Fix Converter Scripts
+  Fix the 1- and 2-Slot Converting Scripts (unregister and register MouseHandles before and after the Script)
   
 ## Better Script Support:
 - [ ] Add variables
@@ -78,3 +94,6 @@
 - [ ] Add a function to download Scripts from Pastebin and Github
 - [ ] Provide ingame-variables to Scripts (%Life or SkillReady)
 - [ ] Provide helper-functions to Scripts (InventoryItterator or change current Class)
+
+## Website for TLHelper
+[TLHelper Website / Online Portal](https://github.com/FischerEnterprise/tlhelper-temp/blob/master/WEBSITE.md)
