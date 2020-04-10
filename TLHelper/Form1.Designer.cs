@@ -38,12 +38,19 @@
             this.ddDevour = new System.Windows.Forms.ComboBox();
             this.ddCommandSkeletons = new System.Windows.Forms.ComboBox();
             this.ddBoneArmor = new System.Windows.Forms.ComboBox();
+            this.pbSimulacrum = new System.Windows.Forms.PictureBox();
             this.tbSimulacrum = new System.Windows.Forms.TextBox();
+            this.pbSkeletalMages = new System.Windows.Forms.PictureBox();
             this.tbSkeletalMages = new System.Windows.Forms.TextBox();
+            this.pbLand = new System.Windows.Forms.PictureBox();
             this.tbLand = new System.Windows.Forms.TextBox();
+            this.pbDevour = new System.Windows.Forms.PictureBox();
             this.tbDevour = new System.Windows.Forms.TextBox();
+            this.pbCommandSkeletons = new System.Windows.Forms.PictureBox();
             this.tbCommandSkeletons = new System.Windows.Forms.TextBox();
+            this.pbBoneArmor = new System.Windows.Forms.PictureBox();
             this.tbBoneArmor = new System.Windows.Forms.TextBox();
+            this.pbDeathNova = new System.Windows.Forms.PictureBox();
             this.tbDeathNova = new System.Windows.Forms.TextBox();
             this.cbSimulacrum = new System.Windows.Forms.CheckBox();
             this.cbSkeletalMages = new System.Windows.Forms.CheckBox();
@@ -60,11 +67,17 @@
             this.ddConfusion = new System.Windows.Forms.ComboBox();
             this.ddHorrify = new System.Windows.Forms.ComboBox();
             this.ddGargantuan = new System.Windows.Forms.ComboBox();
+            this.pbSoulHarvest = new System.Windows.Forms.PictureBox();
             this.tbSoulHarvest = new System.Windows.Forms.TextBox();
+            this.pbSacrifice = new System.Windows.Forms.PictureBox();
             this.tbSacrifice = new System.Windows.Forms.TextBox();
+            this.pbConfusion = new System.Windows.Forms.PictureBox();
             this.tbConfusion = new System.Windows.Forms.TextBox();
+            this.pbHorrify = new System.Windows.Forms.PictureBox();
             this.tbHorrify = new System.Windows.Forms.TextBox();
+            this.pbGargantuan = new System.Windows.Forms.PictureBox();
             this.tbGargantuan = new System.Windows.Forms.TextBox();
+            this.pbFetish = new System.Windows.Forms.PictureBox();
             this.tbFetish = new System.Windows.Forms.TextBox();
             this.cbSoulHarvest = new System.Windows.Forms.CheckBox();
             this.cbSacrifice = new System.Windows.Forms.CheckBox();
@@ -81,12 +94,19 @@
             this.ddHope = new System.Windows.Forms.ComboBox();
             this.ddIronSkin = new System.Windows.Forms.ComboBox();
             this.ddCondemn = new System.Windows.Forms.ComboBox();
+            this.pbProvoke = new System.Windows.Forms.PictureBox();
             this.tbProvoke = new System.Windows.Forms.TextBox();
+            this.pbValor = new System.Windows.Forms.PictureBox();
             this.tbValor = new System.Windows.Forms.TextBox();
+            this.pbJustice = new System.Windows.Forms.PictureBox();
             this.tbJustice = new System.Windows.Forms.TextBox();
+            this.pbHope = new System.Windows.Forms.PictureBox();
             this.tbHope = new System.Windows.Forms.TextBox();
+            this.pbIronSkin = new System.Windows.Forms.PictureBox();
             this.tbIronSkin = new System.Windows.Forms.TextBox();
+            this.pbCondemn = new System.Windows.Forms.PictureBox();
             this.tbCondemn = new System.Windows.Forms.TextBox();
+            this.pbAkarats = new System.Windows.Forms.PictureBox();
             this.tbAkarats = new System.Windows.Forms.TextBox();
             this.cbProvoke = new System.Windows.Forms.CheckBox();
             this.cbValor = new System.Windows.Forms.CheckBox();
@@ -104,12 +124,19 @@
             this.ddRainOfVengeance = new System.Windows.Forms.ComboBox();
             this.ddPreparation = new System.Windows.Forms.ComboBox();
             this.ddKnives = new System.Windows.Forms.ComboBox();
+            this.pbVengeance = new System.Windows.Forms.PictureBox();
             this.tbVengeance = new System.Windows.Forms.TextBox();
+            this.pbSmoke = new System.Windows.Forms.PictureBox();
             this.tbSmoke = new System.Windows.Forms.TextBox();
+            this.pbShadowPower = new System.Windows.Forms.PictureBox();
             this.tbShadowPower = new System.Windows.Forms.TextBox();
+            this.pbRainOfVengeance = new System.Windows.Forms.PictureBox();
             this.tbRainOfVengeance = new System.Windows.Forms.TextBox();
+            this.pbPreparation = new System.Windows.Forms.PictureBox();
             this.tbPreparation = new System.Windows.Forms.TextBox();
+            this.pbKnives = new System.Windows.Forms.PictureBox();
             this.tbKnives = new System.Windows.Forms.TextBox();
+            this.pbCompanion = new System.Windows.Forms.PictureBox();
             this.tbCompanion = new System.Windows.Forms.TextBox();
             this.cbVengeance = new System.Windows.Forms.CheckBox();
             this.cbSmoke = new System.Windows.Forms.CheckBox();
@@ -122,6 +149,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.ddStormArmor = new System.Windows.Forms.ComboBox();
+            this.pbStormArmor = new System.Windows.Forms.PictureBox();
             this.tbStormArmor = new System.Windows.Forms.TextBox();
             this.ddWeapon = new System.Windows.Forms.ComboBox();
             this.ddIceArmor = new System.Windows.Forms.ComboBox();
@@ -129,12 +157,19 @@
             this.ddFamiliar = new System.Windows.Forms.ComboBox();
             this.ddExplosion = new System.Windows.Forms.ComboBox();
             this.ddEnergy = new System.Windows.Forms.ComboBox();
+            this.pbWeapon = new System.Windows.Forms.PictureBox();
             this.tbWeapon = new System.Windows.Forms.TextBox();
+            this.pbIceArmor = new System.Windows.Forms.PictureBox();
             this.tbIceArmor = new System.Windows.Forms.TextBox();
+            this.pbFrostNova = new System.Windows.Forms.PictureBox();
             this.tbFrostNova = new System.Windows.Forms.TextBox();
+            this.pbFamiliar = new System.Windows.Forms.PictureBox();
             this.tbFamiliar = new System.Windows.Forms.TextBox();
+            this.pbExplosion = new System.Windows.Forms.PictureBox();
             this.tbExplosion = new System.Windows.Forms.TextBox();
+            this.pbEnergy = new System.Windows.Forms.PictureBox();
             this.tbEnergy = new System.Windows.Forms.TextBox();
+            this.pbDiamond = new System.Windows.Forms.PictureBox();
             this.tbDiamond = new System.Windows.Forms.TextBox();
             this.cbWeapon = new System.Windows.Forms.CheckBox();
             this.cbIceArmor = new System.Windows.Forms.CheckBox();
@@ -153,12 +188,19 @@
             this.ddHealing = new System.Windows.Forms.ComboBox();
             this.ddSerenity = new System.Windows.Forms.ComboBox();
             this.ddBreath = new System.Windows.Forms.ComboBox();
+            this.pbEpiphany = new System.Windows.Forms.PictureBox();
             this.tbEpiphany = new System.Windows.Forms.TextBox();
+            this.pbAlly = new System.Windows.Forms.PictureBox();
             this.tbAlly = new System.Windows.Forms.TextBox();
+            this.pbConviction = new System.Windows.Forms.PictureBox();
             this.tbConviction = new System.Windows.Forms.TextBox();
+            this.pbHealing = new System.Windows.Forms.PictureBox();
             this.tbHealing = new System.Windows.Forms.TextBox();
+            this.pbSerenity = new System.Windows.Forms.PictureBox();
             this.tbSerenity = new System.Windows.Forms.TextBox();
+            this.pbBreath = new System.Windows.Forms.PictureBox();
             this.tbBreath = new System.Windows.Forms.TextBox();
+            this.pbBlind = new System.Windows.Forms.PictureBox();
             this.tbBlind = new System.Windows.Forms.TextBox();
             this.cbEpiphany = new System.Windows.Forms.CheckBox();
             this.cbAlly = new System.Windows.Forms.CheckBox();
@@ -176,12 +218,19 @@
             this.ddSprint = new System.Windows.Forms.ComboBox();
             this.ddOverpower = new System.Windows.Forms.ComboBox();
             this.ddIP = new System.Windows.Forms.ComboBox();
+            this.pbBerserker = new System.Windows.Forms.PictureBox();
             this.tbBerserker = new System.Windows.Forms.TextBox();
+            this.pbCry = new System.Windows.Forms.PictureBox();
             this.tbCry = new System.Windows.Forms.TextBox();
+            this.pbShout = new System.Windows.Forms.PictureBox();
             this.tbShout = new System.Windows.Forms.TextBox();
+            this.pbSprint = new System.Windows.Forms.PictureBox();
             this.tbSprint = new System.Windows.Forms.TextBox();
+            this.pbOverpower = new System.Windows.Forms.PictureBox();
             this.tbOverpower = new System.Windows.Forms.TextBox();
+            this.pbIP = new System.Windows.Forms.PictureBox();
             this.tbIP = new System.Windows.Forms.TextBox();
+            this.pbCall = new System.Windows.Forms.PictureBox();
             this.tbCall = new System.Windows.Forms.TextBox();
             this.cbBerserker = new System.Windows.Forms.CheckBox();
             this.cbCry = new System.Windows.Forms.CheckBox();
@@ -192,6 +241,7 @@
             this.cbCall = new System.Windows.Forms.CheckBox();
             this.ddCall = new System.Windows.Forms.ComboBox();
             this.tbRage = new System.Windows.Forms.TextBox();
+            this.pbRage = new System.Windows.Forms.PictureBox();
             this.ddRage = new System.Windows.Forms.ComboBox();
             this.cbRage = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
@@ -200,76 +250,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tbScripts = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
-            this.pbSimulacrum = new System.Windows.Forms.PictureBox();
-            this.pbSkeletalMages = new System.Windows.Forms.PictureBox();
-            this.pbLand = new System.Windows.Forms.PictureBox();
-            this.pbDevour = new System.Windows.Forms.PictureBox();
-            this.pbCommandSkeletons = new System.Windows.Forms.PictureBox();
-            this.pbBoneArmor = new System.Windows.Forms.PictureBox();
-            this.pbDeathNova = new System.Windows.Forms.PictureBox();
-            this.pbSoulHarvest = new System.Windows.Forms.PictureBox();
-            this.pbSacrifice = new System.Windows.Forms.PictureBox();
-            this.pbConfusion = new System.Windows.Forms.PictureBox();
-            this.pbHorrify = new System.Windows.Forms.PictureBox();
-            this.pbGargantuan = new System.Windows.Forms.PictureBox();
-            this.pbFetish = new System.Windows.Forms.PictureBox();
-            this.pbProvoke = new System.Windows.Forms.PictureBox();
-            this.pbValor = new System.Windows.Forms.PictureBox();
-            this.pbJustice = new System.Windows.Forms.PictureBox();
-            this.pbHope = new System.Windows.Forms.PictureBox();
-            this.pbIronSkin = new System.Windows.Forms.PictureBox();
-            this.pbCondemn = new System.Windows.Forms.PictureBox();
-            this.pbAkarats = new System.Windows.Forms.PictureBox();
-            this.pbVengeance = new System.Windows.Forms.PictureBox();
-            this.pbSmoke = new System.Windows.Forms.PictureBox();
-            this.pbShadowPower = new System.Windows.Forms.PictureBox();
-            this.pbRainOfVengeance = new System.Windows.Forms.PictureBox();
-            this.pbPreparation = new System.Windows.Forms.PictureBox();
-            this.pbKnives = new System.Windows.Forms.PictureBox();
-            this.pbCompanion = new System.Windows.Forms.PictureBox();
-            this.pbStormArmor = new System.Windows.Forms.PictureBox();
-            this.pbWeapon = new System.Windows.Forms.PictureBox();
-            this.pbIceArmor = new System.Windows.Forms.PictureBox();
-            this.pbFrostNova = new System.Windows.Forms.PictureBox();
-            this.pbFamiliar = new System.Windows.Forms.PictureBox();
-            this.pbExplosion = new System.Windows.Forms.PictureBox();
-            this.pbEnergy = new System.Windows.Forms.PictureBox();
-            this.pbDiamond = new System.Windows.Forms.PictureBox();
-            this.pbEpiphany = new System.Windows.Forms.PictureBox();
-            this.pbAlly = new System.Windows.Forms.PictureBox();
-            this.pbConviction = new System.Windows.Forms.PictureBox();
-            this.pbHealing = new System.Windows.Forms.PictureBox();
-            this.pbSerenity = new System.Windows.Forms.PictureBox();
-            this.pbBreath = new System.Windows.Forms.PictureBox();
-            this.pbBlind = new System.Windows.Forms.PictureBox();
-            this.pbBerserker = new System.Windows.Forms.PictureBox();
-            this.pbCry = new System.Windows.Forms.PictureBox();
-            this.pbShout = new System.Windows.Forms.PictureBox();
-            this.pbSprint = new System.Windows.Forms.PictureBox();
-            this.pbOverpower = new System.Windows.Forms.PictureBox();
-            this.pbIP = new System.Windows.Forms.PictureBox();
-            this.pbCall = new System.Windows.Forms.PictureBox();
-            this.pbRage = new System.Windows.Forms.PictureBox();
             this.pbPotion = new System.Windows.Forms.PictureBox();
             this.tbPotion = new System.Windows.Forms.TextBox();
             this.cbPotion = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.tableLayoutPanel7.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.tableLayoutPanel6.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel9.SuspendLayout();
-            this.tableLayoutPanel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSimulacrum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSkeletalMages)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLand)).BeginInit();
@@ -277,12 +263,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbCommandSkeletons)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBoneArmor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDeathNova)).BeginInit();
+            this.groupBox6.SuspendLayout();
+            this.tableLayoutPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSoulHarvest)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSacrifice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbConfusion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHorrify)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbGargantuan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFetish)).BeginInit();
+            this.groupBox5.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProvoke)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbValor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbJustice)).BeginInit();
@@ -290,6 +280,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbIronSkin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCondemn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAkarats)).BeginInit();
+            this.groupBox4.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbVengeance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSmoke)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbShadowPower)).BeginInit();
@@ -297,6 +289,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbPreparation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbKnives)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCompanion)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbStormArmor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbWeapon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbIceArmor)).BeginInit();
@@ -305,6 +299,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbExplosion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEnergy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDiamond)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbEpiphany)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAlly)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbConviction)).BeginInit();
@@ -312,6 +308,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbSerenity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBreath)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlind)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBerserker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCry)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbShout)).BeginInit();
@@ -320,6 +318,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbIP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCall)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRage)).BeginInit();
+            this.tableLayoutPanel9.SuspendLayout();
+            this.tableLayoutPanel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPotion)).BeginInit();
             this.SuspendLayout();
             // 
@@ -509,6 +509,17 @@
             this.ddBoneArmor.Size = new System.Drawing.Size(27, 21);
             this.ddBoneArmor.TabIndex = 25;
             // 
+            // pbSimulacrum
+            // 
+            this.pbSimulacrum.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbSimulacrum.Image = global::TLHelper.Properties.Resources.p6_necro_simulacrum;
+            this.pbSimulacrum.Location = new System.Drawing.Point(3, 375);
+            this.pbSimulacrum.Name = "pbSimulacrum";
+            this.pbSimulacrum.Size = new System.Drawing.Size(27, 63);
+            this.pbSimulacrum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbSimulacrum.TabIndex = 21;
+            this.pbSimulacrum.TabStop = false;
+            // 
             // tbSimulacrum
             // 
             this.tbSimulacrum.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -516,6 +527,17 @@
             this.tbSimulacrum.Name = "tbSimulacrum";
             this.tbSimulacrum.Size = new System.Drawing.Size(27, 20);
             this.tbSimulacrum.TabIndex = 22;
+            // 
+            // pbSkeletalMages
+            // 
+            this.pbSkeletalMages.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbSkeletalMages.Image = global::TLHelper.Properties.Resources.p6_necro_raisedead;
+            this.pbSkeletalMages.Location = new System.Drawing.Point(3, 313);
+            this.pbSkeletalMages.Name = "pbSkeletalMages";
+            this.pbSkeletalMages.Size = new System.Drawing.Size(27, 56);
+            this.pbSkeletalMages.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbSkeletalMages.TabIndex = 18;
+            this.pbSkeletalMages.TabStop = false;
             // 
             // tbSkeletalMages
             // 
@@ -525,6 +547,17 @@
             this.tbSkeletalMages.Size = new System.Drawing.Size(27, 20);
             this.tbSkeletalMages.TabIndex = 19;
             // 
+            // pbLand
+            // 
+            this.pbLand.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbLand.Image = global::TLHelper.Properties.Resources.p6_necro_landofthedead;
+            this.pbLand.Location = new System.Drawing.Point(3, 251);
+            this.pbLand.Name = "pbLand";
+            this.pbLand.Size = new System.Drawing.Size(27, 56);
+            this.pbLand.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLand.TabIndex = 15;
+            this.pbLand.TabStop = false;
+            // 
             // tbLand
             // 
             this.tbLand.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -532,6 +565,17 @@
             this.tbLand.Name = "tbLand";
             this.tbLand.Size = new System.Drawing.Size(27, 20);
             this.tbLand.TabIndex = 16;
+            // 
+            // pbDevour
+            // 
+            this.pbDevour.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbDevour.Image = global::TLHelper.Properties.Resources.p6_necro_devour;
+            this.pbDevour.Location = new System.Drawing.Point(3, 189);
+            this.pbDevour.Name = "pbDevour";
+            this.pbDevour.Size = new System.Drawing.Size(27, 56);
+            this.pbDevour.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbDevour.TabIndex = 12;
+            this.pbDevour.TabStop = false;
             // 
             // tbDevour
             // 
@@ -541,6 +585,17 @@
             this.tbDevour.Size = new System.Drawing.Size(27, 20);
             this.tbDevour.TabIndex = 13;
             // 
+            // pbCommandSkeletons
+            // 
+            this.pbCommandSkeletons.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbCommandSkeletons.Image = global::TLHelper.Properties.Resources.p6_necro_commandskeletons;
+            this.pbCommandSkeletons.Location = new System.Drawing.Point(3, 127);
+            this.pbCommandSkeletons.Name = "pbCommandSkeletons";
+            this.pbCommandSkeletons.Size = new System.Drawing.Size(27, 56);
+            this.pbCommandSkeletons.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbCommandSkeletons.TabIndex = 6;
+            this.pbCommandSkeletons.TabStop = false;
+            // 
             // tbCommandSkeletons
             // 
             this.tbCommandSkeletons.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -549,6 +604,17 @@
             this.tbCommandSkeletons.Size = new System.Drawing.Size(27, 20);
             this.tbCommandSkeletons.TabIndex = 7;
             // 
+            // pbBoneArmor
+            // 
+            this.pbBoneArmor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbBoneArmor.Image = global::TLHelper.Properties.Resources.p6_necro_bonearmor;
+            this.pbBoneArmor.Location = new System.Drawing.Point(3, 65);
+            this.pbBoneArmor.Name = "pbBoneArmor";
+            this.pbBoneArmor.Size = new System.Drawing.Size(27, 56);
+            this.pbBoneArmor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbBoneArmor.TabIndex = 3;
+            this.pbBoneArmor.TabStop = false;
+            // 
             // tbBoneArmor
             // 
             this.tbBoneArmor.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -556,6 +622,17 @@
             this.tbBoneArmor.Name = "tbBoneArmor";
             this.tbBoneArmor.Size = new System.Drawing.Size(27, 20);
             this.tbBoneArmor.TabIndex = 4;
+            // 
+            // pbDeathNova
+            // 
+            this.pbDeathNova.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbDeathNova.Image = global::TLHelper.Properties.Resources.p6_necro_bloodnova;
+            this.pbDeathNova.Location = new System.Drawing.Point(3, 3);
+            this.pbDeathNova.Name = "pbDeathNova";
+            this.pbDeathNova.Size = new System.Drawing.Size(27, 56);
+            this.pbDeathNova.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbDeathNova.TabIndex = 0;
+            this.pbDeathNova.TabStop = false;
             // 
             // tbDeathNova
             // 
@@ -793,6 +870,17 @@
             this.ddGargantuan.Size = new System.Drawing.Size(27, 21);
             this.ddGargantuan.TabIndex = 25;
             // 
+            // pbSoulHarvest
+            // 
+            this.pbSoulHarvest.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbSoulHarvest.Image = global::TLHelper.Properties.Resources.witchdoctor_soulharvest;
+            this.pbSoulHarvest.Location = new System.Drawing.Point(3, 368);
+            this.pbSoulHarvest.Name = "pbSoulHarvest";
+            this.pbSoulHarvest.Size = new System.Drawing.Size(27, 70);
+            this.pbSoulHarvest.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbSoulHarvest.TabIndex = 18;
+            this.pbSoulHarvest.TabStop = false;
+            // 
             // tbSoulHarvest
             // 
             this.tbSoulHarvest.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -800,6 +888,17 @@
             this.tbSoulHarvest.Name = "tbSoulHarvest";
             this.tbSoulHarvest.Size = new System.Drawing.Size(27, 20);
             this.tbSoulHarvest.TabIndex = 19;
+            // 
+            // pbSacrifice
+            // 
+            this.pbSacrifice.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbSacrifice.Image = global::TLHelper.Properties.Resources.witchdoctor_sacrifice;
+            this.pbSacrifice.Location = new System.Drawing.Point(3, 295);
+            this.pbSacrifice.Name = "pbSacrifice";
+            this.pbSacrifice.Size = new System.Drawing.Size(27, 67);
+            this.pbSacrifice.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbSacrifice.TabIndex = 15;
+            this.pbSacrifice.TabStop = false;
             // 
             // tbSacrifice
             // 
@@ -809,6 +908,17 @@
             this.tbSacrifice.Size = new System.Drawing.Size(27, 20);
             this.tbSacrifice.TabIndex = 16;
             // 
+            // pbConfusion
+            // 
+            this.pbConfusion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbConfusion.Image = global::TLHelper.Properties.Resources.witchdoctor_massconfusion;
+            this.pbConfusion.Location = new System.Drawing.Point(3, 222);
+            this.pbConfusion.Name = "pbConfusion";
+            this.pbConfusion.Size = new System.Drawing.Size(27, 67);
+            this.pbConfusion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbConfusion.TabIndex = 12;
+            this.pbConfusion.TabStop = false;
+            // 
             // tbConfusion
             // 
             this.tbConfusion.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -816,6 +926,17 @@
             this.tbConfusion.Name = "tbConfusion";
             this.tbConfusion.Size = new System.Drawing.Size(27, 20);
             this.tbConfusion.TabIndex = 13;
+            // 
+            // pbHorrify
+            // 
+            this.pbHorrify.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbHorrify.Image = global::TLHelper.Properties.Resources.witchdoctor_horrify;
+            this.pbHorrify.Location = new System.Drawing.Point(3, 149);
+            this.pbHorrify.Name = "pbHorrify";
+            this.pbHorrify.Size = new System.Drawing.Size(27, 67);
+            this.pbHorrify.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbHorrify.TabIndex = 6;
+            this.pbHorrify.TabStop = false;
             // 
             // tbHorrify
             // 
@@ -825,6 +946,17 @@
             this.tbHorrify.Size = new System.Drawing.Size(27, 20);
             this.tbHorrify.TabIndex = 7;
             // 
+            // pbGargantuan
+            // 
+            this.pbGargantuan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbGargantuan.Image = global::TLHelper.Properties.Resources.witchdoctor_gargantuan;
+            this.pbGargantuan.Location = new System.Drawing.Point(3, 76);
+            this.pbGargantuan.Name = "pbGargantuan";
+            this.pbGargantuan.Size = new System.Drawing.Size(27, 67);
+            this.pbGargantuan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbGargantuan.TabIndex = 3;
+            this.pbGargantuan.TabStop = false;
+            // 
             // tbGargantuan
             // 
             this.tbGargantuan.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -832,6 +964,17 @@
             this.tbGargantuan.Name = "tbGargantuan";
             this.tbGargantuan.Size = new System.Drawing.Size(27, 20);
             this.tbGargantuan.TabIndex = 4;
+            // 
+            // pbFetish
+            // 
+            this.pbFetish.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbFetish.Image = global::TLHelper.Properties.Resources.witchdoctor_fetisharmy;
+            this.pbFetish.Location = new System.Drawing.Point(3, 3);
+            this.pbFetish.Name = "pbFetish";
+            this.pbFetish.Size = new System.Drawing.Size(27, 67);
+            this.pbFetish.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbFetish.TabIndex = 0;
+            this.pbFetish.TabStop = false;
             // 
             // tbFetish
             // 
@@ -1079,6 +1222,17 @@
             this.ddCondemn.Size = new System.Drawing.Size(27, 21);
             this.ddCondemn.TabIndex = 25;
             // 
+            // pbProvoke
+            // 
+            this.pbProvoke.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbProvoke.Image = global::TLHelper.Properties.Resources.x1_crusader_provoke;
+            this.pbProvoke.Location = new System.Drawing.Point(3, 375);
+            this.pbProvoke.Name = "pbProvoke";
+            this.pbProvoke.Size = new System.Drawing.Size(27, 63);
+            this.pbProvoke.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbProvoke.TabIndex = 21;
+            this.pbProvoke.TabStop = false;
+            // 
             // tbProvoke
             // 
             this.tbProvoke.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -1086,6 +1240,17 @@
             this.tbProvoke.Name = "tbProvoke";
             this.tbProvoke.Size = new System.Drawing.Size(27, 20);
             this.tbProvoke.TabIndex = 22;
+            // 
+            // pbValor
+            // 
+            this.pbValor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbValor.Image = global::TLHelper.Properties.Resources.x1_crusader_lawsofvalor2;
+            this.pbValor.Location = new System.Drawing.Point(3, 313);
+            this.pbValor.Name = "pbValor";
+            this.pbValor.Size = new System.Drawing.Size(27, 56);
+            this.pbValor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbValor.TabIndex = 18;
+            this.pbValor.TabStop = false;
             // 
             // tbValor
             // 
@@ -1095,6 +1260,17 @@
             this.tbValor.Size = new System.Drawing.Size(27, 20);
             this.tbValor.TabIndex = 19;
             // 
+            // pbJustice
+            // 
+            this.pbJustice.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbJustice.Image = global::TLHelper.Properties.Resources.x1_crusader_lawsofjustice2;
+            this.pbJustice.Location = new System.Drawing.Point(3, 251);
+            this.pbJustice.Name = "pbJustice";
+            this.pbJustice.Size = new System.Drawing.Size(27, 56);
+            this.pbJustice.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbJustice.TabIndex = 15;
+            this.pbJustice.TabStop = false;
+            // 
             // tbJustice
             // 
             this.tbJustice.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -1102,6 +1278,17 @@
             this.tbJustice.Name = "tbJustice";
             this.tbJustice.Size = new System.Drawing.Size(27, 20);
             this.tbJustice.TabIndex = 16;
+            // 
+            // pbHope
+            // 
+            this.pbHope.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbHope.Image = global::TLHelper.Properties.Resources.x1_crusader_lawsofhope2;
+            this.pbHope.Location = new System.Drawing.Point(3, 189);
+            this.pbHope.Name = "pbHope";
+            this.pbHope.Size = new System.Drawing.Size(27, 56);
+            this.pbHope.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbHope.TabIndex = 12;
+            this.pbHope.TabStop = false;
             // 
             // tbHope
             // 
@@ -1111,6 +1298,17 @@
             this.tbHope.Size = new System.Drawing.Size(27, 20);
             this.tbHope.TabIndex = 13;
             // 
+            // pbIronSkin
+            // 
+            this.pbIronSkin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbIronSkin.Image = global::TLHelper.Properties.Resources.x1_crusader_ironskin;
+            this.pbIronSkin.Location = new System.Drawing.Point(3, 127);
+            this.pbIronSkin.Name = "pbIronSkin";
+            this.pbIronSkin.Size = new System.Drawing.Size(27, 56);
+            this.pbIronSkin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbIronSkin.TabIndex = 6;
+            this.pbIronSkin.TabStop = false;
+            // 
             // tbIronSkin
             // 
             this.tbIronSkin.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -1119,6 +1317,17 @@
             this.tbIronSkin.Size = new System.Drawing.Size(27, 20);
             this.tbIronSkin.TabIndex = 7;
             // 
+            // pbCondemn
+            // 
+            this.pbCondemn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbCondemn.Image = global::TLHelper.Properties.Resources.x1_crusader_condemn;
+            this.pbCondemn.Location = new System.Drawing.Point(3, 65);
+            this.pbCondemn.Name = "pbCondemn";
+            this.pbCondemn.Size = new System.Drawing.Size(27, 56);
+            this.pbCondemn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbCondemn.TabIndex = 3;
+            this.pbCondemn.TabStop = false;
+            // 
             // tbCondemn
             // 
             this.tbCondemn.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -1126,6 +1335,17 @@
             this.tbCondemn.Name = "tbCondemn";
             this.tbCondemn.Size = new System.Drawing.Size(27, 20);
             this.tbCondemn.TabIndex = 4;
+            // 
+            // pbAkarats
+            // 
+            this.pbAkarats.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbAkarats.Image = global::TLHelper.Properties.Resources.x1_crusader_akaratschampion;
+            this.pbAkarats.Location = new System.Drawing.Point(3, 3);
+            this.pbAkarats.Name = "pbAkarats";
+            this.pbAkarats.Size = new System.Drawing.Size(27, 56);
+            this.pbAkarats.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbAkarats.TabIndex = 0;
+            this.pbAkarats.TabStop = false;
             // 
             // tbAkarats
             // 
@@ -1385,6 +1605,17 @@
             this.ddKnives.Size = new System.Drawing.Size(27, 21);
             this.ddKnives.TabIndex = 25;
             // 
+            // pbVengeance
+            // 
+            this.pbVengeance.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbVengeance.Image = global::TLHelper.Properties.Resources.x1_demonhunter_vengeance;
+            this.pbVengeance.Location = new System.Drawing.Point(3, 375);
+            this.pbVengeance.Name = "pbVengeance";
+            this.pbVengeance.Size = new System.Drawing.Size(27, 63);
+            this.pbVengeance.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbVengeance.TabIndex = 21;
+            this.pbVengeance.TabStop = false;
+            // 
             // tbVengeance
             // 
             this.tbVengeance.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -1392,6 +1623,17 @@
             this.tbVengeance.Name = "tbVengeance";
             this.tbVengeance.Size = new System.Drawing.Size(27, 20);
             this.tbVengeance.TabIndex = 22;
+            // 
+            // pbSmoke
+            // 
+            this.pbSmoke.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbSmoke.Image = global::TLHelper.Properties.Resources.demonhunter_smokescreen;
+            this.pbSmoke.Location = new System.Drawing.Point(3, 313);
+            this.pbSmoke.Name = "pbSmoke";
+            this.pbSmoke.Size = new System.Drawing.Size(27, 56);
+            this.pbSmoke.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbSmoke.TabIndex = 18;
+            this.pbSmoke.TabStop = false;
             // 
             // tbSmoke
             // 
@@ -1401,6 +1643,17 @@
             this.tbSmoke.Size = new System.Drawing.Size(27, 20);
             this.tbSmoke.TabIndex = 19;
             // 
+            // pbShadowPower
+            // 
+            this.pbShadowPower.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbShadowPower.Image = global::TLHelper.Properties.Resources.demonhunter_shadowpower;
+            this.pbShadowPower.Location = new System.Drawing.Point(3, 251);
+            this.pbShadowPower.Name = "pbShadowPower";
+            this.pbShadowPower.Size = new System.Drawing.Size(27, 56);
+            this.pbShadowPower.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbShadowPower.TabIndex = 15;
+            this.pbShadowPower.TabStop = false;
+            // 
             // tbShadowPower
             // 
             this.tbShadowPower.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -1408,6 +1661,17 @@
             this.tbShadowPower.Name = "tbShadowPower";
             this.tbShadowPower.Size = new System.Drawing.Size(27, 20);
             this.tbShadowPower.TabIndex = 16;
+            // 
+            // pbRainOfVengeance
+            // 
+            this.pbRainOfVengeance.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbRainOfVengeance.Image = global::TLHelper.Properties.Resources.demonhunter_rainofvengeance;
+            this.pbRainOfVengeance.Location = new System.Drawing.Point(3, 189);
+            this.pbRainOfVengeance.Name = "pbRainOfVengeance";
+            this.pbRainOfVengeance.Size = new System.Drawing.Size(27, 56);
+            this.pbRainOfVengeance.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbRainOfVengeance.TabIndex = 12;
+            this.pbRainOfVengeance.TabStop = false;
             // 
             // tbRainOfVengeance
             // 
@@ -1417,6 +1681,17 @@
             this.tbRainOfVengeance.Size = new System.Drawing.Size(27, 20);
             this.tbRainOfVengeance.TabIndex = 13;
             // 
+            // pbPreparation
+            // 
+            this.pbPreparation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbPreparation.Image = global::TLHelper.Properties.Resources.demonhunter_preparation;
+            this.pbPreparation.Location = new System.Drawing.Point(3, 127);
+            this.pbPreparation.Name = "pbPreparation";
+            this.pbPreparation.Size = new System.Drawing.Size(27, 56);
+            this.pbPreparation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbPreparation.TabIndex = 6;
+            this.pbPreparation.TabStop = false;
+            // 
             // tbPreparation
             // 
             this.tbPreparation.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -1425,6 +1700,17 @@
             this.tbPreparation.Size = new System.Drawing.Size(27, 20);
             this.tbPreparation.TabIndex = 7;
             // 
+            // pbKnives
+            // 
+            this.pbKnives.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbKnives.Image = global::TLHelper.Properties.Resources.demonhunter_fanofknives;
+            this.pbKnives.Location = new System.Drawing.Point(3, 65);
+            this.pbKnives.Name = "pbKnives";
+            this.pbKnives.Size = new System.Drawing.Size(27, 56);
+            this.pbKnives.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbKnives.TabIndex = 3;
+            this.pbKnives.TabStop = false;
+            // 
             // tbKnives
             // 
             this.tbKnives.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -1432,6 +1718,17 @@
             this.tbKnives.Name = "tbKnives";
             this.tbKnives.Size = new System.Drawing.Size(27, 20);
             this.tbKnives.TabIndex = 4;
+            // 
+            // pbCompanion
+            // 
+            this.pbCompanion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbCompanion.Image = global::TLHelper.Properties.Resources.demonhunter_companion;
+            this.pbCompanion.Location = new System.Drawing.Point(3, 3);
+            this.pbCompanion.Name = "pbCompanion";
+            this.pbCompanion.Size = new System.Drawing.Size(27, 56);
+            this.pbCompanion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbCompanion.TabIndex = 0;
+            this.pbCompanion.TabStop = false;
             // 
             // tbCompanion
             // 
@@ -1610,6 +1907,17 @@
             this.ddStormArmor.Size = new System.Drawing.Size(27, 21);
             this.ddStormArmor.TabIndex = 35;
             // 
+            // pbStormArmor
+            // 
+            this.pbStormArmor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbStormArmor.Image = global::TLHelper.Properties.Resources.wizard_stormarmor;
+            this.pbStormArmor.Location = new System.Drawing.Point(3, 388);
+            this.pbStormArmor.Name = "pbStormArmor";
+            this.pbStormArmor.Size = new System.Drawing.Size(27, 50);
+            this.pbStormArmor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbStormArmor.TabIndex = 32;
+            this.pbStormArmor.TabStop = false;
+            // 
             // tbStormArmor
             // 
             this.tbStormArmor.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -1720,6 +2028,17 @@
             this.ddEnergy.Size = new System.Drawing.Size(27, 21);
             this.ddEnergy.TabIndex = 25;
             // 
+            // pbWeapon
+            // 
+            this.pbWeapon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbWeapon.Image = global::TLHelper.Properties.Resources.wizard_magicweapon;
+            this.pbWeapon.Location = new System.Drawing.Point(3, 333);
+            this.pbWeapon.Name = "pbWeapon";
+            this.pbWeapon.Size = new System.Drawing.Size(27, 49);
+            this.pbWeapon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbWeapon.TabIndex = 21;
+            this.pbWeapon.TabStop = false;
+            // 
             // tbWeapon
             // 
             this.tbWeapon.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -1727,6 +2046,17 @@
             this.tbWeapon.Name = "tbWeapon";
             this.tbWeapon.Size = new System.Drawing.Size(27, 20);
             this.tbWeapon.TabIndex = 22;
+            // 
+            // pbIceArmor
+            // 
+            this.pbIceArmor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbIceArmor.Image = global::TLHelper.Properties.Resources.wizard_icearmor;
+            this.pbIceArmor.Location = new System.Drawing.Point(3, 278);
+            this.pbIceArmor.Name = "pbIceArmor";
+            this.pbIceArmor.Size = new System.Drawing.Size(27, 49);
+            this.pbIceArmor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbIceArmor.TabIndex = 18;
+            this.pbIceArmor.TabStop = false;
             // 
             // tbIceArmor
             // 
@@ -1736,6 +2066,17 @@
             this.tbIceArmor.Size = new System.Drawing.Size(27, 20);
             this.tbIceArmor.TabIndex = 19;
             // 
+            // pbFrostNova
+            // 
+            this.pbFrostNova.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbFrostNova.Image = global::TLHelper.Properties.Resources.wizard_frostnova;
+            this.pbFrostNova.Location = new System.Drawing.Point(3, 223);
+            this.pbFrostNova.Name = "pbFrostNova";
+            this.pbFrostNova.Size = new System.Drawing.Size(27, 49);
+            this.pbFrostNova.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbFrostNova.TabIndex = 15;
+            this.pbFrostNova.TabStop = false;
+            // 
             // tbFrostNova
             // 
             this.tbFrostNova.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -1743,6 +2084,17 @@
             this.tbFrostNova.Name = "tbFrostNova";
             this.tbFrostNova.Size = new System.Drawing.Size(27, 20);
             this.tbFrostNova.TabIndex = 16;
+            // 
+            // pbFamiliar
+            // 
+            this.pbFamiliar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbFamiliar.Image = global::TLHelper.Properties.Resources.wizard_familiar;
+            this.pbFamiliar.Location = new System.Drawing.Point(3, 168);
+            this.pbFamiliar.Name = "pbFamiliar";
+            this.pbFamiliar.Size = new System.Drawing.Size(27, 49);
+            this.pbFamiliar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbFamiliar.TabIndex = 12;
+            this.pbFamiliar.TabStop = false;
             // 
             // tbFamiliar
             // 
@@ -1752,6 +2104,17 @@
             this.tbFamiliar.Size = new System.Drawing.Size(27, 20);
             this.tbFamiliar.TabIndex = 13;
             // 
+            // pbExplosion
+            // 
+            this.pbExplosion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbExplosion.Image = global::TLHelper.Properties.Resources.wizard_explosiveblast;
+            this.pbExplosion.Location = new System.Drawing.Point(3, 113);
+            this.pbExplosion.Name = "pbExplosion";
+            this.pbExplosion.Size = new System.Drawing.Size(27, 49);
+            this.pbExplosion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbExplosion.TabIndex = 6;
+            this.pbExplosion.TabStop = false;
+            // 
             // tbExplosion
             // 
             this.tbExplosion.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -1760,6 +2123,17 @@
             this.tbExplosion.Size = new System.Drawing.Size(27, 20);
             this.tbExplosion.TabIndex = 7;
             // 
+            // pbEnergy
+            // 
+            this.pbEnergy.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbEnergy.Image = global::TLHelper.Properties.Resources.wizard_energyarmor;
+            this.pbEnergy.Location = new System.Drawing.Point(3, 58);
+            this.pbEnergy.Name = "pbEnergy";
+            this.pbEnergy.Size = new System.Drawing.Size(27, 49);
+            this.pbEnergy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbEnergy.TabIndex = 3;
+            this.pbEnergy.TabStop = false;
+            // 
             // tbEnergy
             // 
             this.tbEnergy.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -1767,6 +2141,17 @@
             this.tbEnergy.Name = "tbEnergy";
             this.tbEnergy.Size = new System.Drawing.Size(27, 20);
             this.tbEnergy.TabIndex = 4;
+            // 
+            // pbDiamond
+            // 
+            this.pbDiamond.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbDiamond.Image = global::TLHelper.Properties.Resources.wizard_diamondskin;
+            this.pbDiamond.Location = new System.Drawing.Point(3, 3);
+            this.pbDiamond.Name = "pbDiamond";
+            this.pbDiamond.Size = new System.Drawing.Size(27, 49);
+            this.pbDiamond.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbDiamond.TabIndex = 0;
+            this.pbDiamond.TabStop = false;
             // 
             // tbDiamond
             // 
@@ -2032,6 +2417,17 @@
             this.ddBreath.Size = new System.Drawing.Size(27, 21);
             this.ddBreath.TabIndex = 25;
             // 
+            // pbEpiphany
+            // 
+            this.pbEpiphany.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbEpiphany.Image = global::TLHelper.Properties.Resources.x1_monk_epiphany;
+            this.pbEpiphany.Location = new System.Drawing.Point(3, 375);
+            this.pbEpiphany.Name = "pbEpiphany";
+            this.pbEpiphany.Size = new System.Drawing.Size(27, 63);
+            this.pbEpiphany.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbEpiphany.TabIndex = 21;
+            this.pbEpiphany.TabStop = false;
+            // 
             // tbEpiphany
             // 
             this.tbEpiphany.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -2039,6 +2435,17 @@
             this.tbEpiphany.Name = "tbEpiphany";
             this.tbEpiphany.Size = new System.Drawing.Size(27, 20);
             this.tbEpiphany.TabIndex = 22;
+            // 
+            // pbAlly
+            // 
+            this.pbAlly.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbAlly.Image = global::TLHelper.Properties.Resources.monk_mystically;
+            this.pbAlly.Location = new System.Drawing.Point(3, 313);
+            this.pbAlly.Name = "pbAlly";
+            this.pbAlly.Size = new System.Drawing.Size(27, 56);
+            this.pbAlly.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbAlly.TabIndex = 18;
+            this.pbAlly.TabStop = false;
             // 
             // tbAlly
             // 
@@ -2048,6 +2455,17 @@
             this.tbAlly.Size = new System.Drawing.Size(27, 20);
             this.tbAlly.TabIndex = 19;
             // 
+            // pbConviction
+            // 
+            this.pbConviction.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbConviction.Image = global::TLHelper.Properties.Resources.monk_mantraofconviction;
+            this.pbConviction.Location = new System.Drawing.Point(3, 251);
+            this.pbConviction.Name = "pbConviction";
+            this.pbConviction.Size = new System.Drawing.Size(27, 56);
+            this.pbConviction.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbConviction.TabIndex = 15;
+            this.pbConviction.TabStop = false;
+            // 
             // tbConviction
             // 
             this.tbConviction.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -2055,6 +2473,17 @@
             this.tbConviction.Name = "tbConviction";
             this.tbConviction.Size = new System.Drawing.Size(27, 20);
             this.tbConviction.TabIndex = 16;
+            // 
+            // pbHealing
+            // 
+            this.pbHealing.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbHealing.Image = global::TLHelper.Properties.Resources.monk_mantraofhealing;
+            this.pbHealing.Location = new System.Drawing.Point(3, 189);
+            this.pbHealing.Name = "pbHealing";
+            this.pbHealing.Size = new System.Drawing.Size(27, 56);
+            this.pbHealing.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbHealing.TabIndex = 12;
+            this.pbHealing.TabStop = false;
             // 
             // tbHealing
             // 
@@ -2064,6 +2493,17 @@
             this.tbHealing.Size = new System.Drawing.Size(27, 20);
             this.tbHealing.TabIndex = 13;
             // 
+            // pbSerenity
+            // 
+            this.pbSerenity.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbSerenity.Image = global::TLHelper.Properties.Resources.monk_serenity;
+            this.pbSerenity.Location = new System.Drawing.Point(3, 127);
+            this.pbSerenity.Name = "pbSerenity";
+            this.pbSerenity.Size = new System.Drawing.Size(27, 56);
+            this.pbSerenity.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbSerenity.TabIndex = 6;
+            this.pbSerenity.TabStop = false;
+            // 
             // tbSerenity
             // 
             this.tbSerenity.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -2072,6 +2512,17 @@
             this.tbSerenity.Size = new System.Drawing.Size(27, 20);
             this.tbSerenity.TabIndex = 7;
             // 
+            // pbBreath
+            // 
+            this.pbBreath.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbBreath.Image = global::TLHelper.Properties.Resources.monk_breathofheaven;
+            this.pbBreath.Location = new System.Drawing.Point(3, 65);
+            this.pbBreath.Name = "pbBreath";
+            this.pbBreath.Size = new System.Drawing.Size(27, 56);
+            this.pbBreath.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbBreath.TabIndex = 3;
+            this.pbBreath.TabStop = false;
+            // 
             // tbBreath
             // 
             this.tbBreath.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -2079,6 +2530,17 @@
             this.tbBreath.Name = "tbBreath";
             this.tbBreath.Size = new System.Drawing.Size(27, 20);
             this.tbBreath.TabIndex = 4;
+            // 
+            // pbBlind
+            // 
+            this.pbBlind.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbBlind.Image = global::TLHelper.Properties.Resources.monk_blindingflash;
+            this.pbBlind.Location = new System.Drawing.Point(3, 3);
+            this.pbBlind.Name = "pbBlind";
+            this.pbBlind.Size = new System.Drawing.Size(27, 56);
+            this.pbBlind.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbBlind.TabIndex = 0;
+            this.pbBlind.TabStop = false;
             // 
             // tbBlind
             // 
@@ -2342,6 +2804,17 @@
             this.ddIP.Size = new System.Drawing.Size(27, 21);
             this.ddIP.TabIndex = 25;
             // 
+            // pbBerserker
+            // 
+            this.pbBerserker.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbBerserker.Image = global::TLHelper.Properties.Resources.barbarian_wrathoftheberserker;
+            this.pbBerserker.Location = new System.Drawing.Point(3, 333);
+            this.pbBerserker.Name = "pbBerserker";
+            this.pbBerserker.Size = new System.Drawing.Size(27, 49);
+            this.pbBerserker.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbBerserker.TabIndex = 21;
+            this.pbBerserker.TabStop = false;
+            // 
             // tbBerserker
             // 
             this.tbBerserker.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -2349,6 +2822,17 @@
             this.tbBerserker.Name = "tbBerserker";
             this.tbBerserker.Size = new System.Drawing.Size(27, 20);
             this.tbBerserker.TabIndex = 22;
+            // 
+            // pbCry
+            // 
+            this.pbCry.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbCry.Image = global::TLHelper.Properties.Resources.barbarian_warcry;
+            this.pbCry.Location = new System.Drawing.Point(3, 278);
+            this.pbCry.Name = "pbCry";
+            this.pbCry.Size = new System.Drawing.Size(27, 49);
+            this.pbCry.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbCry.TabIndex = 18;
+            this.pbCry.TabStop = false;
             // 
             // tbCry
             // 
@@ -2358,6 +2842,17 @@
             this.tbCry.Size = new System.Drawing.Size(27, 20);
             this.tbCry.TabIndex = 19;
             // 
+            // pbShout
+            // 
+            this.pbShout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbShout.Image = global::TLHelper.Properties.Resources.barbarian_threateningshout;
+            this.pbShout.Location = new System.Drawing.Point(3, 223);
+            this.pbShout.Name = "pbShout";
+            this.pbShout.Size = new System.Drawing.Size(27, 49);
+            this.pbShout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbShout.TabIndex = 15;
+            this.pbShout.TabStop = false;
+            // 
             // tbShout
             // 
             this.tbShout.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -2365,6 +2860,17 @@
             this.tbShout.Name = "tbShout";
             this.tbShout.Size = new System.Drawing.Size(27, 20);
             this.tbShout.TabIndex = 16;
+            // 
+            // pbSprint
+            // 
+            this.pbSprint.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbSprint.Image = global::TLHelper.Properties.Resources.barbarian_sprint;
+            this.pbSprint.Location = new System.Drawing.Point(3, 168);
+            this.pbSprint.Name = "pbSprint";
+            this.pbSprint.Size = new System.Drawing.Size(27, 49);
+            this.pbSprint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbSprint.TabIndex = 12;
+            this.pbSprint.TabStop = false;
             // 
             // tbSprint
             // 
@@ -2374,6 +2880,17 @@
             this.tbSprint.Size = new System.Drawing.Size(27, 20);
             this.tbSprint.TabIndex = 13;
             // 
+            // pbOverpower
+            // 
+            this.pbOverpower.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbOverpower.Image = global::TLHelper.Properties.Resources.barbarian_overpower;
+            this.pbOverpower.Location = new System.Drawing.Point(3, 113);
+            this.pbOverpower.Name = "pbOverpower";
+            this.pbOverpower.Size = new System.Drawing.Size(27, 49);
+            this.pbOverpower.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbOverpower.TabIndex = 6;
+            this.pbOverpower.TabStop = false;
+            // 
             // tbOverpower
             // 
             this.tbOverpower.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -2382,6 +2899,17 @@
             this.tbOverpower.Size = new System.Drawing.Size(27, 20);
             this.tbOverpower.TabIndex = 7;
             // 
+            // pbIP
+            // 
+            this.pbIP.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbIP.Image = global::TLHelper.Properties.Resources.barbarian_ignorepain;
+            this.pbIP.Location = new System.Drawing.Point(3, 58);
+            this.pbIP.Name = "pbIP";
+            this.pbIP.Size = new System.Drawing.Size(27, 49);
+            this.pbIP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbIP.TabIndex = 3;
+            this.pbIP.TabStop = false;
+            // 
             // tbIP
             // 
             this.tbIP.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -2389,6 +2917,17 @@
             this.tbIP.Name = "tbIP";
             this.tbIP.Size = new System.Drawing.Size(27, 20);
             this.tbIP.TabIndex = 4;
+            // 
+            // pbCall
+            // 
+            this.pbCall.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbCall.Image = global::TLHelper.Properties.Resources.barbarian_calloftheancients;
+            this.pbCall.Location = new System.Drawing.Point(3, 3);
+            this.pbCall.Name = "pbCall";
+            this.pbCall.Size = new System.Drawing.Size(27, 49);
+            this.pbCall.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbCall.TabIndex = 0;
+            this.pbCall.TabStop = false;
             // 
             // tbCall
             // 
@@ -2492,6 +3031,17 @@
             this.tbRage.Name = "tbRage";
             this.tbRage.Size = new System.Drawing.Size(27, 20);
             this.tbRage.TabIndex = 33;
+            // 
+            // pbRage
+            // 
+            this.pbRage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbRage.Image = global::TLHelper.Properties.Resources.barbarian_battlerage;
+            this.pbRage.Location = new System.Drawing.Point(3, 388);
+            this.pbRage.Name = "pbRage";
+            this.pbRage.Size = new System.Drawing.Size(27, 50);
+            this.pbRage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbRage.TabIndex = 32;
+            this.pbRage.TabStop = false;
             // 
             // ddRage
             // 
@@ -2610,563 +3160,13 @@
             this.tableLayoutPanel10.Size = new System.Drawing.Size(231, 40);
             this.tableLayoutPanel10.TabIndex = 13;
             // 
-            // pbSimulacrum
-            // 
-            this.pbSimulacrum.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbSimulacrum.Image = global::TLHelper.Properties.Resources.p6_necro_simulacrum;
-            this.pbSimulacrum.Location = new System.Drawing.Point(3, 375);
-            this.pbSimulacrum.Name = "pbSimulacrum";
-            this.pbSimulacrum.Size = new System.Drawing.Size(27, 63);
-            this.pbSimulacrum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbSimulacrum.TabIndex = 21;
-            this.pbSimulacrum.TabStop = false;
-            // 
-            // pbSkeletalMages
-            // 
-            this.pbSkeletalMages.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbSkeletalMages.Image = global::TLHelper.Properties.Resources.p6_necro_raisedead;
-            this.pbSkeletalMages.Location = new System.Drawing.Point(3, 313);
-            this.pbSkeletalMages.Name = "pbSkeletalMages";
-            this.pbSkeletalMages.Size = new System.Drawing.Size(27, 56);
-            this.pbSkeletalMages.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbSkeletalMages.TabIndex = 18;
-            this.pbSkeletalMages.TabStop = false;
-            // 
-            // pbLand
-            // 
-            this.pbLand.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbLand.Image = global::TLHelper.Properties.Resources.p6_necro_landofthedead;
-            this.pbLand.Location = new System.Drawing.Point(3, 251);
-            this.pbLand.Name = "pbLand";
-            this.pbLand.Size = new System.Drawing.Size(27, 56);
-            this.pbLand.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbLand.TabIndex = 15;
-            this.pbLand.TabStop = false;
-            // 
-            // pbDevour
-            // 
-            this.pbDevour.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbDevour.Image = global::TLHelper.Properties.Resources.p6_necro_devour;
-            this.pbDevour.Location = new System.Drawing.Point(3, 189);
-            this.pbDevour.Name = "pbDevour";
-            this.pbDevour.Size = new System.Drawing.Size(27, 56);
-            this.pbDevour.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbDevour.TabIndex = 12;
-            this.pbDevour.TabStop = false;
-            // 
-            // pbCommandSkeletons
-            // 
-            this.pbCommandSkeletons.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbCommandSkeletons.Image = global::TLHelper.Properties.Resources.p6_necro_commandskeletons;
-            this.pbCommandSkeletons.Location = new System.Drawing.Point(3, 127);
-            this.pbCommandSkeletons.Name = "pbCommandSkeletons";
-            this.pbCommandSkeletons.Size = new System.Drawing.Size(27, 56);
-            this.pbCommandSkeletons.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbCommandSkeletons.TabIndex = 6;
-            this.pbCommandSkeletons.TabStop = false;
-            // 
-            // pbBoneArmor
-            // 
-            this.pbBoneArmor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbBoneArmor.Image = global::TLHelper.Properties.Resources.p6_necro_bonearmor;
-            this.pbBoneArmor.Location = new System.Drawing.Point(3, 65);
-            this.pbBoneArmor.Name = "pbBoneArmor";
-            this.pbBoneArmor.Size = new System.Drawing.Size(27, 56);
-            this.pbBoneArmor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbBoneArmor.TabIndex = 3;
-            this.pbBoneArmor.TabStop = false;
-            // 
-            // pbDeathNova
-            // 
-            this.pbDeathNova.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbDeathNova.Image = global::TLHelper.Properties.Resources.p6_necro_bloodnova;
-            this.pbDeathNova.Location = new System.Drawing.Point(3, 3);
-            this.pbDeathNova.Name = "pbDeathNova";
-            this.pbDeathNova.Size = new System.Drawing.Size(27, 56);
-            this.pbDeathNova.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbDeathNova.TabIndex = 0;
-            this.pbDeathNova.TabStop = false;
-            // 
-            // pbSoulHarvest
-            // 
-            this.pbSoulHarvest.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbSoulHarvest.Image = global::TLHelper.Properties.Resources.witchdoctor_soulharvest;
-            this.pbSoulHarvest.Location = new System.Drawing.Point(3, 368);
-            this.pbSoulHarvest.Name = "pbSoulHarvest";
-            this.pbSoulHarvest.Size = new System.Drawing.Size(27, 70);
-            this.pbSoulHarvest.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbSoulHarvest.TabIndex = 18;
-            this.pbSoulHarvest.TabStop = false;
-            // 
-            // pbSacrifice
-            // 
-            this.pbSacrifice.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbSacrifice.Image = global::TLHelper.Properties.Resources.witchdoctor_sacrifice;
-            this.pbSacrifice.Location = new System.Drawing.Point(3, 295);
-            this.pbSacrifice.Name = "pbSacrifice";
-            this.pbSacrifice.Size = new System.Drawing.Size(27, 67);
-            this.pbSacrifice.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbSacrifice.TabIndex = 15;
-            this.pbSacrifice.TabStop = false;
-            // 
-            // pbConfusion
-            // 
-            this.pbConfusion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbConfusion.Image = global::TLHelper.Properties.Resources.witchdoctor_massconfusion;
-            this.pbConfusion.Location = new System.Drawing.Point(3, 222);
-            this.pbConfusion.Name = "pbConfusion";
-            this.pbConfusion.Size = new System.Drawing.Size(27, 67);
-            this.pbConfusion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbConfusion.TabIndex = 12;
-            this.pbConfusion.TabStop = false;
-            // 
-            // pbHorrify
-            // 
-            this.pbHorrify.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbHorrify.Image = global::TLHelper.Properties.Resources.witchdoctor_horrify;
-            this.pbHorrify.Location = new System.Drawing.Point(3, 149);
-            this.pbHorrify.Name = "pbHorrify";
-            this.pbHorrify.Size = new System.Drawing.Size(27, 67);
-            this.pbHorrify.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbHorrify.TabIndex = 6;
-            this.pbHorrify.TabStop = false;
-            // 
-            // pbGargantuan
-            // 
-            this.pbGargantuan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbGargantuan.Image = global::TLHelper.Properties.Resources.witchdoctor_gargantuan;
-            this.pbGargantuan.Location = new System.Drawing.Point(3, 76);
-            this.pbGargantuan.Name = "pbGargantuan";
-            this.pbGargantuan.Size = new System.Drawing.Size(27, 67);
-            this.pbGargantuan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbGargantuan.TabIndex = 3;
-            this.pbGargantuan.TabStop = false;
-            // 
-            // pbFetish
-            // 
-            this.pbFetish.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbFetish.Image = global::TLHelper.Properties.Resources.witchdoctor_fetisharmy;
-            this.pbFetish.Location = new System.Drawing.Point(3, 3);
-            this.pbFetish.Name = "pbFetish";
-            this.pbFetish.Size = new System.Drawing.Size(27, 67);
-            this.pbFetish.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbFetish.TabIndex = 0;
-            this.pbFetish.TabStop = false;
-            // 
-            // pbProvoke
-            // 
-            this.pbProvoke.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbProvoke.Image = global::TLHelper.Properties.Resources.x1_crusader_provoke;
-            this.pbProvoke.Location = new System.Drawing.Point(3, 375);
-            this.pbProvoke.Name = "pbProvoke";
-            this.pbProvoke.Size = new System.Drawing.Size(27, 63);
-            this.pbProvoke.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbProvoke.TabIndex = 21;
-            this.pbProvoke.TabStop = false;
-            // 
-            // pbValor
-            // 
-            this.pbValor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbValor.Image = global::TLHelper.Properties.Resources.x1_crusader_lawsofvalor2;
-            this.pbValor.Location = new System.Drawing.Point(3, 313);
-            this.pbValor.Name = "pbValor";
-            this.pbValor.Size = new System.Drawing.Size(27, 56);
-            this.pbValor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbValor.TabIndex = 18;
-            this.pbValor.TabStop = false;
-            // 
-            // pbJustice
-            // 
-            this.pbJustice.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbJustice.Image = global::TLHelper.Properties.Resources.x1_crusader_lawsofjustice2;
-            this.pbJustice.Location = new System.Drawing.Point(3, 251);
-            this.pbJustice.Name = "pbJustice";
-            this.pbJustice.Size = new System.Drawing.Size(27, 56);
-            this.pbJustice.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbJustice.TabIndex = 15;
-            this.pbJustice.TabStop = false;
-            // 
-            // pbHope
-            // 
-            this.pbHope.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbHope.Image = global::TLHelper.Properties.Resources.x1_crusader_lawsofhope2;
-            this.pbHope.Location = new System.Drawing.Point(3, 189);
-            this.pbHope.Name = "pbHope";
-            this.pbHope.Size = new System.Drawing.Size(27, 56);
-            this.pbHope.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbHope.TabIndex = 12;
-            this.pbHope.TabStop = false;
-            // 
-            // pbIronSkin
-            // 
-            this.pbIronSkin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbIronSkin.Image = global::TLHelper.Properties.Resources.x1_crusader_ironskin;
-            this.pbIronSkin.Location = new System.Drawing.Point(3, 127);
-            this.pbIronSkin.Name = "pbIronSkin";
-            this.pbIronSkin.Size = new System.Drawing.Size(27, 56);
-            this.pbIronSkin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbIronSkin.TabIndex = 6;
-            this.pbIronSkin.TabStop = false;
-            // 
-            // pbCondemn
-            // 
-            this.pbCondemn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbCondemn.Image = global::TLHelper.Properties.Resources.x1_crusader_condemn;
-            this.pbCondemn.Location = new System.Drawing.Point(3, 65);
-            this.pbCondemn.Name = "pbCondemn";
-            this.pbCondemn.Size = new System.Drawing.Size(27, 56);
-            this.pbCondemn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbCondemn.TabIndex = 3;
-            this.pbCondemn.TabStop = false;
-            // 
-            // pbAkarats
-            // 
-            this.pbAkarats.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbAkarats.Image = global::TLHelper.Properties.Resources.x1_crusader_akaratschampion;
-            this.pbAkarats.Location = new System.Drawing.Point(3, 3);
-            this.pbAkarats.Name = "pbAkarats";
-            this.pbAkarats.Size = new System.Drawing.Size(27, 56);
-            this.pbAkarats.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbAkarats.TabIndex = 0;
-            this.pbAkarats.TabStop = false;
-            // 
-            // pbVengeance
-            // 
-            this.pbVengeance.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbVengeance.Image = global::TLHelper.Properties.Resources.x1_demonhunter_vengeance;
-            this.pbVengeance.Location = new System.Drawing.Point(3, 375);
-            this.pbVengeance.Name = "pbVengeance";
-            this.pbVengeance.Size = new System.Drawing.Size(27, 63);
-            this.pbVengeance.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbVengeance.TabIndex = 21;
-            this.pbVengeance.TabStop = false;
-            // 
-            // pbSmoke
-            // 
-            this.pbSmoke.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbSmoke.Image = global::TLHelper.Properties.Resources.demonhunter_smokescreen;
-            this.pbSmoke.Location = new System.Drawing.Point(3, 313);
-            this.pbSmoke.Name = "pbSmoke";
-            this.pbSmoke.Size = new System.Drawing.Size(27, 56);
-            this.pbSmoke.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbSmoke.TabIndex = 18;
-            this.pbSmoke.TabStop = false;
-            // 
-            // pbShadowPower
-            // 
-            this.pbShadowPower.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbShadowPower.Image = global::TLHelper.Properties.Resources.demonhunter_shadowpower;
-            this.pbShadowPower.Location = new System.Drawing.Point(3, 251);
-            this.pbShadowPower.Name = "pbShadowPower";
-            this.pbShadowPower.Size = new System.Drawing.Size(27, 56);
-            this.pbShadowPower.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbShadowPower.TabIndex = 15;
-            this.pbShadowPower.TabStop = false;
-            // 
-            // pbRainOfVengeance
-            // 
-            this.pbRainOfVengeance.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbRainOfVengeance.Image = global::TLHelper.Properties.Resources.demonhunter_rainofvengeance;
-            this.pbRainOfVengeance.Location = new System.Drawing.Point(3, 189);
-            this.pbRainOfVengeance.Name = "pbRainOfVengeance";
-            this.pbRainOfVengeance.Size = new System.Drawing.Size(27, 56);
-            this.pbRainOfVengeance.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbRainOfVengeance.TabIndex = 12;
-            this.pbRainOfVengeance.TabStop = false;
-            // 
-            // pbPreparation
-            // 
-            this.pbPreparation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbPreparation.Image = global::TLHelper.Properties.Resources.demonhunter_preparation;
-            this.pbPreparation.Location = new System.Drawing.Point(3, 127);
-            this.pbPreparation.Name = "pbPreparation";
-            this.pbPreparation.Size = new System.Drawing.Size(27, 56);
-            this.pbPreparation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbPreparation.TabIndex = 6;
-            this.pbPreparation.TabStop = false;
-            // 
-            // pbKnives
-            // 
-            this.pbKnives.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbKnives.Image = global::TLHelper.Properties.Resources.demonhunter_fanofknives;
-            this.pbKnives.Location = new System.Drawing.Point(3, 65);
-            this.pbKnives.Name = "pbKnives";
-            this.pbKnives.Size = new System.Drawing.Size(27, 56);
-            this.pbKnives.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbKnives.TabIndex = 3;
-            this.pbKnives.TabStop = false;
-            // 
-            // pbCompanion
-            // 
-            this.pbCompanion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbCompanion.Image = global::TLHelper.Properties.Resources.demonhunter_companion;
-            this.pbCompanion.Location = new System.Drawing.Point(3, 3);
-            this.pbCompanion.Name = "pbCompanion";
-            this.pbCompanion.Size = new System.Drawing.Size(27, 56);
-            this.pbCompanion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbCompanion.TabIndex = 0;
-            this.pbCompanion.TabStop = false;
-            // 
-            // pbStormArmor
-            // 
-            this.pbStormArmor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbStormArmor.Image = global::TLHelper.Properties.Resources.wizard_stormarmor;
-            this.pbStormArmor.Location = new System.Drawing.Point(3, 388);
-            this.pbStormArmor.Name = "pbStormArmor";
-            this.pbStormArmor.Size = new System.Drawing.Size(27, 50);
-            this.pbStormArmor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbStormArmor.TabIndex = 32;
-            this.pbStormArmor.TabStop = false;
-            // 
-            // pbWeapon
-            // 
-            this.pbWeapon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbWeapon.Image = global::TLHelper.Properties.Resources.wizard_magicweapon;
-            this.pbWeapon.Location = new System.Drawing.Point(3, 333);
-            this.pbWeapon.Name = "pbWeapon";
-            this.pbWeapon.Size = new System.Drawing.Size(27, 49);
-            this.pbWeapon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbWeapon.TabIndex = 21;
-            this.pbWeapon.TabStop = false;
-            // 
-            // pbIceArmor
-            // 
-            this.pbIceArmor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbIceArmor.Image = global::TLHelper.Properties.Resources.wizard_icearmor;
-            this.pbIceArmor.Location = new System.Drawing.Point(3, 278);
-            this.pbIceArmor.Name = "pbIceArmor";
-            this.pbIceArmor.Size = new System.Drawing.Size(27, 49);
-            this.pbIceArmor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbIceArmor.TabIndex = 18;
-            this.pbIceArmor.TabStop = false;
-            // 
-            // pbFrostNova
-            // 
-            this.pbFrostNova.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbFrostNova.Image = global::TLHelper.Properties.Resources.wizard_frostnova;
-            this.pbFrostNova.Location = new System.Drawing.Point(3, 223);
-            this.pbFrostNova.Name = "pbFrostNova";
-            this.pbFrostNova.Size = new System.Drawing.Size(27, 49);
-            this.pbFrostNova.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbFrostNova.TabIndex = 15;
-            this.pbFrostNova.TabStop = false;
-            // 
-            // pbFamiliar
-            // 
-            this.pbFamiliar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbFamiliar.Image = global::TLHelper.Properties.Resources.wizard_familiar;
-            this.pbFamiliar.Location = new System.Drawing.Point(3, 168);
-            this.pbFamiliar.Name = "pbFamiliar";
-            this.pbFamiliar.Size = new System.Drawing.Size(27, 49);
-            this.pbFamiliar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbFamiliar.TabIndex = 12;
-            this.pbFamiliar.TabStop = false;
-            // 
-            // pbExplosion
-            // 
-            this.pbExplosion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbExplosion.Image = global::TLHelper.Properties.Resources.wizard_explosiveblast;
-            this.pbExplosion.Location = new System.Drawing.Point(3, 113);
-            this.pbExplosion.Name = "pbExplosion";
-            this.pbExplosion.Size = new System.Drawing.Size(27, 49);
-            this.pbExplosion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbExplosion.TabIndex = 6;
-            this.pbExplosion.TabStop = false;
-            // 
-            // pbEnergy
-            // 
-            this.pbEnergy.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbEnergy.Image = global::TLHelper.Properties.Resources.wizard_energyarmor;
-            this.pbEnergy.Location = new System.Drawing.Point(3, 58);
-            this.pbEnergy.Name = "pbEnergy";
-            this.pbEnergy.Size = new System.Drawing.Size(27, 49);
-            this.pbEnergy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbEnergy.TabIndex = 3;
-            this.pbEnergy.TabStop = false;
-            // 
-            // pbDiamond
-            // 
-            this.pbDiamond.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbDiamond.Image = global::TLHelper.Properties.Resources.wizard_diamondskin;
-            this.pbDiamond.Location = new System.Drawing.Point(3, 3);
-            this.pbDiamond.Name = "pbDiamond";
-            this.pbDiamond.Size = new System.Drawing.Size(27, 49);
-            this.pbDiamond.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbDiamond.TabIndex = 0;
-            this.pbDiamond.TabStop = false;
-            // 
-            // pbEpiphany
-            // 
-            this.pbEpiphany.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbEpiphany.Image = global::TLHelper.Properties.Resources.x1_monk_epiphany;
-            this.pbEpiphany.Location = new System.Drawing.Point(3, 375);
-            this.pbEpiphany.Name = "pbEpiphany";
-            this.pbEpiphany.Size = new System.Drawing.Size(27, 63);
-            this.pbEpiphany.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbEpiphany.TabIndex = 21;
-            this.pbEpiphany.TabStop = false;
-            // 
-            // pbAlly
-            // 
-            this.pbAlly.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbAlly.Image = global::TLHelper.Properties.Resources.monk_mystically;
-            this.pbAlly.Location = new System.Drawing.Point(3, 313);
-            this.pbAlly.Name = "pbAlly";
-            this.pbAlly.Size = new System.Drawing.Size(27, 56);
-            this.pbAlly.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbAlly.TabIndex = 18;
-            this.pbAlly.TabStop = false;
-            // 
-            // pbConviction
-            // 
-            this.pbConviction.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbConviction.Image = global::TLHelper.Properties.Resources.monk_mantraofconviction;
-            this.pbConviction.Location = new System.Drawing.Point(3, 251);
-            this.pbConviction.Name = "pbConviction";
-            this.pbConviction.Size = new System.Drawing.Size(27, 56);
-            this.pbConviction.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbConviction.TabIndex = 15;
-            this.pbConviction.TabStop = false;
-            // 
-            // pbHealing
-            // 
-            this.pbHealing.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbHealing.Image = global::TLHelper.Properties.Resources.monk_mantraofhealing;
-            this.pbHealing.Location = new System.Drawing.Point(3, 189);
-            this.pbHealing.Name = "pbHealing";
-            this.pbHealing.Size = new System.Drawing.Size(27, 56);
-            this.pbHealing.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbHealing.TabIndex = 12;
-            this.pbHealing.TabStop = false;
-            // 
-            // pbSerenity
-            // 
-            this.pbSerenity.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbSerenity.Image = global::TLHelper.Properties.Resources.monk_serenity;
-            this.pbSerenity.Location = new System.Drawing.Point(3, 127);
-            this.pbSerenity.Name = "pbSerenity";
-            this.pbSerenity.Size = new System.Drawing.Size(27, 56);
-            this.pbSerenity.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbSerenity.TabIndex = 6;
-            this.pbSerenity.TabStop = false;
-            // 
-            // pbBreath
-            // 
-            this.pbBreath.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbBreath.Image = global::TLHelper.Properties.Resources.monk_breathofheaven;
-            this.pbBreath.Location = new System.Drawing.Point(3, 65);
-            this.pbBreath.Name = "pbBreath";
-            this.pbBreath.Size = new System.Drawing.Size(27, 56);
-            this.pbBreath.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbBreath.TabIndex = 3;
-            this.pbBreath.TabStop = false;
-            // 
-            // pbBlind
-            // 
-            this.pbBlind.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbBlind.Image = global::TLHelper.Properties.Resources.monk_blindingflash;
-            this.pbBlind.Location = new System.Drawing.Point(3, 3);
-            this.pbBlind.Name = "pbBlind";
-            this.pbBlind.Size = new System.Drawing.Size(27, 56);
-            this.pbBlind.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbBlind.TabIndex = 0;
-            this.pbBlind.TabStop = false;
-            // 
-            // pbBerserker
-            // 
-            this.pbBerserker.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbBerserker.Image = global::TLHelper.Properties.Resources.barbarian_wrathoftheberserker;
-            this.pbBerserker.Location = new System.Drawing.Point(3, 333);
-            this.pbBerserker.Name = "pbBerserker";
-            this.pbBerserker.Size = new System.Drawing.Size(27, 49);
-            this.pbBerserker.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbBerserker.TabIndex = 21;
-            this.pbBerserker.TabStop = false;
-            // 
-            // pbCry
-            // 
-            this.pbCry.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbCry.Image = global::TLHelper.Properties.Resources.barbarian_warcry;
-            this.pbCry.Location = new System.Drawing.Point(3, 278);
-            this.pbCry.Name = "pbCry";
-            this.pbCry.Size = new System.Drawing.Size(27, 49);
-            this.pbCry.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbCry.TabIndex = 18;
-            this.pbCry.TabStop = false;
-            // 
-            // pbShout
-            // 
-            this.pbShout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbShout.Image = global::TLHelper.Properties.Resources.barbarian_threateningshout;
-            this.pbShout.Location = new System.Drawing.Point(3, 223);
-            this.pbShout.Name = "pbShout";
-            this.pbShout.Size = new System.Drawing.Size(27, 49);
-            this.pbShout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbShout.TabIndex = 15;
-            this.pbShout.TabStop = false;
-            // 
-            // pbSprint
-            // 
-            this.pbSprint.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbSprint.Image = global::TLHelper.Properties.Resources.barbarian_sprint;
-            this.pbSprint.Location = new System.Drawing.Point(3, 168);
-            this.pbSprint.Name = "pbSprint";
-            this.pbSprint.Size = new System.Drawing.Size(27, 49);
-            this.pbSprint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbSprint.TabIndex = 12;
-            this.pbSprint.TabStop = false;
-            // 
-            // pbOverpower
-            // 
-            this.pbOverpower.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbOverpower.Image = global::TLHelper.Properties.Resources.barbarian_overpower;
-            this.pbOverpower.Location = new System.Drawing.Point(3, 113);
-            this.pbOverpower.Name = "pbOverpower";
-            this.pbOverpower.Size = new System.Drawing.Size(27, 49);
-            this.pbOverpower.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbOverpower.TabIndex = 6;
-            this.pbOverpower.TabStop = false;
-            // 
-            // pbIP
-            // 
-            this.pbIP.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbIP.Image = global::TLHelper.Properties.Resources.barbarian_ignorepain;
-            this.pbIP.Location = new System.Drawing.Point(3, 58);
-            this.pbIP.Name = "pbIP";
-            this.pbIP.Size = new System.Drawing.Size(27, 49);
-            this.pbIP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbIP.TabIndex = 3;
-            this.pbIP.TabStop = false;
-            // 
-            // pbCall
-            // 
-            this.pbCall.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbCall.Image = global::TLHelper.Properties.Resources.barbarian_calloftheancients;
-            this.pbCall.Location = new System.Drawing.Point(3, 3);
-            this.pbCall.Name = "pbCall";
-            this.pbCall.Size = new System.Drawing.Size(27, 49);
-            this.pbCall.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbCall.TabIndex = 0;
-            this.pbCall.TabStop = false;
-            // 
-            // pbRage
-            // 
-            this.pbRage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbRage.Image = global::TLHelper.Properties.Resources.barbarian_battlerage;
-            this.pbRage.Location = new System.Drawing.Point(3, 388);
-            this.pbRage.Name = "pbRage";
-            this.pbRage.Size = new System.Drawing.Size(27, 50);
-            this.pbRage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbRage.TabIndex = 32;
-            this.pbRage.TabStop = false;
-            // 
             // pbPotion
             // 
             this.pbPotion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbPotion.Image = global::TLHelper.Properties.Resources.potion;
             this.pbPotion.Location = new System.Drawing.Point(3, 3);
             this.pbPotion.Name = "pbPotion";
-            this.pbPotion.Size = new System.Drawing.Size(70, 34);
+            this.pbPotion.Size = new System.Drawing.Size(71, 34);
             this.pbPotion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbPotion.TabIndex = 0;
             this.pbPotion.TabStop = false;
@@ -3174,7 +3174,7 @@
             // tbPotion
             // 
             this.tbPotion.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbPotion.Location = new System.Drawing.Point(79, 10);
+            this.tbPotion.Location = new System.Drawing.Point(80, 10);
             this.tbPotion.Name = "tbPotion";
             this.tbPotion.Size = new System.Drawing.Size(70, 20);
             this.tbPotion.TabIndex = 1;
@@ -3183,7 +3183,7 @@
             // 
             this.cbPotion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbPotion.AutoSize = true;
-            this.cbPotion.Location = new System.Drawing.Point(184, 13);
+            this.cbPotion.Location = new System.Drawing.Point(185, 13);
             this.cbPotion.Name = "cbPotion";
             this.cbPotion.Size = new System.Drawing.Size(15, 14);
             this.cbPotion.TabIndex = 2;
@@ -3203,28 +3203,6 @@
             this.groupBox7.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel8.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.tableLayoutPanel7.ResumeLayout(false);
-            this.tableLayoutPanel7.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.tableLayoutPanel6.ResumeLayout(false);
-            this.tableLayoutPanel6.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel4.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
-            this.tableLayoutPanel9.ResumeLayout(false);
-            this.tableLayoutPanel9.PerformLayout();
-            this.tableLayoutPanel10.ResumeLayout(false);
-            this.tableLayoutPanel10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSimulacrum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSkeletalMages)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLand)).EndInit();
@@ -3232,12 +3210,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbCommandSkeletons)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBoneArmor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDeathNova)).EndInit();
+            this.groupBox6.ResumeLayout(false);
+            this.tableLayoutPanel7.ResumeLayout(false);
+            this.tableLayoutPanel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSoulHarvest)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSacrifice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbConfusion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHorrify)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbGargantuan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFetish)).EndInit();
+            this.groupBox5.ResumeLayout(false);
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProvoke)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbValor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbJustice)).EndInit();
@@ -3245,6 +3229,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbIronSkin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCondemn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAkarats)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbVengeance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSmoke)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbShadowPower)).EndInit();
@@ -3252,6 +3239,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbPreparation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbKnives)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCompanion)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbStormArmor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbWeapon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbIceArmor)).EndInit();
@@ -3260,6 +3250,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbExplosion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEnergy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDiamond)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbEpiphany)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAlly)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbConviction)).EndInit();
@@ -3267,6 +3260,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbSerenity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBreath)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBlind)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBerserker)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCry)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbShout)).EndInit();
@@ -3275,6 +3271,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbIP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCall)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRage)).EndInit();
+            this.tableLayoutPanel9.ResumeLayout(false);
+            this.tableLayoutPanel9.PerformLayout();
+            this.tableLayoutPanel10.ResumeLayout(false);
+            this.tableLayoutPanel10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPotion)).EndInit();
             this.ResumeLayout(false);
 

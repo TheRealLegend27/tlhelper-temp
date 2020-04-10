@@ -146,11 +146,6 @@ namespace TLHelper.Stats
 
         // ACTION HANDLES
 
-        public static void TestScript()
-        {
-            HardwareRobot.PressKey('H');
-        }
-
         public static void ClearInv1Space()
         {
             // DISABLE MOUSE HOOKS TO PREVENT LAG
@@ -290,6 +285,26 @@ namespace TLHelper.Stats
                 Sleep(-25);
             }
             SendKeys.SendWait("i");
+
+            // RE-ENABLE MOUSE HOOKS
+            HardwareListener.RegisterMouseHooks();
+
+            // RESCAN MODIFIER KEYS
+            HardwareListener.RefreshKeys();
+        }
+
+        public static void MoveInventory()
+        {
+            // DISABLE MOUSE HOOKS TO PREVENT LAG
+            HardwareListener.UnregisterMouseHooks();
+
+            InventoryIterator invIt = Inventory.Get1SlotIterator();
+            while (invIt.HasNext())
+            {
+                Position p = invIt.getNext();
+                HardwareRobot.MoveCursor(p.x, p.y);
+                HardwareRobot.DoMouseClick(false);
+            }
 
             // RE-ENABLE MOUSE HOOKS
             HardwareListener.RegisterMouseHooks();
