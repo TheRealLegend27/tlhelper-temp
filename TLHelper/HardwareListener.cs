@@ -6,6 +6,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Input;
 using TLHelper.Hotkeys;
 
 namespace TLHelper
@@ -90,7 +91,7 @@ namespace TLHelper
             {
                 case Keys.LControlKey: IsCtrlDown = false; break;
                 case Keys.LMenu: IsAltDown = false; break;
-                case Keys.LShiftKey: IsCtrlDown = false; break;
+                case Keys.LShiftKey: IsShiftDown = false; break;
             }
         }
         private static void KeyDownAction(object Sender, KeyEventArgs e)
@@ -99,8 +100,15 @@ namespace TLHelper
             {
                 case Keys.LControlKey: IsCtrlDown = true; break;
                 case Keys.LMenu: IsAltDown = true; break;
-                case Keys.LShiftKey: IsCtrlDown = true; break;
+                case Keys.LShiftKey: IsShiftDown = true; break;
             }
+        }
+
+        public static void RefreshKeys()
+        {
+            IsCtrlDown = Control.ModifierKeys.HasFlag(Keys.Control);
+            IsAltDown = Control.ModifierKeys.HasFlag(Keys.Alt);
+            IsShiftDown = Control.ModifierKeys.HasFlag(Keys.Shift);
         }
     }
 }

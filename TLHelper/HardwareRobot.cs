@@ -89,12 +89,47 @@ namespace TLHelper
         const UInt32 WM_KEYUP = 0x0101;
         public static void PressKey(char keyChar)
         {
+            KeyDown(keyChar);
+            Thread.Sleep(5);
+            KeyUp(keyChar);
+        }
+        public static void PressKey(int keyCode)
+        {
+            PressKey((char)keyCode);
+        }
+
+        public static void KeyDown(char keyChar)
+        {
             IntPtr d3WindowHandle = ScreenTools.d3WindowHandle;
             if (d3WindowHandle == IntPtr.Zero) return;
 
             PostMessage(d3WindowHandle, WM_KEYDOWN, (int)keyChar, 0);
-            Thread.Sleep(5);
+        }
+        public static void KeyDown(int keyCode)
+        {
+            KeyDown((char)keyCode);
+        }
+
+        public static void KeyUp(char keyChar)
+        {
+            IntPtr d3WindowHandle = ScreenTools.d3WindowHandle;
+            if (d3WindowHandle == IntPtr.Zero) return;
+
             PostMessage(d3WindowHandle, WM_KEYUP, (int)keyChar, 0);
+        }
+        public static void KeyUp(int keyCode)
+        {
+            KeyUp((char)keyCode);
+        }
+
+        public static class KeyCodes
+        {
+            public const int ALT = 0x00A4;
+            public const int CTRL = 0x00A2;
+            public const int SHIFT = 0x00A0;
+            public const int CTRL1 = 0x00A3;
+            public const int CTRL2 = 0x0011;
+            public const int CTRL3 = 0x2000;
         }
 
     }

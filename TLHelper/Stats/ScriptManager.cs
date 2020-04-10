@@ -171,6 +171,9 @@ namespace TLHelper.Stats
 
             // RE-ENABLE MOUSE HOOKS
             HardwareListener.RegisterMouseHooks();
+
+            // RESCAN MODIFIER KEYS
+            HardwareListener.RefreshKeys();
         }
 
         public static void ClearInv2Space()
@@ -193,10 +196,15 @@ namespace TLHelper.Stats
 
             // RE-ENABLE MOUSE HOOKS
             HardwareListener.RegisterMouseHooks();
+
+            // RESCAN MODIFIER KEYS
+            HardwareListener.RefreshKeys();
         }
 
         public static void DoCube1Space()
         {
+            // DISABLE MOUSE HOOKS TO PREVENT LAG
+            HardwareListener.UnregisterMouseHooks();
 
             Coord cubeFill = coords["cube_fill"];
             Coord cubeTransute = coords["cube_transmute"];
@@ -208,21 +216,29 @@ namespace TLHelper.Stats
             {
                 Position p = invIt.getNext();
                 HardwareRobot.DoMouseClick(p, false);
-                Sleep(10);
+                Sleep(0);
                 HardwareRobot.DoMouseClick(cubeFill);
-                Sleep(10);
+                Sleep(0);
                 HardwareRobot.DoMouseClick(cubeTransute);
-                Sleep(125);
+                Sleep(80);
                 HardwareRobot.DoMouseClick(cubeRight);
-                Sleep(10);
+                Sleep(0);
                 HardwareRobot.DoMouseClick(cubeLeft);
-                Sleep(10);
+                Sleep(0);
             }
+
+            // RE-ENABLE MOUSE HOOKS
+            HardwareListener.RegisterMouseHooks();
+
+            // RESCAN MODIFIER KEYS
+            HardwareListener.RefreshKeys();
 
         }
 
         public static void DoCube2Space()
         {
+            // DISABLE MOUSE HOOKS TO PREVENT LAG
+            HardwareListener.UnregisterMouseHooks();
 
             Coord cubeFill = coords["cube_fill"];
             Coord cubeTransute = coords["cube_transmute"];
@@ -234,21 +250,30 @@ namespace TLHelper.Stats
             {
                 Position p = invIt.getNext();
                 HardwareRobot.DoMouseClick(p, false);
-                Sleep(10);
+                Sleep(0);
                 HardwareRobot.DoMouseClick(cubeFill);
-                Sleep(10);
+                Sleep(0);
                 HardwareRobot.DoMouseClick(cubeTransute);
-                Sleep(125);
+                Sleep(80);
                 HardwareRobot.DoMouseClick(cubeRight);
-                Sleep(10);
+                Sleep(0);
                 HardwareRobot.DoMouseClick(cubeLeft);
-                Sleep(10);
+                Sleep(0);
             }
+
+            // RE-ENABLE MOUSE HOOKS
+            HardwareListener.RegisterMouseHooks();
+
+            // RESCAN MODIFIER KEYS
+            HardwareListener.RefreshKeys();
 
         }
 
         public static void DropItems()
         {
+            // DISABLE MOUSE HOOKS TO PREVENT LAG
+            HardwareListener.UnregisterMouseHooks();
+
             Coord Drop = coords["drop_item"];
             InventoryIterator invIt = Inventory.Get1SlotIterator();
 
@@ -265,6 +290,12 @@ namespace TLHelper.Stats
                 Sleep(-25);
             }
             SendKeys.SendWait("i");
+
+            // RE-ENABLE MOUSE HOOKS
+            HardwareListener.RegisterMouseHooks();
+
+            // RESCAN MODIFIER KEYS
+            HardwareListener.RefreshKeys();
         }
 
         private static EventWaitHandle sltWait = new ManualResetEvent(initialState: false);
