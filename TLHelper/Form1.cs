@@ -192,7 +192,7 @@ namespace TLHelper
             reqFields.Add("monk", new string[]{ "blinding_flash", "breath_of_heaven", "serenity", "mantra_of_healing", "mantra_of_conviction", "mystic_ally", "epiphany" });
             reqFields.Add("wizard", new string[]{ "frost_nova", "diamond_skin", "ice_armor", "storm_armor", "explosive_blast", "magic_weapon", "familiar", "energy_armor" });
             reqFields.Add("dh", new string[]{ "smoke_screen", "preparation", "fan_of_knives", "shadow_power", "companion", "rain_of_vengeance", "vengeance" });
-            reqFields.Add("crusader", new string[]{ "iron_skin", "provoke", "laws_of_valor", "condemn", "laws_of_hope", "akarats_champion" });
+            reqFields.Add("crusader", new string[]{ "iron_skin", "provoke", "laws_of_valor", "condemn", "laws_of_hope", "akarats_champion", "laws_of_justice" });
             reqFields.Add("wd", new string[]{ "horrify", "soul_harvest", "sacrifice", "gargantuan", "mass_confusion", "fetish_army" });
             reqFields.Add("necro", new string[]{ "skeletal_mages", "command_skeletons", "death_nova", "devour", "bone_armor", "land_of_the_dead", "simulacrum" });
             reqFields.Add("general", new string[] { "potion" });
