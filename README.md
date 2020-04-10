@@ -7,6 +7,15 @@
   - Add Big Bad Voodoo
   - Add Hex
   
+- [ ] Add Support for XButton1 and XButton2
+
+- [ ] Change key input:  
+  Replace TextField with a Button. After pressing the Button the next Key will be registered (Mouse and Keybard)
+  
+- [ ] Implement the HotkeySelector Window:  
+  Implement the Window to select Keycombinations to launch Scripts
+  Save selected Hotkeys in hotkeys.ini (hotkeys.ini overrides the scripts default keys)
+  
 - [ ] Add Mode Control
   - F1: Always press Keys
   - F2: Press Keys inside GRs and Rifts
