@@ -8,6 +8,9 @@
   - Add Hex
 
 - [ ] Change Baseresolution to 1920x1080
+
+- [ ] Disable Console by Default  
+  Only show Console if defined in Config
   
 - [ ] Add Support for XButton1 and XButton2
 
