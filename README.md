@@ -29,6 +29,13 @@
   
 - [ ] Profiles:  
   Save and Load Skill-Profiles
+
+- [ ] Auto Rift Opener:  
+  Automatically open a Rift or GR when Orek's Widow is opened
+  (later) Open a defined GR-Level via Text Recognition
+
+- [ ] Add Auto-Reforger:  
+  Add a Script to automatically reforge a selected Stat on an Item
   
 - [ ] Class recognition:  
   Automatically detect the current class
