@@ -6,6 +6,8 @@
   - Remove Fetish Army
   - Add Big Bad Voodoo
   - Add Hex
+
+- [ ] Change Baseresolution to 1920x1080
   
 - [ ] Add Support for XButton1 and XButton2
 
@@ -25,7 +27,7 @@
   If activated, gamble a defined Item every Time Kadala's Window is opened
   
 - [ ] Auto Gemup:  
-  Automaticaly update Gems at the end of a GR
+  Automaticaly upgrade Gems at the end of a GR
   
 - [ ] Profiles:  
   Save and Load Skill-Profiles
