@@ -11,6 +11,10 @@
   
 - [ ] Add Support for XButton1 and XButton2
 
+- [ ] Change MouseMove and MouseClick to use PostMessage
+
+- [ ] Check if the CTRL-Problem is causing the CubeCoverter problems
+
 - [ ] Change key input:  
   Replace TextField with a Button. After pressing the Button the next Key will be registered (Mouse and Keybard)
   
