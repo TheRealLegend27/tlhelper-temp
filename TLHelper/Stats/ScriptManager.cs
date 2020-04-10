@@ -131,7 +131,7 @@ namespace TLHelper.Stats
                         break;
                     case "click":
                         for (int i = int.Parse(args[1]); i>0; i--)
-                            HardwareRobot.DoMouseClick(args[0] == "left");
+                            HardwareRobot.DoMouseClick(Cursor.Position.X, Cursor.Position.Y, args[0] == "left");
                         break;
                     case "unreg_mouse_hooks":
                         HardwareListener.UnregisterMouseHooks();
@@ -151,15 +151,15 @@ namespace TLHelper.Stats
             // DISABLE MOUSE HOOKS TO PREVENT LAG
             HardwareListener.UnregisterMouseHooks();
 
-            HardwareRobot.MoveCursor(coords["smith_salvage"].RealX, coords["smith_salvage"].RealY);
-            HardwareRobot.DoMouseClick();
+            HardwareRobot.DoMouseClick(coords["smith_salvage"].RealX, coords["smith_salvage"].RealY);
 
             InventoryIterator invIt = Inventory.Get1SlotIterator();
             while (invIt.HasNext())
             {
                 Position p = invIt.getNext();
                 HardwareRobot.MoveCursor(p.x, p.y);
-                HardwareRobot.DoMouseClick();
+                HardwareRobot.DoMouseDown();
+                HardwareRobot.DoMouseUp();
                 SendKeys.Send("{ENTER}");
                 SendKeys.Send("{ENTER}");
             }
@@ -176,15 +176,15 @@ namespace TLHelper.Stats
             // DISABLE MOUSE HOOKS TO PREVENT LAG
             HardwareListener.UnregisterMouseHooks();
 
-            HardwareRobot.MoveCursor(coords["smith_salvage"].RealX, coords["smith_salvage"].RealY);
-            HardwareRobot.DoMouseClick();
+            HardwareRobot.DoMouseClick(coords["smith_salvage"].RealX, coords["smith_salvage"].RealY);
 
             InventoryIterator invIt = Inventory.Get2SlotIterator();
             while (invIt.HasNext())
             {
                 Position p = invIt.getNext();
                 HardwareRobot.MoveCursor(p.x, p.y);
-                HardwareRobot.DoMouseClick();
+                HardwareRobot.DoMouseDown();
+                HardwareRobot.DoMouseUp();
                 SendKeys.Send("{ENTER}");
                 SendKeys.Send("{ENTER}");
             }
@@ -302,8 +302,7 @@ namespace TLHelper.Stats
             while (invIt.HasNext())
             {
                 Position p = invIt.getNext();
-                HardwareRobot.MoveCursor(p.x, p.y);
-                HardwareRobot.DoMouseClick(false);
+                HardwareRobot.DoMouseClick(p.x, p.y, false);
             }
 
             // RE-ENABLE MOUSE HOOKS
@@ -339,7 +338,7 @@ namespace TLHelper.Stats
                     sltRunning = false;
                 }
                 sltWait.WaitOne();
-                HardwareRobot.DoMouseClick();
+                HardwareRobot.DoMouseClick(Cursor.Position.X, Cursor.Position.Y);
                 Sleep(-30);
             }
         }
@@ -361,7 +360,7 @@ namespace TLHelper.Stats
                     srtRunning = false;
                 }
                 srtWait.WaitOne();
-                HardwareRobot.DoMouseClick(false);
+                HardwareRobot.DoMouseClick(Cursor.Position.X, Cursor.Position.Y, false);
                 Sleep(-30);
             }
         }

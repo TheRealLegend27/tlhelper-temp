@@ -12,25 +12,41 @@ namespace TLHelper
         public static extern void mouse_event(uint dwFlags, uint dx, uint dy, uint cButtons, uint dwExtraInfo);
         [DllImport("user32.dll")]
         public static extern void PostMessage(IntPtr hWnd, UInt32 Msg, int wParam, int lParam);
+        [DllImport("user32.dll")]
+        public static extern void SendMessage(IntPtr hWnd, UInt32 Msg, int wParam, int lParam);
         //Mouse actions
         private const int MOUSEEVENTF_LEFTDOWN = 0x02;
         private const int MOUSEEVENTF_LEFTUP = 0x04;
         private const int MOUSEEVENTF_RIGHTDOWN = 0x08;
         private const int MOUSEEVENTF_RIGHTUP = 0x10;
 
-        public static void DoMouseClick(bool left = true)
+        const int WM_MOUSEMOVE = 0x200;
+        const int WM_LBUTTONDOWN = 0x201;
+        const int WM_LBUTTONUP = 0x202;
+        const int WM_RBUTTONDOWN = 0x204;
+        const int WM_RBUTTONUP = 0x205;
+
+        public static void DoMouseClick(int x, int y, bool left = true)
         {
             //Call the imported function with the cursor's current position
-            uint X = (uint)Cursor.Position.X;
-            uint Y = (uint)Cursor.Position.Y;
+            IntPtr diablo3Handle = ScreenTools.d3WindowHandle;
             if (left)
             {
-                mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, X, Y, 0, 0);
+                //mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, X, Y, 0, 0);
+                SendMessage(diablo3Handle, WM_LBUTTONDOWN, 1, MakeLParam(x, y));
+                SendMessage(diablo3Handle, WM_LBUTTONUP, 0, MakeLParam(x, y));
             }
             else
             {
-                mouse_event(MOUSEEVENTF_RIGHTDOWN | MOUSEEVENTF_RIGHTUP, X, Y, 0, 0);
+                //mouse_event(MOUSEEVENTF_RIGHTDOWN | MOUSEEVENTF_RIGHTUP, X, Y, 0, 0);
+                PostMessage(diablo3Handle, WM_RBUTTONDOWN, 2, MakeLParam(x, y));
+                PostMessage(diablo3Handle, WM_RBUTTONUP, 0, MakeLParam(x, y));
             }
+        }
+
+        private static int MakeLParam(int LoWord, int HiWord)
+        {
+            return (int)((HiWord << 16) | (LoWord & 0xFFFF));
         }
 
         public static void DoMouseDown(bool left = true)
@@ -61,12 +77,6 @@ namespace TLHelper
             {
                 mouse_event(MOUSEEVENTF_RIGHTUP, X, Y, 0, 0);
             }
-        }
-
-        public static void DoMouseClick(int x, int y, bool left=true)
-        {
-            MoveCursor(x, y);
-            DoMouseClick(left);
         }
 
         public static void DoMouseClick(Position p, bool left=true)

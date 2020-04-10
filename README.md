@@ -16,7 +16,7 @@
 
 - [ ] Add Support for XButton1 and XButton2
 
-- [ ] Change MouseMove and MouseClick to use PostMessage
+- [x] Change MouseMove and MouseClick to use PostMessage
 
 - [x] Check if the CTRL-Problem is causing the CubeCoverter problems
 
@@ -45,9 +45,6 @@
 - [ ] Auto Rift Opener:  
        Automatically open a Rift or GR when Orek's Widow is opened
       (later) Open a defined GR-Level via Text Recognition
-
-- [ ] Add Auto-Reforger:  
-       Add a Script to automatically reforge a selected Stat on an Item
 
 - [ ] Class recognition:  
        Automatically detect the current class

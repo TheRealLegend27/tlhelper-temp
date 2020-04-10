@@ -45,7 +45,7 @@ namespace TLHelper.Stats.Skills
                     (bool isMouse, Keys key, string button) = skill.GetKey();
                     if (isMouse)
                     {
-                        HardwareRobot.DoMouseClick(button == "lmb");
+                        HardwareRobot.DoMouseClick(Cursor.Position.X, Cursor.Position.Y, button == "lmb");
                     }
                     else
                     {
