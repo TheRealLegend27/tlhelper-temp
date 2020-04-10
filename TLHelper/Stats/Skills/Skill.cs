@@ -8,7 +8,7 @@ namespace TLHelper.Stats.Skills
     class Skill
     {
 
-        public delegate bool IsAvailable(bool isMouse, Color pxl);
+        public delegate bool IsAvailable(int skillSlot, Color pxl);
 
         public string[] id;
         public string key { get; set; }

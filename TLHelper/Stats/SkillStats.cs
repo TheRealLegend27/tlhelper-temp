@@ -14,7 +14,7 @@ namespace TLHelper.Stats
             skillSlots[0] = new Position(927, 1002);
             skillSlots[1] = new Position(993, 1002);
             skillSlots[2] = new Position(658, 1001);
-            skillSlots[3] = new Position(725, 1001);
+            skillSlots[3] = new Position(724, 1001);
             skillSlots[4] = new Position(791, 1001);
             skillSlots[5] = new Position(858, 1001);
             skillSlots[6] = new Position(1959, 1000);

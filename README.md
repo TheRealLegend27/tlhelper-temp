@@ -108,7 +108,7 @@
 - [x] Create config if not existing  
        If no config exists in documents/TLHelper/config.ini, create an empty one
 
-- [ ] Fix Skill-Slot 2:  
+- [x] Fix Skill-Slot 2:  
        Skill Slot 2 not working for any Reason
 
 - [x] Fix Converter Scripts

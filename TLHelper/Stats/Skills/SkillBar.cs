@@ -40,7 +40,7 @@ namespace TLHelper.Stats.Skills
 
             foreach (Skill skill in currentSkills)
             {
-                if (skill.IsActive && skill.CanPress(skill.SkillSlot == 0 || skill.SkillSlot == 1, SkillStats.GetPxlColor(skill)))
+                if (skill.IsActive && skill.CanPress(skill.SkillSlot, SkillStats.GetPxlColor(skill)))
                 {
                     (bool isMouse, Keys key, string button) = skill.GetKey();
                     if (isMouse)

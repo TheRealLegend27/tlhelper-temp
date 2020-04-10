@@ -10,7 +10,7 @@ namespace TLHelper.Stats.Skills
 {
     class PotionSkill
     {
-        public delegate bool IsAvailable(bool isMouse, Color pxl);
+        public delegate bool IsAvailable(int skillSlot, Color pxl);
         public string key { get; set; }
         public bool active { get; set; }
         public IsAvailable CanPress;
@@ -29,7 +29,7 @@ namespace TLHelper.Stats.Skills
             if (!ScreenTools.IsInRift()) return;
             if (ScreenTools.IsPorting()) return;
 
-            if (IsActive && CanPress(false, ScreenTools.GetPixelColor(Coords.Potion50.x, Coords.Potion50.y).Item1))
+            if (IsActive && CanPress(0, ScreenTools.GetPixelColor(Coords.Potion50.x, Coords.Potion50.y).Item1))
             {
                 (bool isMouse, Keys key, string button) = GetKey();
                 HardwareRobot.PressKey((char)key);
