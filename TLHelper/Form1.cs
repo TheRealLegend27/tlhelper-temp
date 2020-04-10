@@ -46,9 +46,9 @@ namespace TLHelper
 
             ScriptManager.AddScript(new Hotkey(true, false, false, '5'), ScriptManager.DoCube1Space);
             ScriptManager.AddScript(new Hotkey(true, false, false, '6'), ScriptManager.DoCube2Space);
+            ScriptManager.AddScript(new Hotkey(false, false, true, 'r'), ScriptManager.ReforgeItem);
 
             ScriptManager.AddScript(new Hotkey(true, false, false, 'j'), ScriptManager.DropItems);
-
             ScriptManager.AddScript(new Hotkey(false, false, true, 'i'), ScriptManager.MoveInventory);
 
             ScriptManager.AddScript(new Hotkey(false, false, true, Keys.LButton), ScriptManager.SpamLeft);

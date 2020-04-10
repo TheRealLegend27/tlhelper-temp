@@ -87,7 +87,7 @@
 - [ ] Multiple Auto-Ports:  
        Set multiple Hotkeys to port to different Locations
 
-- [ ] Add Cube-Functionality to reforge
+- [x] Add Cube-Functionality to reforge
       Add functionality to reforge the Item in the top-left Corner of the Inventory
 
 - [ ] Hotkeys to launch / kill 4th-Party programs

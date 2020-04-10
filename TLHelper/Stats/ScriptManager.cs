@@ -312,6 +312,38 @@ namespace TLHelper.Stats
             HardwareListener.RefreshKeys();
         }
 
+        public static void ReforgeItem()
+        {
+            // DISABLE MOUSE HOOKS TO PREVENT LAG
+            HardwareListener.UnregisterMouseHooks();
+
+            Coord cubeFill = coords["cube_fill"];
+            Coord cubeTransute = coords["cube_transmute"];
+            Position cubeLeft = SwitchPagesLeft;
+            Position cubeRight = SwitchPagesRight;
+
+            InventoryIterator invIt = Inventory.Get1SlotIterator();
+            Position p = invIt.getNext();
+            HardwareRobot.DoMouseClick(p.x, p.y, false);
+            Sleep(0);
+            HardwareRobot.DoMouseClick(cubeFill);
+            Sleep(0);
+            HardwareRobot.DoMouseClick(cubeTransute);
+            Sleep(80);
+            HardwareRobot.DoMouseClick(cubeRight);
+            Sleep(0);
+            HardwareRobot.DoMouseClick(cubeLeft);
+            Sleep(0);
+
+            HardwareRobot.MoveCursor(p.x, p.y);
+
+            // RE-ENABLE MOUSE HOOKS
+            HardwareListener.RegisterMouseHooks();
+
+            // RESCAN MODIFIER KEYS
+            HardwareListener.RefreshKeys();
+        }
+
         private static EventWaitHandle sltWait = new ManualResetEvent(initialState: false);
         private static EventWaitHandle srtWait = new ManualResetEvent(initialState: false);
 
