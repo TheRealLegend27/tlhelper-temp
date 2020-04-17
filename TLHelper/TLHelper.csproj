@@ -4,8 +4,8 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5721564A-9029-4F10-AF19-7F8FCF4F66BE}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{74A2D0D9-1AD8-43CE-9B5A-BB1ED192ED40}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>TLHelper</RootNamespace>
     <AssemblyName>TLHelper</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -32,9 +32,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -47,37 +44,18 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AvailableFunction.cs" />
-    <Compile Include="Coords.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HardwareListener.cs" />
-    <Compile Include="HardwareRobot.cs" />
-    <Compile Include="HotkeySelector.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HotkeySelector.Designer.cs">
-      <DependentUpon>HotkeySelector.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hotkeys\Hotkey.cs" />
-    <Compile Include="Hotkeys\HotkeyRegistry.cs" />
-    <Compile Include="Inventory.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ScreenTools.cs" />
-    <Compile Include="Stats\ScriptManager.cs" />
-    <Compile Include="Stats\SkillStats.cs" />
-    <Compile Include="Stats\Skills\PotionSkill.cs" />
-    <Compile Include="Stats\Skills\Skill.cs" />
-    <Compile Include="Stats\Skills\SkillBar.cs" />
-    <Compile Include="Stats\Skills\SkillManager.cs" />
+    <Compile Include="Coords\Coords.cs" />
+    <Compile Include="Player\Inventory.cs" />
+    <Compile Include="Player\InventoryIterator.cs" />
+    <Compile Include="Player\Player.cs" />
+    <Compile Include="Scripts\HotkeyManager.cs" />
+    <Compile Include="Scripts\InternalScripts.cs" />
+    <Compile Include="Scripts\ScriptCompiler.cs" />
+    <Compile Include="Skills\AvailableFunctions.cs" />
+    <Compile Include="Skills\SkillCoords.cs" />
+    <Compile Include="SysCom\HardwareRobot.cs" />
     <Compile Include="UAM\GlobalEventProvider.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -85,12 +63,92 @@
     <Compile Include="UAM\HookManager.cs" />
     <Compile Include="UAM\HookManager.Structures.cs" />
     <Compile Include="UAM\HookManager.Windows.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HotKeys\HotKey.cs" />
+    <Compile Include="HotKeys\Key.cs" />
     <Compile Include="UAM\MouseEventExtArgs.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HotkeySelector.resx">
-      <DependentUpon>HotkeySelector.cs</DependentUpon>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\GlobalData.cs" />
+    <Compile Include="Resources\GlobalDataList.cs" />
+    <Compile Include="Resources\SkillIcons.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SkillIcons.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\UIIcons.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIIcons.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\Script.cs" />
+    <Compile Include="Scripts\ScriptManager.cs" />
+    <Compile Include="Settings\SettingsManager.cs" />
+    <Compile Include="Skills\PotionSkill.cs" />
+    <Compile Include="Skills\Skill.cs" />
+    <Compile Include="Skills\SkillManager.cs" />
+    <Compile Include="SysCom\HardwareListener.cs" />
+    <Compile Include="SysCom\ScreenTools.cs" />
+    <Compile Include="UI\Containers\Actions\ActionsContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Containers\Efficiency\EfficiencyContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Containers\Overview\OverviewContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Containers\Overview\SideBarContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Containers\Overview\SkillBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Containers\Overview\SkillContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Containers\Scripts\ScriptBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Containers\Scripts\ScriptContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Containers\Settings\SettingsContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\HotkeySelectionButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\KeySelectionButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Layout.cs" />
+    <Compile Include="UI\Popups\HotkeySelectionPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Popups\HotkeySelectionPopup.Designer.cs">
+      <DependentUpon>HotkeySelectionPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Popups\KeySelectionPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Popups\KeySelectionPopup.Designer.cs">
+      <DependentUpon>KeySelectionPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Theme.cs" />
+    <Compile Include="UI\UIActions.cs" />
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -100,8 +158,28 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Resources\SkillIcons.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SkillIcons.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Strings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\UIIcons.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIIcons.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Popups\HotkeySelectionPopup.resx">
+      <DependentUpon>HotkeySelectionPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Popups\KeySelectionPopup.resx">
+      <DependentUpon>KeySelectionPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -115,167 +193,333 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <None Include="Icons\demonhunter_companion.png" />
+    <None Include="Resources\Icons\skills\barbarian_battlerage.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\barbarian_calloftheancients.png" />
+    <None Include="Resources\Icons\skills\barbarian_calloftheancients.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\barbarian_ignorepain.png" />
+    <None Include="Resources\Icons\skills\barbarian_ignorepain.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\barbarian_overpower.png" />
+    <None Include="Resources\Icons\skills\barbarian_overpower.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\barbarian_revenge.png" />
+    <None Include="Resources\Icons\skills\barbarian_revenge.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\barbarian_sprint.png" />
+    <None Include="Resources\Icons\skills\barbarian_sprint.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\barbarian_threateningshout.png" />
+    <None Include="Resources\Icons\skills\barbarian_threateningshout.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\barbarian_warcry.png" />
+    <None Include="Resources\Icons\skills\barbarian_warcry.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\barbarian_wrathoftheberserker.png" />
+    <None Include="Resources\Icons\skills\barbarian_wrathoftheberserker.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\demonhunter_fanofknives.png" />
+    <None Include="Resources\Icons\skills\demonhunter_companion.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\demonhunter_preparation.png" />
+    <None Include="Resources\Icons\skills\demonhunter_fanofknives.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\demonhunter_rainofvengeance.png" />
+    <None Include="Resources\Icons\skills\demonhunter_preparation.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\demonhunter_shadowpower.png" />
+    <None Include="Resources\Icons\skills\demonhunter_rainofvengeance.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\demonhunter_smokescreen.png" />
+    <None Include="Resources\Icons\skills\demonhunter_shadowpower.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\monk_blindingflash.png" />
+    <None Include="Resources\Icons\skills\demonhunter_smokescreen.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\monk_breathofheaven.png" />
+    <None Include="Resources\Icons\skills\monk_blindingflash.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\monk_mantraofconviction.png" />
+    <None Include="Resources\Icons\skills\monk_breathofheaven.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\monk_mantraofhealing.png" />
+    <None Include="Resources\Icons\skills\monk_mantraofconviction.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\monk_mantraofretribution.png" />
+    <None Include="Resources\Icons\skills\monk_mantraofhealing.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\monk_mantraofsalvation.png" />
+    <None Include="Resources\Icons\skills\monk_mantraofretribution.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\monk_mystically.png" />
+    <None Include="Resources\Icons\skills\monk_mantraofsalvation.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\monk_serenity.png" />
+    <None Include="Resources\Icons\skills\monk_mystically.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\p6_necro_bloodnova.png" />
+    <None Include="Resources\Icons\skills\monk_serenity.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\p6_necro_bonearmor.png" />
+    <None Include="Resources\Icons\skills\p6_necro_bloodnova.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\p6_necro_commandskeletons.png" />
+    <None Include="Resources\Icons\skills\p6_necro_bonearmor.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\p6_necro_devour.png" />
+    <None Include="Resources\Icons\skills\p6_necro_commandskeletons.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\p6_necro_landofthedead.png" />
+    <None Include="Resources\Icons\skills\p6_necro_devour.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\p6_necro_raisedead.png" />
+    <None Include="Resources\Icons\skills\p6_necro_landofthedead.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\p6_necro_simulacrum.png" />
+    <None Include="Resources\Icons\skills\p6_necro_raisedead.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\witchdoctor_fetisharmy.png" />
+    <None Include="Resources\Icons\skills\p6_necro_simulacrum.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\witchdoctor_gargantuan.png" />
+    <None Include="Resources\Icons\skills\potion.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\witchdoctor_horrify.png" />
+    <None Include="Resources\Icons\skills\witchdoctor_fetisharmy.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\witchdoctor_massconfusion.png" />
+    <None Include="Resources\Icons\skills\witchdoctor_gargantuan.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\witchdoctor_sacrifice.png" />
+    <None Include="Resources\Icons\skills\witchdoctor_horrify.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\witchdoctor_soulharvest.png" />
+    <None Include="Resources\Icons\skills\witchdoctor_massconfusion.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\wizard_diamondskin.png" />
+    <None Include="Resources\Icons\skills\witchdoctor_sacrifice.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\wizard_energyarmor.png" />
+    <None Include="Resources\Icons\skills\witchdoctor_soulharvest.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\wizard_explosiveblast.png" />
+    <None Include="Resources\Icons\skills\wizard_diamondskin.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\wizard_familiar.png" />
+    <None Include="Resources\Icons\skills\wizard_energyarmor.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\wizard_frostnova.png" />
+    <None Include="Resources\Icons\skills\wizard_explosiveblast.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\wizard_icearmor.png" />
+    <None Include="Resources\Icons\skills\wizard_familiar.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\wizard_magicweapon.png" />
+    <None Include="Resources\Icons\skills\wizard_frostnova.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\wizard_stormarmor.png" />
+    <None Include="Resources\Icons\skills\wizard_icearmor.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\x1_crusader_akaratschampion.png" />
+    <None Include="Resources\Icons\skills\wizard_magicweapon.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\x1_crusader_condemn.png" />
+    <None Include="Resources\Icons\skills\wizard_stormarmor.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\x1_crusader_ironskin.png" />
+    <None Include="Resources\Icons\skills\x1_crusader_akaratschampion.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\x1_crusader_lawsofhope2.png" />
+    <None Include="Resources\Icons\skills\x1_crusader_condemn.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\x1_crusader_lawsofjustice2.png" />
+    <None Include="Resources\Icons\skills\x1_crusader_ironskin.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\x1_crusader_lawsofvalor2.png" />
+    <None Include="Resources\Icons\skills\x1_crusader_lawsofhope2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\x1_crusader_provoke.png" />
+    <None Include="Resources\Icons\skills\x1_crusader_lawsofjustice2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\x1_demonhunter_vengeance.png" />
+    <None Include="Resources\Icons\skills\x1_crusader_lawsofvalor2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\x1_monk_epiphany.png" />
+    <None Include="Resources\Icons\skills\x1_crusader_provoke.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\barbarian_battlerage.png" />
+    <None Include="Resources\Icons\skills\x1_demonhunter_vengeance.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\potion.png" />
+    <None Include="Resources\Icons\skills\x1_monk_epiphany.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\ui\minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\ui\power-off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\barb\barbarian_battlerage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\barb\barbarian_calloftheancients.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\barb\barbarian_ignorepain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\barb\barbarian_overpower.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\barb\barbarian_revenge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\barb\barbarian_sprint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\barb\barbarian_threateningshout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\barb\barbarian_warcry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\barb\barbarian_wrathoftheberserker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\crus\x1_crusader_akaratschampion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\crus\x1_crusader_condemn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\crus\x1_crusader_ironskin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\crus\x1_crusader_lawsofhope2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\crus\x1_crusader_lawsofjustice2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\crus\x1_crusader_lawsofvalor2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\crus\x1_crusader_provoke.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\dh\demonhunter_companion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\dh\demonhunter_fanofknives.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\dh\demonhunter_preparation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\dh\demonhunter_rainofvengeance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\dh\demonhunter_shadowpower.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\dh\demonhunter_smokescreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\dh\x1_demonhunter_vengeance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\monk\monk_blindingflash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\monk\monk_breathofheaven.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\monk\monk_mantraofconviction.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\monk\monk_mantraofhealing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\monk\monk_mantraofretribution.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\monk\monk_mantraofsalvation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\monk\monk_mystically.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\monk\monk_serenity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\monk\x1_monk_epiphany.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\nec\p6_necro_bloodnova.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\nec\p6_necro_bonearmor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\nec\p6_necro_commandskeletons.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\nec\p6_necro_devour.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\nec\p6_necro_landofthedead.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\nec\p6_necro_raisedead.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\nec\p6_necro_simulacrum.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\wd\witchdoctor_fetisharmy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\wd\witchdoctor_gargantuan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\wd\witchdoctor_horrify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\wd\witchdoctor_massconfusion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\wd\witchdoctor_sacrifice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\wd\witchdoctor_soulharvest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\wiz\wizard_diamondskin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\wiz\wizard_energyarmor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\wiz\wizard_explosiveblast.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\wiz\wizard_familiar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\wiz\wizard_frostnova.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\wiz\wizard_icearmor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\wiz\wizard_magicweapon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\skills\wiz\wizard_stormarmor.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

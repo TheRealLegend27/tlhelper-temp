@@ -14,16 +14,16 @@
 - [ ] Disable Console by Default  
        Only show Console if defined in Config
 
-- [ ] Add Support for XButton1 and XButton2
+- [x] Add Support for XButton1 and XButton2
 
 - [x] Change MouseMove and MouseClick to use PostMessage
 
 - [x] Check if the CTRL-Problem is causing the CubeCoverter problems
 
-- [ ] Change key input:  
+- [x] Change key input:  
        Replace TextField with a Button. After pressing the Button the next Key will be registered (Mouse and Keybard)
 
-- [ ] Implement the HotkeySelector Window:  
+- [x] Implement the HotkeySelector Window:  
        Implement the Window to select Keycombinations to launch Scripts
       Save selected Hotkeys in hotkeys.ini (hotkeys.ini overrides the scripts default keys)
 
@@ -58,10 +58,10 @@
 - [ ] Skill recognition:  
        Automatically detect current Skills when not in GR or Rift every 10 seconds
 
-- [ ] Remove Save Button:  
+- [x] Remove Save Button:  
        Automatically save on change and remove Save Button
 
-- [ ] Start / End THud and Helper with D3:  
+- [x] Start / End THud and Helper with D3:  
        Register a Process to automatically start TurboHUD and TLHelper when Diablo III is launched  
        Register a Process to automatically stop TLHelper when Diablo III is closed
 
@@ -69,7 +69,7 @@
        Add Settings to change a Skills behavior (e.g. Press on CD or on not active)
       Add Settings to change Script behavior (e.g. Global min Sleep)
 
-- [ ] Implement Essance Support:  
+- [ ] Implement Essence Support:  
        Create availability functions based on %-Essence
 
 - [ ] Implement Licence-Keys:  

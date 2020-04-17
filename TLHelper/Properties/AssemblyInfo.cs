@@ -1,5 +1,4 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // Allgemeine Informationen über eine Assembly werden über die folgenden
@@ -20,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Die folgende GUID bestimmt die ID der Typbibliothek, wenn dieses Projekt für COM verfügbar gemacht wird
-[assembly: Guid("5721564a-9029-4f10-af19-7f8fcf4f66be")]
+[assembly: Guid("74a2d0d9-1ad8-43ce-9b5a-bb1ed192ed40")]
 
 // Versionsinformationen für eine Assembly bestehen aus den folgenden vier Werten:
 //

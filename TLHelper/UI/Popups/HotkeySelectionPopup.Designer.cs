@@ -1,0 +1,84 @@
+﻿namespace TLHelper.UI.Popups
+{
+    partial class HotkeySelectionPopup
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Calibri", 12F);
+            this.label1.Location = new System.Drawing.Point(0, 81);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(400, 38);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Waiting for input...\r\n(Escape to cancel)";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Enter += new System.EventHandler(this.label1_Enter);
+            this.label1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.label1_MouseClick);
+            // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(100, 150);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(200, 40);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Set Hotkey";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.button1_KeyDown);
+            // 
+            // HotkeySelectionPopup
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(100)))), ((int)(((byte)(200)))));
+            this.ClientSize = new System.Drawing.Size(400, 200);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label1);
+            this.ForeColor = System.Drawing.Color.White;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "HotkeySelectionPopup";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "HotkeySelectionPopup";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.HotkeySelectionPopup_KeyDown);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.HotkeySelectionPopup_MouseClick);
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+    }
+}

@@ -1,47 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace TLHelper.Hotkeys
+﻿namespace TLHelper.HotKeys
 {
-    class Hotkey
+    public class HotKey
     {
-        public bool ctrl, shift, alt;
-        public char cKey;
-        public Keys kKey;
-        public bool isChar;
+        public Key CurrentKey { get; set; }
 
-        public Hotkey(bool _ctrl, bool _shift, bool _alt, char _key)
+        public bool IsCtrl { get; set; }
+        public bool IsShift { get; set; }
+        public bool IsAlt { get; set; }
+
+        public HotKey(Key key, bool ctrl, bool shift, bool alt)
         {
-            ctrl = _ctrl;
-            shift = _shift;
-            alt = _alt;
-            cKey = _key;
-            isChar = true;
-        }
-        public Hotkey(bool _ctrl, bool _shift, bool _alt, Keys _key)
-        {
-            ctrl = _ctrl;
-            shift = _shift;
-            alt = _alt;
-            kKey = _key;
-            isChar = false;
+            CurrentKey = key;
+            IsCtrl = ctrl;
+            IsShift = shift;
+            IsAlt = alt;
         }
 
-        public int GetAddonKeys()
-        {
-            return (alt ? 1 : 0) + (ctrl ? 2 : 0) + (shift ? 4 : 0);
-        }
+        public bool IsMouse => CurrentKey.IsMouse;
 
-        public Keys GetKey()
-        {
-            return isChar ? (Keys)char.ToUpper(cKey) : kKey;
-        }
+        public int AddonKeys => (IsAlt ? 1 : 0) + (IsCtrl ? 2 : 0) + (IsShift ? 4 : 0);
 
-        public bool IsMouse() => isChar ? false : kKey == Keys.LButton || kKey == Keys.RButton || kKey == Keys.MButton || kKey == Keys.XButton1 || kKey == Keys.XButton2;
+        public string GetString()
+        {
+            string s = "";
+            if (IsCtrl) s += "Ctrl + ";
+            if (IsShift) s += "Shift + ";
+            if (IsAlt) s += "Alt + ";
+            s += CurrentKey.GetString();
+
+            return s;
+        }
 
     }
 }
