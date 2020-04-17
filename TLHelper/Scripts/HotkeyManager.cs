@@ -26,8 +26,6 @@ namespace TLHelper.Scripts
             var ptId = (button, ctrlDown, shiftDown, altDown);
             if (MouseHotkeys.ContainsKey(ptId))
                 ScriptManager.Run(MouseHotkeys[ptId]);
-            else
-                Console.WriteLine(ptId);
         }
 
     }

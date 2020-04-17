@@ -52,7 +52,7 @@ namespace TLHelper.Skills
 
         public static bool Error (int i, Color c) { Console.Error.WriteLine("Unknown AvailableType!"); return false; }
 
-    static readonly Color DefaultProfile = Color.FromArgb(83, 85, 66);
+        static readonly Color DefaultProfile = Color.FromArgb(83, 85, 66);
         static readonly Color PotionColor = Color.FromArgb(1, 1, 1);
         static readonly int PotionMinRed = 100;
 

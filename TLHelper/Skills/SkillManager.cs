@@ -23,11 +23,11 @@ namespace TLHelper.Skills
             MainFormRef = Ref;
         }
 
-        public static void ProcessSkills()
+        public static int ProcessSkills()
         {
-            if (!ScreenTools.IsDiabloFocused()) return;
-            if (!ScreenTools.IsInRift()) return;
-            if (ScreenTools.IsPorting()) return;
+            if (!ScreenTools.IsDiabloFocused()) return 1;
+            if (!ScreenTools.IsInRift()) return 2;
+            if (ScreenTools.IsPorting()) return 3;
 
             foreach (string id in ActiveSkills)
             {
@@ -50,6 +50,7 @@ namespace TLHelper.Skills
                 }
             }
             PotionSkill.Process();
+            return 0;
         }
 
         public static void ClearActiveSkills()

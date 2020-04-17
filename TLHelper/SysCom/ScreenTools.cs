@@ -85,8 +85,8 @@ namespace TLHelper.SysCom
             // CONVERT COLOR TO ARGB
             Color color = Color.FromArgb(
                 (int)(pixel & 0x000000FF),
-                (int)(pixel & 0x000000FF) >> 8,
-                (int)(pixel & 0x000000FF) >> 16
+                (int)(pixel & 0x0000FF00) >> 8,
+                (int)(pixel & 0x00FF0000) >> 16
             );
             // RETURN COLOR AND TRUE
             return (color, true);

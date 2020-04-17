@@ -162,6 +162,9 @@ namespace TLHelper
             if (ScriptsRoot != null)
                 ScriptManager.OverrideScripts(ScriptsRoot.SelectSingleNode("descendant::Scripts"));
 
+            // INITIALIZE SKILL COORDS
+            SkillCoords.Init();
+
             // INITIALIZE COMPONENTS
             InitializeComponent();
 
@@ -255,7 +258,7 @@ namespace TLHelper
             while(true)
             {
                 SkillManager.ProcessSkills();
-                Thread.Sleep(0);
+                Thread.Sleep(5);
             }
         }
 
