@@ -141,7 +141,7 @@ namespace TLHelper.UI.Containers.Settings
                 if (fileDialog.ShowDialog() == DialogResult.OK)
                 {
                     var thud = fileDialog.FileName;
-                    TBThud.Text = thud;
+                    TBD3.Text = thud;
                     SettingsManager.SetSetting("d3-exe", thud);
                 }
             };
