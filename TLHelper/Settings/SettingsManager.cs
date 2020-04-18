@@ -13,6 +13,7 @@ namespace TLHelper.Settings
 
         public static void SetFormRef(MainForm Ref) => MainFormRef = Ref;
 
+        public static bool Contains(string key) => Settings.ContainsKey(key) && Settings[key].Length > 0;
         public static string GetSetting(string key) => Settings[key];
         public static void SetSetting(string key, string value) => Settings[key] = value;
         public static void ResetSetting(string key)

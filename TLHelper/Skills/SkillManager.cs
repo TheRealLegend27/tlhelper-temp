@@ -20,6 +20,7 @@ namespace TLHelper.Skills
 
         public static void SetFormRef(MainForm Ref)
         {
+            Console.WriteLine("[SkillManager]:: MainFormRef Set");
             MainFormRef = Ref;
         }
 
@@ -73,6 +74,7 @@ namespace TLHelper.Skills
 
         public static void InitSkills(XmlNode SkillSettings, XmlNode ExtSkillSettings)
         {
+            Console.WriteLine("[SkillManager]:: Init Skills");
             foreach (XmlNode igClass in SkillSettings.ChildNodes)
             {
                 string currentClassId = igClass.Attributes.GetNamedItem("id").InnerText;

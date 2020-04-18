@@ -29,12 +29,6 @@ namespace TLHelper.SysCom
 
         public static readonly string DiabloWindowTitle = "Diablo III";
 
-        public static bool IsTHudRunning()
-        {
-            Process[] pname = Process.GetProcessesByName("TurboHUD");
-            return pname.Length > 0;
-        }
-
         /// <summary>
         /// Get Title of currently selected Window
         /// </summary>

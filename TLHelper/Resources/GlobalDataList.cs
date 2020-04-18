@@ -15,7 +15,6 @@ namespace TLHelper.Resources
 
         public VE GetValue(KE key)
         {
-            Console.WriteLine("Requrested Value-Key: " + key);
             return Data[key];
         }
 

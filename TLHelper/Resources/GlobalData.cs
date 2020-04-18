@@ -12,7 +12,7 @@ namespace TLHelper.Resources
             Classes.AddData("barb", "Barbarian");
             Classes.AddData("monk", "Monk");
             Classes.AddData("wiz", "Wizard");
-            Classes.AddData("nec", "Necro");
+            Classes.AddData("nec", "Necromancer");
             Classes.AddData("crus", "Crusader");
             Classes.AddData("dh", "Demon Hunter");
             Classes.AddData("wd", "Witch Doctor");
@@ -69,11 +69,6 @@ namespace TLHelper.Resources
             // SPECIAL KEYS
             AllowedKeys.AddData(Keys.Space, "Space");
             AllowedKeys.AddData(Keys.Tab, "Tab");
-
-            foreach (Keys key in AllowedKeys.GetKeys())
-            {
-                Console.WriteLine(key + " - " + AllowedKeys.GetValue(key));
-            }
 
         }
 
