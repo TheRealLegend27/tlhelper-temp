@@ -11,7 +11,7 @@
 
 - [ ] Change Baseresolution to 1920x1080
 
-- [ ] Disable Console by Default  
+- [x] Disable Console by Default  
        Only show Console if defined in Config
 
 - [x] Add Support for XButton1 and XButton2
@@ -66,8 +66,8 @@
        Register a Process to automatically stop TLHelper when Diablo III is closed
 
 - [ ] Add Settings:  
-       Add Settings to change a Skills behavior (e.g. Press on CD or on not active)
-      Add Settings to change Script behavior (e.g. Global min Sleep)
+       Add Settings to change a Skills behavior (e.g. Press on CD or on not active)  
+       Add Settings to change Script behavior (e.g. Global min Sleep)
 
 - [ ] Implement Essence Support:  
        Create availability functions based on %-Essence
