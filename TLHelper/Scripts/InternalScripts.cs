@@ -5,11 +5,17 @@ using TLHelper.SysCom;
 using static TLHelper.Coords.Coords;
 using TLHelper.HotKeys;
 using System;
+using System.Drawing;
 
 namespace TLHelper.Scripts
 {
     public static class InternalScripts
     {
+        private static Position LastCurser = new Position(0, 0);
+        private static void SaveCursor() => LastCurser = new Position(Cursor.Position.X, Cursor.Position.Y);
+        private static void RecoverCursor() => Cursor.Position = new Point(LastCurser.x, LastCurser.y);
+
+
         public static void RegisterScripts()
         {
             srt.Start();
@@ -35,6 +41,7 @@ namespace TLHelper.Scripts
 
         public static void ClearInv1Space()
         {
+            SaveCursor();
             HardwareListener.UnregisterMouseHooks();
 
             HardwareRobot.DoLeftClick(coords["smith_salvage"]);
@@ -44,15 +51,17 @@ namespace TLHelper.Scripts
                 Position p = inventory.GetNext();
                 HardwareRobot.MovePhysicalCursor(p);
                 HardwareRobot.DoLeftClick(p, HardwareRobot.ActionTypes.PHYSICAL);
-                SendKeys.SendWait("{ENTER}");
-                SendKeys.SendWait("{ENTER}");
+                SendKeys.Send("{ENTER}");
+                SendKeys.Send("{ENTER}");
             }
 
             HardwareListener.RegisterMouseHooks();
+            RecoverCursor();
         }
 
         public static void ClearInv2Space()
         {
+            SaveCursor();
             HardwareListener.UnregisterMouseHooks();
 
             HardwareRobot.DoLeftClick(coords["smith_salvage"]);
@@ -62,11 +71,12 @@ namespace TLHelper.Scripts
                 Position p = inventory.GetNext();
                 HardwareRobot.MovePhysicalCursor(p);
                 HardwareRobot.DoLeftClick(p, HardwareRobot.ActionTypes.PHYSICAL);
-                SendKeys.SendWait("{ENTER}");
-                SendKeys.SendWait("{ENTER}");
+                SendKeys.Send("{ENTER}");
+                SendKeys.Send("{ENTER}");
             }
 
             HardwareListener.RegisterMouseHooks();
+            RecoverCursor();
         }
 
         public static void DoCube1Space()
@@ -88,7 +98,7 @@ namespace TLHelper.Scripts
                 HardwareRobot.DoLeftClick(cubeFill);
                 Sleep(0);
                 HardwareRobot.DoLeftClick(cubeTransute);
-                Sleep(80);
+                Sleep(60);
                 HardwareRobot.DoLeftClick(cubeRight);
                 Sleep(0);
                 HardwareRobot.DoLeftClick(cubeLeft);
@@ -118,7 +128,7 @@ namespace TLHelper.Scripts
                 HardwareRobot.DoLeftClick(cubeFill);
                 Sleep(0);
                 HardwareRobot.DoLeftClick(cubeTransute);
-                Sleep(80);
+                Sleep(35);
                 HardwareRobot.DoLeftClick(cubeRight);
                 Sleep(0);
                 HardwareRobot.DoLeftClick(cubeLeft);
@@ -141,10 +151,11 @@ namespace TLHelper.Scripts
             while (inventory.HasNext)
             {
                 Position p = inventory.GetNext();
-                HardwareRobot.DoLeftDown(p.x, p.y);
-                Sleep(-25);
-                HardwareRobot.DoLeftUp(Drop.RealX, Drop.RealY);
-                Sleep(-25);
+                HardwareRobot.MovePhysicalCursor(p);
+                HardwareRobot.DoLeftDown(p.x, p.y, HardwareRobot.ActionTypes.PHYSICAL);
+                HardwareRobot.MovePhysicalCursor(Drop);
+                Sleep(-20);
+                HardwareRobot.DoLeftUp(Drop.RealX, Drop.RealY, HardwareRobot.ActionTypes.PHYSICAL);
             }
             SendKeys.SendWait("i");
 
@@ -185,7 +196,7 @@ namespace TLHelper.Scripts
             HardwareRobot.DoLeftClick(cubeFill);
             Sleep(0);
             HardwareRobot.DoLeftClick(cubeTransute);
-            Sleep(80);
+            Sleep(40);
             HardwareRobot.DoLeftClick(cubeRight);
             Sleep(0);
             HardwareRobot.DoLeftClick(cubeLeft);
@@ -224,6 +235,7 @@ namespace TLHelper.Scripts
                 }
                 sltWait.WaitOne();
                 HardwareRobot.DoLeftClick();
+                Sleep(-25);
             }
         }
         public static void SpamRight()
@@ -245,6 +257,7 @@ namespace TLHelper.Scripts
                 }
                 srtWait.WaitOne();
                 HardwareRobot.DoRightClick();
+                Sleep(-35);
             }
         }
 

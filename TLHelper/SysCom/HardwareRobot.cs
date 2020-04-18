@@ -120,7 +120,7 @@ namespace TLHelper.SysCom
                 else
                     wm = WM.WM_RBUTTONDOWN;
 
-                SendMessage(d3Handle, wm, left ? 1 : 2, MakeLParam(x, y));
+                PostMessage(d3Handle, wm, left ? 1 : 2, MakeLParam(x, y));
 
             }
             else if (actionType == ActionTypes.PHYSICAL)
@@ -151,7 +151,7 @@ namespace TLHelper.SysCom
                 else
                     wm = WM.WM_RBUTTONUP;
 
-                SendMessage(d3Handle, wm, 0, MakeLParam(x, y));
+                PostMessage(d3Handle, wm, 0, MakeLParam(x, y));
 
             }
             else if (actionType == ActionTypes.PHYSICAL)

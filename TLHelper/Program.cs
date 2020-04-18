@@ -52,10 +52,10 @@ namespace TLHelper
             // INIT KILL COORDS
             SkillCoords.Init();
 
+            StartSkillLoop();
+
             // LAUNCH APPLICATION
             Application.Run(mainForm);
-
-            StartSkillLoop();
         }
 
         private static void SetFormRefs(MainForm Ref)

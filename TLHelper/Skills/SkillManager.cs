@@ -13,8 +13,8 @@ namespace TLHelper.Skills
     {
         private static MainForm MainFormRef;
 
-        private static Dictionary<string, Skill> Skills = new Dictionary<string, Skill>();
-        private static List<string> ActiveSkills = new List<string>();
+        private static readonly Dictionary<string, Skill> Skills = new Dictionary<string, Skill>();
+        private static readonly List<string> ActiveSkills = new List<string>();
 
         public static PotionSkill PotionSkill = null;
 
@@ -111,14 +111,16 @@ namespace TLHelper.Skills
 
         public static void CreateMissingSkills()
         {
-            Dictionary<string, string[]> RequiredFields = new Dictionary<string, string[]>();
-            RequiredFields.Add("barb", new string[] { "overpower", "battle_rage", "threatening_shout", "sprint", "ignore_pain", "call_of_the_ancients", "war_cry", "wrath_of_the_berserker" });
-            RequiredFields.Add("monk", new string[] { "blinding_flash", "breath_of_heaven", "serenity", "mantra_of_healing", "mantra_of_conviction", "mystical_ally", "epiphany" });
-            RequiredFields.Add("wiz", new string[] { "frost_nova", "diamond_skin", "ice_armor", "storm_armor", "explosive_blast", "magic_weapon", "familiar", "energy_armor" });
-            RequiredFields.Add("dh", new string[] { "smoke_screen", "preparation", "fan_of_knives", "shadow_power", "companion", "rain_of_vengeance", "vengeance" });
-            RequiredFields.Add("crus", new string[] { "iron_skin", "provoke", "laws_of_valor", "laws_of_justice", "laws_of_hope", "condemn", "akarats_champion" });
-            RequiredFields.Add("wd", new string[] { "horrify", "soul_harvest", "sacrifice", "gargantuan", "massconfusion", "fetish_army" });
-            RequiredFields.Add("nec", new string[] { "skeletal_mages", "command_skeletons", "death_nova", "devour", "bone_armor", "land_of_the_dead", "simulacrum" });
+            Dictionary<string, string[]> RequiredFields = new Dictionary<string, string[]>
+            {
+                { "barb", new string[] { "overpower", "battle_rage", "threatening_shout", "sprint", "ignore_pain", "call_of_the_ancients", "war_cry", "wrath_of_the_berserker" } },
+                { "monk", new string[] { "blinding_flash", "breath_of_heaven", "serenity", "mantra_of_healing", "mantra_of_conviction", "mystical_ally", "epiphany" } },
+                { "wiz", new string[] { "frost_nova", "diamond_skin", "ice_armor", "storm_armor", "explosive_blast", "magic_weapon", "familiar", "energy_armor" } },
+                { "dh", new string[] { "smoke_screen", "preparation", "fan_of_knives", "shadow_power", "companion", "rain_of_vengeance", "vengeance" } },
+                { "crus", new string[] { "iron_skin", "provoke", "laws_of_valor", "laws_of_justice", "laws_of_hope", "condemn", "akarats_champion" } },
+                { "wd", new string[] { "horrify", "soul_harvest", "sacrifice", "gargantuan", "massconfusion", "fetish_army" } },
+                { "nec", new string[] { "skeletal_mages", "command_skeletons", "death_nova", "devour", "bone_armor", "land_of_the_dead", "simulacrum" } }
+            };
 
             foreach (KeyValuePair<string, string[]> kvp in RequiredFields)
             {
