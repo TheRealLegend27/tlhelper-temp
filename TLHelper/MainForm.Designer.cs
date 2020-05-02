@@ -40,6 +40,8 @@
             this.MenuButtonActions = new System.Windows.Forms.Button();
             this.MenuButtonSettings = new System.Windows.Forms.Button();
             this.MenuButtonScripts = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lUserName = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Minimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PowerOff)).BeginInit();
@@ -49,6 +51,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(100)))), ((int)(((byte)(200)))));
+            this.panel1.Controls.Add(this.lUserName);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.Minimize);
             this.panel1.Controls.Add(this.PowerOff);
             this.panel1.Controls.Add(this.label1);
@@ -201,6 +205,30 @@
             this.MenuButtonScripts.UseVisualStyleBackColor = true;
             this.MenuButtonScripts.Click += new System.EventHandler(this.ScriptsClicked);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(201, 17);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 18);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Loged in as: ";
+            // 
+            // lUserName
+            // 
+            this.lUserName.AutoSize = true;
+            this.lUserName.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lUserName.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lUserName.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lUserName.Location = new System.Drawing.Point(290, 17);
+            this.lUserName.Name = "lUserName";
+            this.lUserName.Size = new System.Drawing.Size(57, 18);
+            this.lUserName.TabIndex = 6;
+            this.lUserName.Text = "No User";
+            this.lUserName.Click += new System.EventHandler(this.Logout);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -235,6 +263,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox Minimize;
         private System.Windows.Forms.PictureBox PowerOff;
+        private System.Windows.Forms.Label lUserName;
+        private System.Windows.Forms.Label label2;
     }
 }
 

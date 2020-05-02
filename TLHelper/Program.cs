@@ -2,11 +2,14 @@
 using System.Diagnostics;
 using System.Threading;
 using System.Windows.Forms;
+using System.Xml;
 using TLHelper.Scripts;
 using TLHelper.Settings;
 using TLHelper.Skills;
 using TLHelper.SysCom;
 using TLHelper.UI;
+using TLHelper.UI.Popups;
+using static TLHelper.XML.IOManager;
 
 namespace TLHelper
 {
@@ -23,23 +26,67 @@ namespace TLHelper
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Run();
+            // CHECK IF SETTINGS DIR EXISTS
+            SettingsBundle xml = new SettingsBundle((null, null), null, null, null);
+            if (!CreateConfigDir())
+            {
+                // LOAD ALL SETTINGS
+                xml = LoadAllSettings();
+                Console.WriteLine("[Program]:: Settings Loaded");
+            }
+
+            InitSettings(xml.settings);
+
+            if (SettingsManager.Ath.Length == 0)
+            {
+                if (!TryLogin()) Environment.Exit(-1);
+            }
+            API.Users.Token = SettingsManager.Ath;
+
+            bool authSuccess = API.Users.Authenticate().GetAwaiter().GetResult();
+            if (authSuccess)
+            {
+                if (CheckServer()) Run(xml);
+                else Environment.Exit(-1);
+            }
+            else
+            {
+                if (!TryLogin()) Environment.Exit(-1);
+                else
+                {
+                    authSuccess = API.Users.Authenticate().GetAwaiter().GetResult();
+                    if (!authSuccess) Environment.Exit(-1);
+                    else Run(xml);
+                }
+            }
         }
 
-        private static void Run()
+        private static bool CheckServer() => API.Users.AuthServer().GetAwaiter().GetResult();
+
+        private static bool TryLogin()
+        {
+            LoginPopup loginPopup = new LoginPopup();
+            if (loginPopup.ShowDialog() == DialogResult.OK)
+            {
+                var username = loginPopup.username;
+                var password = loginPopup.password;
+
+                bool loginSuccess = API.Users.Login(username, password).GetAwaiter().GetResult();
+                if (!loginSuccess)
+                    return false;
+            }
+            else
+            {
+                return false;
+            }
+            return true;
+        }
+
+        private static void Run(SettingsBundle xml)
         {
             // CREATE MAIN FORM
             MainForm mainForm = new MainForm();
             mainForm.FormClosing += (object s, FormClosingEventArgs e) => ShutDown();
-
-            // CHECK IF SETTINGS DIR EXISTS
-            XML.IOManager.SettingsBundle xml = new XML.IOManager.SettingsBundle((null, null), null, null, null);
-            if (!XML.IOManager.CreateConfigDir())
-            {
-                // LOAD ALL SETTINGS
-                xml = XML.IOManager.LoadAllSettings();
-                Console.WriteLine("[Program]:: Settings Loaded");
-            }
 
             // INITIALIZE
             SetFormRefs(mainForm);
@@ -72,14 +119,16 @@ namespace TLHelper
             ActiveMode.SetFormRef(Ref);
         }
 
+        private static void InitSettings(XmlNode e)
+        {
+            // INIT SETTINGS MANAGER
+            if (e != null)
+                SettingsManager.LoadSettings(e);
+            SettingsManager.CreateMissingSettings();
+        }
+
         private static void Init(XML.IOManager.SettingsBundle xml, MainForm mainForm)
         {
-            Console.WriteLine(xml.settings.ChildNodes.Count);
-            // INIT SETTINGS MANAGER
-            if (xml.settings != null)
-                SettingsManager.LoadSettings(xml.settings);
-            SettingsManager.CreateMissingSettings();
-
             // SETUP SKILLS
             if (xml.skills.def != null)
                 SkillManager.InitSkills(xml.skills.def, xml.skills.special);
@@ -92,7 +141,7 @@ namespace TLHelper
 
 
             // INIT MAINFORM
-            mainForm.Init();
+            mainForm.Init(username: API.Users.CurrentUser.username);
 
             // LOAD SCRIPTS
             ScriptManager.LoadScripts();

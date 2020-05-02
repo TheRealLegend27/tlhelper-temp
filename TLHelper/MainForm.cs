@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using TLHelper.Settings;
 using TLHelper.SysCom;
 using TLHelper.UI.Containers;
 using TLHelper.UI.Containers.Actions;
@@ -24,13 +26,14 @@ namespace TLHelper
         {
         }
 
-        public void Init()
+        public void Init(string username)
         {
             // CREATE CONTAINERS
             CreateContainers();
 
             // INITIALIZE COMPONENTS
             InitializeComponent();
+            lUserName.Text = username;
 
             // SET ICONS
             PowerOff.Image = Resources.UIIcons.power_off;
@@ -127,6 +130,16 @@ namespace TLHelper
         {
             HardwareListener.Action(m);
             base.WndProc(ref m);
+        }
+
+        private void Logout(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Do you want to logout of the current account?", "Logout?", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                SettingsManager.SetSetting("ath", "");
+                Close();
+            }
         }
 
     }
