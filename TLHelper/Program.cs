@@ -23,6 +23,11 @@ namespace TLHelper
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            Run();
+        }
+
+        private static void Run()
+        {
             // CREATE MAIN FORM
             MainForm mainForm = new MainForm();
             mainForm.FormClosing += (object s, FormClosingEventArgs e) => ShutDown();
@@ -105,12 +110,7 @@ namespace TLHelper
             if (!ProcessManager.IsDiabloRunning)
             {
                 // DIABLO IS NOT RUNNING
-                if (StartDiablo())
-                {
-                    // DIABLO EXE WAS IN SETTINGS
-                    MessageBox.Show("Klick 'OK', after Diablo has started", "Starting Diablo...", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
-                }
-                else
+                if (!StartDiablo())
                 {
                     // DIABLO EXE WAS NOT IN SETTINGS
                     MessageBox.Show("Please start Diablo first or set the Path to Diablo in the Settings, to automaticaly start it.", "Diablo is not running!");
