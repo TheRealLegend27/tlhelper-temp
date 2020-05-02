@@ -51,8 +51,8 @@ namespace TLHelper.Scripts
                 Position p = inventory.GetNext();
                 HardwareRobot.MovePhysicalCursor(p);
                 HardwareRobot.DoLeftClick(p, HardwareRobot.ActionTypes.PHYSICAL);
-                SendKeys.Send("{ENTER}");
-                SendKeys.Send("{ENTER}");
+                SendKeys.SendWait("{ENTER}");
+                SendKeys.SendWait("{ENTER}");
             }
 
             HardwareListener.RegisterMouseHooks();
@@ -71,8 +71,8 @@ namespace TLHelper.Scripts
                 Position p = inventory.GetNext();
                 HardwareRobot.MovePhysicalCursor(p);
                 HardwareRobot.DoLeftClick(p, HardwareRobot.ActionTypes.PHYSICAL);
-                SendKeys.Send("{ENTER}");
-                SendKeys.Send("{ENTER}");
+                SendKeys.SendWait("{ENTER}");
+                SendKeys.SendWait("{ENTER}");
             }
 
             HardwareListener.RegisterMouseHooks();
@@ -98,7 +98,7 @@ namespace TLHelper.Scripts
                 HardwareRobot.DoLeftClick(cubeFill);
                 Sleep(0);
                 HardwareRobot.DoLeftClick(cubeTransute);
-                Sleep(60);
+                Sleep(70);
                 HardwareRobot.DoLeftClick(cubeRight);
                 Sleep(0);
                 HardwareRobot.DoLeftClick(cubeLeft);
@@ -124,15 +124,15 @@ namespace TLHelper.Scripts
             {
                 Position p = inventory.GetNext();
                 HardwareRobot.DoRightClick(p);
-                Sleep(0);
+                Sleep(10);
                 HardwareRobot.DoLeftClick(cubeFill);
-                Sleep(0);
+                Sleep(10);
                 HardwareRobot.DoLeftClick(cubeTransute);
-                Sleep(35);
+                Sleep(60);
                 HardwareRobot.DoLeftClick(cubeRight);
-                Sleep(0);
+                Sleep(10);
                 HardwareRobot.DoLeftClick(cubeLeft);
-                Sleep(0);
+                Sleep(10);
             }
 
             // RE-ENABLE MOUSE HOOKS
