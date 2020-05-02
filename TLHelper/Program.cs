@@ -16,6 +16,7 @@ namespace TLHelper
     static class Program
     {
         private static bool Running = false;
+        private static MainForm MainFormRef;
         /// <summary>
         /// Der Haupteinstiegspunkt für die Anwendung.
         /// </summary>
@@ -87,6 +88,7 @@ namespace TLHelper
             // CREATE MAIN FORM
             MainForm mainForm = new MainForm();
             mainForm.FormClosing += (object s, FormClosingEventArgs e) => ShutDown();
+            MainFormRef = mainForm;
 
             // INITIALIZE
             SetFormRefs(mainForm);
@@ -104,7 +106,11 @@ namespace TLHelper
             // INIT KILL COORDS
             SkillCoords.Init();
 
+            // START SKILL LOOP
             StartSkillLoop();
+
+            // START AUTH LOOP
+            StartAuthLoop();
 
             // LAUNCH APPLICATION
             Application.Run(mainForm);
@@ -127,7 +133,7 @@ namespace TLHelper
             SettingsManager.CreateMissingSettings();
         }
 
-        private static void Init(XML.IOManager.SettingsBundle xml, MainForm mainForm)
+        private static void Init(SettingsBundle xml, MainForm mainForm)
         {
             // SETUP SKILLS
             if (xml.skills.def != null)
@@ -209,27 +215,55 @@ namespace TLHelper
             return false;
         }
 
-        private static void ShutDown()
+        private static void ShutDown(int code = 0)
         {
-            XML.IOManager.SaveAllSettings();
+            SaveAllSettings();
             Running = false;
 
-            Environment.Exit(0);
+            Environment.Exit(code);
         }
 
         private static void StartSkillLoop()
         {
-            Thread mainThread = new Thread(new ThreadStart(RunSkillLoop));
             Running = true;
+            Thread mainThread = new Thread(new ThreadStart(RunSkillLoop));
             mainThread.Start();
         }
-
         private static void RunSkillLoop()
         {
             while (Running)
             {
                 SkillManager.ProcessSkills();
                 Thread.Sleep(5);
+            }
+            Thread.CurrentThread.Join();
+        }
+
+        private static void StartAuthLoop()
+        {
+            Thread authThread = new Thread(new ThreadStart(RunAuthLoop));
+            authThread.Start();
+        }
+        private static void RunAuthLoop()
+        {
+            int counter = 0;
+            while (Running)
+            {
+                while (counter < 60)
+                {
+                    if (!Running)
+                        Thread.CurrentThread.Join();
+                    Thread.Sleep(1000);
+                    counter++;
+                }
+                counter = 0;
+                // AUTHENTICATE
+                bool authed = API.Users.Authenticate().GetAwaiter().GetResult();
+                if (!authed)
+                {
+                    MessageBox.Show("Could not authenticate your account. Maybe its used by another person.");
+                    ShutDown(-1);
+                }
             }
             Thread.CurrentThread.Join();
         }
