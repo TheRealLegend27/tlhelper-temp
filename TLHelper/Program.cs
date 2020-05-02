@@ -28,7 +28,7 @@ namespace TLHelper
             mainForm.FormClosing += (object s, FormClosingEventArgs e) => ShutDown();
 
             // CHECK IF SETTINGS DIR EXISTS
-            XML.IOManager.SettingsBundle xml = new XML.IOManager.SettingsBundle((null, null), null, null);
+            XML.IOManager.SettingsBundle xml = new XML.IOManager.SettingsBundle((null, null), null, null, null);
             if (!XML.IOManager.CreateConfigDir())
             {
                 // LOAD ALL SETTINGS
@@ -64,6 +64,7 @@ namespace TLHelper
             UIActions.SetFormRef(Ref);
             ScriptManager.SetFormRef(Ref);
             SkillManager.SetFormRef(Ref);
+            ActiveMode.SetFormRef(Ref);
         }
 
         private static void Init(XML.IOManager.SettingsBundle xml, MainForm mainForm)
@@ -79,6 +80,11 @@ namespace TLHelper
                 SkillManager.InitSkills(xml.skills.def, xml.skills.special);
             SkillManager.CreateMissingSkills();
 
+            // SETUP ACTIONS
+            if (xml.actions != null)
+                ActiveMode.LoadSettings(xml.actions);
+            ActiveMode.LoadDefaultSettings();
+
 
             // INIT MAINFORM
             mainForm.Init();
@@ -89,6 +95,8 @@ namespace TLHelper
             if (xml.scripts != null)
                 ScriptManager.OverrideScripts(xml.scripts);
 
+            // INIT ACTIVE MODE
+            ActiveMode.Init();
         }
 
         public static bool CheckForStart()

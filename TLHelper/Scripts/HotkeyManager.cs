@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using TLHelper.HotKeys;
+using TLHelper.Skills;
 using TLHelper.SysCom;
 
 namespace TLHelper.Scripts
@@ -20,7 +21,11 @@ namespace TLHelper.Scripts
                 KeyboardHotkeys.Add(HardwareListener.AddAction(key.AddonKeys, key.CurrentKey.CurrentKey), id);
         }
 
-        public static void ProcessKeyboardAction(int id) => ScriptManager.Run(KeyboardHotkeys[id]);
+        public static void ProcessKeyboardAction(int id)
+        {
+            if (KeyboardHotkeys[id].StartsWith("active-mode")) ActiveMode.KeyPressed(KeyboardHotkeys[id]);
+            else ScriptManager.Run(KeyboardHotkeys[id]);
+        }
         public static void ProcessMouseAction(MouseButtons button, bool ctrlDown, bool shiftDown, bool altDown)
         {
             var ptId = (button, ctrlDown, shiftDown, altDown);

@@ -53,6 +53,7 @@
     <Compile Include="Scripts\HotkeyManager.cs" />
     <Compile Include="Scripts\InternalScripts.cs" />
     <Compile Include="Scripts\ScriptCompiler.cs" />
+    <Compile Include="Skills\ActiveMode.cs" />
     <Compile Include="Skills\AvailableFunctions.cs" />
     <Compile Include="Skills\SkillCoords.cs" />
     <Compile Include="SysCom\HardwareRobot.cs" />
@@ -101,6 +102,9 @@
     <Compile Include="SysCom\HardwareListener.cs" />
     <Compile Include="SysCom\ScreenTools.cs" />
     <Compile Include="UI\Containers\Actions\ActionsContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Containers\Actions\ChangeModeRow.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="UI\Containers\Efficiency\EfficiencyContainer.cs">

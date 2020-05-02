@@ -37,6 +37,16 @@ namespace TLHelper.UI
                     );
                 }
 
+                public static class CurrentModeLabel
+                {
+                    public static readonly Rectangle Rect = new Rectangle(
+                        x: 0,
+                        y: 0,
+                        width: SideBar.Rect.Width - (defaultMargin * 2),
+                        height: 30
+                    );
+                }
+
                 public static class AutoPotionBox
                 {
                     public static readonly Rectangle Rect = new Rectangle(
@@ -83,7 +93,7 @@ namespace TLHelper.UI
                         x: 0,
                         y: 0,
                         width: SideBar.Rect.Width - (defaultMargin * 2),
-                        height: SideBar.Rect.Height - (CurrentClassSelection.Rect.Height - AutoPotionBox.Rect.Height) - (SideBar.Padding.All * 8)
+                        height: SideBar.Rect.Height - (CurrentClassSelection.Rect.Height - AutoPotionBox.Rect.Height - CurrentModeLabel.Rect.Height) - (Padding.All * 14)
                     );
                 }
 

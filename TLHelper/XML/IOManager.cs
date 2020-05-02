@@ -27,17 +27,23 @@ namespace TLHelper.XML
             public (XmlNode def, XmlNode special) skills;
             public XmlNode settings;
             public XmlNode scripts;
+            public XmlNode actions;
 
-            public SettingsBundle((XmlNode, XmlNode) skills, XmlNode settings, XmlNode scripts)
+            public SettingsBundle((XmlNode, XmlNode) skills, XmlNode settings, XmlNode scripts, XmlNode actions)
             {
                 this.skills = skills;
                 this.settings = settings;
                 this.scripts = scripts;
+                this.actions = actions;
             }
         }
 
         public static SettingsBundle LoadAllSettings()
         {
+
+            // CREATE SETTINGS BUNDLE
+            SettingsBundle bundle = new SettingsBundle();
+
             // GET SAVE FILES
             var XmlSkills = new XmlDocument();
             string skillsPath = configDir + @"\TLHelper\skills.xml";
@@ -66,8 +72,25 @@ namespace TLHelper.XML
                 SettingsRoot = XmlSettings.DocumentElement;
             }
 
-            var skills = (SkillsRoot.SelectSingleNode("descendant::Skills"), SkillsRoot.SelectSingleNode("descendant::SpecialSkills"));
-            return new SettingsBundle((skills), SettingsRoot.SelectSingleNode("descendant::Settings"), ScriptsRoot.SelectSingleNode("descendant::Scripts"));
+            var XmlActions = new XmlDocument();
+            string actionsPath = configDir + @"\TLHelper\actions.xml";
+            XmlNode ActionsRoot = null;
+            if (File.Exists(actionsPath))
+            {
+                XmlActions.Load(actionsPath);
+                ActionsRoot = XmlActions.DocumentElement;
+            }
+
+            if (SkillsRoot != null)
+                bundle.skills = (SkillsRoot.SelectSingleNode("descendant::Skills"), SkillsRoot.SelectSingleNode("descendant::SpecialSkills"));
+            if (SettingsRoot != null)
+                bundle.settings = SettingsRoot.SelectSingleNode("descendant::Settings");
+            if (ScriptsRoot != null)
+                bundle.scripts = ScriptsRoot.SelectSingleNode("descendant::Scripts");
+            if (ActionsRoot != null)
+                bundle.actions = ActionsRoot.SelectSingleNode("descendant::Actions");
+
+            return bundle;
         }
 
         public static void SaveAllSettings()
@@ -82,6 +105,9 @@ namespace TLHelper.XML
             //  SETTINGS
             XmlDocument settingsDoc = SettingsManager.GetXml();
             settingsDoc.Save(configDir + @"\TLHelper\settings.xml");
+            //  ACTIONS
+            XmlDocument actionsDoc = ActiveMode.GetXml();
+            actionsDoc.Save(configDir + @"\TLHelper\actions.xml");
         }
 
     }

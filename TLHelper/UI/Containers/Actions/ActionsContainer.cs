@@ -1,8 +1,10 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
+using TLHelper.UI.Controls;
 
 namespace TLHelper.UI.Containers.Actions
 {
-    public class ActionsContainer : Panel
+    public class ActionsContainer : FlowLayoutPanel
     {
         private readonly Label HeadLine;
 
@@ -14,12 +16,19 @@ namespace TLHelper.UI.Containers.Actions
 
             HeadLine = new Label
             {
-                Text = "Actions (coming soon)",
+                Text = "Actions",
                 Font = Theme.Fonts.H2,
                 Size = UI.Layout.MainControl.Headline.Rect.Size,
                 Location = UI.Layout.MainControl.Headline.Rect.Location
             };
             Controls.Add(HeadLine);
         }
+
+        public void AddActionKeyBar(ChangeModeRow r)
+        {
+            Controls.Add(r);
+            Console.WriteLine("Added Bar");
+        }
+
     }
 }

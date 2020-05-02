@@ -27,8 +27,16 @@ namespace TLHelper.Skills
         public static int ProcessSkills()
         {
             if (!ScreenTools.IsDiabloFocused()) return 1;
-            if (!ScreenTools.IsInRift()) return 2;
             if (ScreenTools.IsPorting()) return 3;
+
+            // RETURN IF MODE IS NEVER
+            if (ActiveMode.GetCurrentMode() == ActiveMode.Mode.NeverActive) return 4;
+
+            // CHECK IN RIFT IF AUTO
+            else if (ActiveMode.GetCurrentMode() == ActiveMode.Mode.Automatic)
+            {
+                if (!ScreenTools.IsInRift()) return 2;
+            }
 
             foreach (string id in ActiveSkills)
             {
@@ -62,6 +70,7 @@ namespace TLHelper.Skills
 
         public static void SetActiveSkills(string classId)
         {
+            ActiveMode.KeyPressed("active-mode-auto");
             ClearActiveSkills();
             if (classId == null) return;
             foreach (string id in Skills.Keys)

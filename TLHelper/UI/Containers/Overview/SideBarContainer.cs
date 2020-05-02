@@ -9,13 +9,15 @@ namespace TLHelper.UI.Containers
     public class SideBarContainer : FlowLayoutPanel
     {
         // DEFAULT CONTROLS
-        private ComboBox CurrentClassSelection;
-        private TextBox ScriptDescriptions;
+        private readonly ComboBox CurrentClassSelection;
+        private readonly TextBox ScriptDescriptions;
         //  AUTO POTION CONTROLS
-        private FlowLayoutPanel AutoPotionContainer;
+        private readonly FlowLayoutPanel AutoPotionContainer;
         public PictureBox AutoPotionIcon;
         public KeySelectionButton AutoPotionKey;
         public ComboBox AutoPotionActive;
+        // CURRENT MODE LABEL
+        private readonly Label CurrentModeLabel;
         public SideBarContainer()
         {
             // SETUP DEFAULT ATTRIBUTES
@@ -47,6 +49,14 @@ namespace TLHelper.UI.Containers
                 Size = UI.Layout.MainControl.SideBar.ScriptDescriptionBox.Rect.Size,
                 Location = UI.Layout.MainControl.SideBar.ScriptDescriptionBox.Rect.Location,
                 Font = Theme.Fonts.H5
+            };
+
+            // CURRENT MODE
+            CurrentModeLabel = new Label
+            {
+                Text = "Current Mode: Automatic",
+                Size = UI.Layout.MainControl.SideBar.CurrentModeLabel.Rect.Size,
+                Font = Theme.Fonts.H6
             };
 
             //  AUTO POTION
@@ -87,6 +97,7 @@ namespace TLHelper.UI.Containers
 
             Controls.Add(CurrentClassSelection);
             Controls.Add(ScriptDescriptions);
+            Controls.Add(CurrentModeLabel);
             Controls.Add(AutoPotionContainer);
         }
 
@@ -98,6 +109,11 @@ namespace TLHelper.UI.Containers
         public void AddScriptDescription(string desc)
         {
             ScriptDescriptions.Text += desc + "\r\n";
+        }
+
+        public void ChangeCurrentMode(string mode)
+        {
+            CurrentModeLabel.Text = "Current Mode: " + mode;
         }
 
     }
