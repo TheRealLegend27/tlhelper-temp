@@ -82,6 +82,7 @@ namespace TLHelper.API
                     if (user.auth_lvl >= 1) return true;
                 } catch (Exception)
                 {
+                    HandleError(response.Content.ReadAsAsync<Response>().Result);
                     return false;
                 }
             }

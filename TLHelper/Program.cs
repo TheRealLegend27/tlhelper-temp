@@ -261,7 +261,7 @@ namespace TLHelper
                 bool authed = API.Users.Authenticate().GetAwaiter().GetResult();
                 if (!authed)
                 {
-                    MessageBox.Show("Could not authenticate your account. Maybe its used by another person.");
+                    MessageBox.Show("Could not authenticate your account. Maybe its used by another person or expired.");
                     ShutDown(-1);
                 }
             }
