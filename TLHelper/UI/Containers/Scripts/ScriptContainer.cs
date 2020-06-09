@@ -46,7 +46,7 @@ namespace TLHelper.UI.Containers.Scripts
 
         public void AddScript(Script s)
         {
-            ScriptList.Controls.Add(new ScriptBar(s));
+            ScriptList.Controls.Add(new ScriptBar(s, ScriptList.Controls.Count % 2 == 0));
         }
 
     }

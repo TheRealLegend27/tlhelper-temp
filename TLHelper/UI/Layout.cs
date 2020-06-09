@@ -9,7 +9,7 @@ namespace TLHelper.UI
 
         public static class MainControl
         {
-            public static readonly Rectangle Rect = new Rectangle(200, 50, 1000, 650);
+            public static readonly Rectangle Rect = new Rectangle(250, 0, 1150, 700);
 
             public static class Headline
             {
@@ -18,7 +18,7 @@ namespace TLHelper.UI
 
             public static class SideBar
             {
-                private const int width = 250;
+                private const int width = 350;
                 public static readonly Rectangle Rect = new Rectangle(
                     x: MainControl.Rect.Width - width,
                     y: 0,
@@ -33,7 +33,7 @@ namespace TLHelper.UI
                         x: 0,
                         y: 0,
                         width: SideBar.Rect.Width - (defaultMargin * 2),
-                        height: 30
+                        height: 60
                     );
                 }
 
@@ -53,7 +53,7 @@ namespace TLHelper.UI
                         x: 0,
                         y: 0,
                         width: SideBar.Rect.Width - (defaultMargin * 2),
-                        height: 30
+                        height: 50
                     );
 
                     public static class Icon
@@ -61,8 +61,8 @@ namespace TLHelper.UI
                         public static readonly Rectangle Rect = new Rectangle(
                             x: 0,
                             y: 0,
-                            width: AutoPotionBox.Rect.Height - 10,
-                            height: AutoPotionBox.Rect.Height - 10
+                            width: 28,
+                            height: 28
                         );
                     }
 
@@ -72,7 +72,7 @@ namespace TLHelper.UI
                             x: 0,
                             y: 0,
                             width: ((AutoPotionBox.Rect.Width - Icon.Rect.Height) / 2) - 10,
-                            height: AutoPotionBox.Rect.Height - 10
+                            height: 28
                         );
                     }
                     public static class ActiveSelection
@@ -81,7 +81,7 @@ namespace TLHelper.UI
                             x: 0,
                             y: 0,
                             width: ((AutoPotionBox.Rect.Width - Icon.Rect.Height) / 2) - 10,
-                            height: AutoPotionBox.Rect.Height - 10
+                            height: 28
                         );
                     }
 
@@ -93,7 +93,7 @@ namespace TLHelper.UI
                         x: 0,
                         y: 0,
                         width: SideBar.Rect.Width - (defaultMargin * 2),
-                        height: SideBar.Rect.Height - (CurrentClassSelection.Rect.Height - AutoPotionBox.Rect.Height - CurrentModeLabel.Rect.Height) - (Padding.All * 14)
+                        height: SideBar.Rect.Height - (CurrentClassSelection.Rect.Height - AutoPotionBox.Rect.Height - CurrentModeLabel.Rect.Height) - (Padding.All * 16)
                     );
                 }
 
@@ -103,9 +103,9 @@ namespace TLHelper.UI
             {
                 public static readonly Rectangle Rect = new Rectangle(
                     x: 0,
-                    y: MainControl.Headline.Rect.Height,
+                    y: Headline.Rect.Height + 10,
                     width: MainControl.Rect.Width - SideBar.Rect.Width,
-                    height: MainControl.Rect.Height - MainControl.Headline.Rect.Height
+                    height: MainControl.Rect.Height - Headline.Rect.Height - 10
                 );
 
                 public static class SkillBar
@@ -144,8 +144,8 @@ namespace TLHelper.UI
                         public static readonly Rectangle Rect = new Rectangle(
                             x: 0,
                             y: 0,
-                            width: 100,
-                            height: 25
+                            width: 200,
+                            height: 28
                         );
                         public static readonly int Top = (SkillBar.Rect.Height - Rect.Height) / 2;
                     }
@@ -156,7 +156,7 @@ namespace TLHelper.UI
                             x: 0,
                             y: 0,
                             width: 100,
-                            height: 25
+                            height: 28
                         );
                         public static readonly int Top = (SkillBar.Rect.Height - Rect.Height) / 2;
                     }
@@ -165,8 +165,8 @@ namespace TLHelper.UI
                         public static readonly Rectangle Rect = new Rectangle(
                             x: 0,
                             y: 0,
-                            width: 100,
-                            height: 25
+                            width: 200,
+                            height: 28
                         );
                         public static readonly int Top = (SkillBar.Rect.Height - Rect.Height) / 2;
                     }
@@ -178,7 +178,7 @@ namespace TLHelper.UI
             public static class ScriptList
             {
 
-                public static readonly Rectangle Rect = new Rectangle(0, Headline.Rect.Height, MainControl.Rect.Width - 40, MainControl.Rect.Height - Headline.Rect.Height);
+                public static readonly Rectangle Rect = new Rectangle(0, Headline.Rect.Height, MainControl.Rect.Width - 6, MainControl.Rect.Height - Headline.Rect.Height);
 
                 public static class ScriptBar
                 {
@@ -186,30 +186,30 @@ namespace TLHelper.UI
                         x: 0,
                         y: 0,
                         width: ScriptList.Rect.Width - (defaultMargin * 2),
-                        height: 50
+                        height: 60
                     );
 
                     public static class Name
                     {
-                        public static readonly Rectangle Rect = new Rectangle(0, 0, ScriptBar.Rect.Width / 3, 20);
+                        public static readonly Rectangle Rect = new Rectangle(0, 0, ScriptBar.Rect.Width / 3, 28);
                         public static readonly int Top = (ScriptBar.Rect.Height - Rect.Height) / 2;
                     }
 
                     public static class Key
                     {
-                        public static readonly Rectangle Rect = new Rectangle(0, 0, (ScriptBar.Rect.Width - Name.Rect.Width) / 4, 25);
+                        public static readonly Rectangle Rect = new Rectangle(0, 0, (ScriptBar.Rect.Width - Name.Rect.Width) / 4, 28);
                         public static readonly int Top = (ScriptBar.Rect.Height - Rect.Height) / 2;
                     }
 
                     public static class Active
                     {
-                        public static readonly Rectangle Rect = new Rectangle(0, 0, (ScriptBar.Rect.Width - Name.Rect.Width) / 4, 25);
+                        public static readonly Rectangle Rect = new Rectangle(0, 0, (ScriptBar.Rect.Width - Name.Rect.Width) / 4, 28);
                         public static readonly int Top = (ScriptBar.Rect.Height - Rect.Height) / 2;
                     }
 
                     public static class Src
                     {
-                        public static readonly Rectangle Rect = new Rectangle(0, 0, (ScriptBar.Rect.Width - Name.Rect.Width) / 4, 20);
+                        public static readonly Rectangle Rect = new Rectangle(0, 0, (ScriptBar.Rect.Width - Name.Rect.Width) / 4, 28);
                         public static readonly int Top = (ScriptBar.Rect.Height - Rect.Height) / 2;
                     }
 

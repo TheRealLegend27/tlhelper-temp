@@ -29,7 +29,7 @@ namespace TLHelper.Skills
             CanPress = GetFunction(type);
         }
 
-        public SkillBar GetSkillBar() => new SkillBar(name, icon, key, Slot, IsActive, this);
+        public SkillBar GetSkillBar(bool even = false) => new SkillBar(name, icon, key, Slot, IsActive, this, even);
 
         public void SetXmlAttribs(XmlElement e)
         {

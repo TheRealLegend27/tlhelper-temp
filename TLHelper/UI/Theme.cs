@@ -4,9 +4,12 @@ namespace TLHelper.UI
 {
     public static class Theme
     {
-        public static readonly Color Background = Color.FromArgb(240, 240, 240);
-        public static readonly Color Foreground = Color.FromArgb(50, 50, 50);
-        public static readonly Color Accent = Color.FromArgb(5, 100, 200);
+        public static readonly Color Background = ColorTranslator.FromHtml("#FFFFFF");
+        public static readonly Color Foreground = ColorTranslator.FromHtml("#333333");
+        public static readonly Color Gray = ColorTranslator.FromHtml("#999999");
+        public static readonly Color Accent = ColorTranslator.FromHtml("#3285a8");
+        public static readonly Color AccentLight = ColorTranslator.FromHtml("#6db5d3");
+        public static readonly Color AccentLighter = ColorTranslator.FromHtml("#bbddeb");
 
         public static class Fonts
         {

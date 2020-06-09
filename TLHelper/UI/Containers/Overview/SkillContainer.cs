@@ -12,7 +12,7 @@ namespace TLHelper.UI.Containers
             Location = UI.Layout.MainControl.SkillContainer.Rect.Location;
         }
 
-        public void AddSkill(Skill skill) => Controls.Add(skill.GetSkillBar());
+        public void AddSkill(Skill skill) => Controls.Add(skill.GetSkillBar(Controls.Count % 2 == 0));
 
         public void ClearSkills() => Controls.Clear();
     }

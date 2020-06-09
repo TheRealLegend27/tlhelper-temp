@@ -4,11 +4,13 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using TLHelper.Settings;
 using TLHelper.SysCom;
+using TLHelper.UI;
 using TLHelper.UI.Containers;
 using TLHelper.UI.Containers.Actions;
 using TLHelper.UI.Containers.Efficiency;
 using TLHelper.UI.Containers.Scripts;
 using TLHelper.UI.Containers.Settings;
+using TLHelper.UI.Controls;
 
 namespace TLHelper
 {
@@ -35,9 +37,14 @@ namespace TLHelper
             InitializeComponent();
             lUserName.Text = username;
 
-            // SET ICONS
-            PowerOff.Image = Resources.UIIcons.power_off;
-            Minimize.Image = Resources.UIIcons.minimize;
+            // CREATE UI
+            CreateUI();
+        }
+
+        // CREATE UI
+        private void CreateUI()
+        {
+            sidebarContainer.BackColor = Theme.Accent;
         }
 
 
@@ -78,7 +85,7 @@ namespace TLHelper
         }
 
         // MENU BUTTONS
-        private void DisplayContainer(Control container)
+        private void DisplayContainer(Control container, SidebarButton button)
         {
             ScriptContainer.Visible = false;
             OverviewContainer.Visible = false;
@@ -86,44 +93,19 @@ namespace TLHelper
             ActionsContainer.Visible = false;
             EfficiencyContainer.Visible = false;
             container.Visible = true;
-        }
-        public void OverviewClicked(object sender, EventArgs e) => DisplayContainer(OverviewContainer);
-        public void ScriptsClicked(object sender, EventArgs e) => DisplayContainer(ScriptContainer);
-        public void SettingsClicked(object sender, EventArgs e) => DisplayContainer(SettingsContainer);
-        public void ActionsClicked(object sender, EventArgs e) => DisplayContainer(ActionsContainer);
-        public void EfficiencyClicked(object sender, EventArgs e) => DisplayContainer(EfficiencyContainer);
 
-        // CREATE WINDOW SHADOW
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                const int CS_DROPSHADOW = 0x20000;
-                CreateParams cp = base.CreateParams;
-                cp.ClassStyle |= CS_DROPSHADOW;
-                return cp;
-            }
+            sbbOverview.Active = false;
+            sbbScripts.Active = false;
+            sbbSettings.Active = false;
+            sbbActions.Active = false;
+            sbbEfficiency.Active = false;
+            button.Active = true;
         }
-
-        // FAKE WINDOW MOVEMENT
-        public const int WM_NCLBUTTONDOWN = 0xA1;
-        public const int HT_CAPTION = 0x2;
-        [DllImport("user32.dll")]
-        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-        [DllImport("user32.dll")]
-        public static extern bool ReleaseCapture();
-        private void FakeWindowMove(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                ReleaseCapture();
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
-            }
-        }
-
-        // FORM CONTROL ACTIONS
-        private void PowerOff_Click(object sender, EventArgs e) => Close();
-        private void Minimize_Click(object sender, EventArgs e) => WindowState = FormWindowState.Minimized;
+        public void OverviewClicked(object sender, EventArgs e) => DisplayContainer(OverviewContainer, sbbOverview);
+        public void ScriptsClicked(object sender, EventArgs e) => DisplayContainer(ScriptContainer, sbbScripts);
+        public void SettingsClicked(object sender, EventArgs e) => DisplayContainer(SettingsContainer, sbbSettings);
+        public void ActionsClicked(object sender, EventArgs e) => DisplayContainer(ActionsContainer, sbbActions);
+        public void EfficiencyClicked(object sender, EventArgs e) => DisplayContainer(EfficiencyContainer, sbbEfficiency);
 
         [System.Security.Permissions.PermissionSet(System.Security.Permissions.SecurityAction.Demand, Name = "FullTrust")]
         protected override void WndProc(ref Message m)
