@@ -93,8 +93,15 @@
 - [ ] Hotkeys to launch / kill 4th-Party programs
       Add a Window to define Programs to be launched / killed on Hotkey
       Let scripts start / kill Processes and Programs
+      
+- [ ] cancel running scripts when ESC pressed
+
+- [ ] add settings for ingame buttons (open map, close all windows, etc.)
 
 ## Bugs to be fixed:
+
+- [ ] Helper not starting when no documents/tlhelper/scripts folder is present
+      On Startup: check if folder is present, if not create one
 
 - [x] Fix Auto Potion  
        Fix the way the Potion key is pressed to not interfere Shift
