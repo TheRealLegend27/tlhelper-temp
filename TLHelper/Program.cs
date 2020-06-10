@@ -31,6 +31,8 @@ namespace TLHelper
             SettingsBundle xml = new SettingsBundle((null, null), null, null, null);
             if (!CreateConfigDir())
             {
+                // CREATE SCRIPTS DIR IF NOT PRESENT
+                CreateScriptsDir();
                 // LOAD ALL SETTINGS
                 xml = LoadAllSettings();
                 Console.WriteLine("[Program]:: Settings Loaded");

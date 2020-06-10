@@ -93,33 +93,37 @@
 - [ ] Hotkeys to launch / kill 4th-Party programs
       Add a Window to define Programs to be launched / killed on Hotkey
       Let scripts start / kill Processes and Programs
-      
 - [ ] cancel running scripts when ESC pressed
 
 - [ ] add settings for ingame buttons (open map, close all windows, etc.)
 
 ## Bugs to be fixed:
 
-- [ ] Helper not starting when no documents/tlhelper/scripts folder is present **(tlb007)**  
-      On Startup: check if folder is present, if not create one
-
-- [x] Fix Auto Potion **(tlb001)**  
-       Fix the way the Potion key is pressed to not interfere Shift
-
-- [x] Macro Hotkeys **(tlb002)**  
-       Make sure CTRL is released after Hotkey completed
-
 - [ ] Shift on LMB **(tlb006)**  
        If needed press Shift for LMB-Actions
 
-- [x] Create config if not existing **(tlb003)**  
+<details>
+       <summary>Show bug history</summary>
+
+- [x] Fix Auto Potion **(tlb001)** _fixed 05.03.2020_  
+       Fix the way the Potion key is pressed to not interfere Shift
+
+- [x] Macro Hotkeys **(tlb002)** _fixed 05.03.2020_  
+       Make sure CTRL is released after Hotkey completed
+
+- [x] Create config if not existing **(tlb003)** _fixed 05.03.2020_  
        If no config exists in documents/TLHelper/config.ini, create an empty one
 
-- [x] Fix Skill-Slot 2: **(tlb004)**  
+- [x] Fix Skill-Slot 2: **(tlb004)** _fixed 05.03.2020_  
        Skill Slot 2 not working for any Reason
 
-- [x] Fix Converter Scripts **(tlb005)**  
-      Fix the 1- and 2-Slot Converting Scripts (unregister and register MouseHandles before and after the Script)
+- [x] Fix Converter Scripts **(tlb005)** _fixed 05.03.2020_  
+       Fix the 1- and 2-Slot Converting Scripts (unregister and register MouseHandles before and after the Script)
+
+- [x] Helper not starting when no documents/tlhelper/scripts folder is present **(tlb007)** _fixed 10.06.2020_  
+       On Startup: check if folder is present, if not create one
+
+</details>
 
 ## Better Script Support:
 

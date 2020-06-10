@@ -13,12 +13,21 @@ namespace TLHelper.XML
 {
     public static class IOManager
     {
-        public static readonly string configDir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        public static readonly string configDir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/TLHelper";
 
         public static bool CreateConfigDir()
         {
             if (Directory.Exists(configDir)) return false;
             else Directory.CreateDirectory(configDir);
+            return true;
+        }
+
+        public static bool CreateScriptsDir()
+        {
+            Console.WriteLine(configDir + "/scripts");
+            Console.WriteLine(Directory.Exists(configDir + "/scripts"));
+            if (Directory.Exists(configDir + "/scripts")) return false;
+            else Directory.CreateDirectory(configDir + "/scripts");
             return true;
         }
 
@@ -46,7 +55,7 @@ namespace TLHelper.XML
 
             // GET SAVE FILES
             var XmlSkills = new XmlDocument();
-            string skillsPath = configDir + @"\TLHelper\skills.xml";
+            string skillsPath = configDir + @"\skills.xml";
             XmlNode SkillsRoot = null;
             if (File.Exists(skillsPath))
             {
@@ -55,7 +64,7 @@ namespace TLHelper.XML
             }
 
             var XmlScripts = new XmlDocument();
-            string scriptsPath = configDir + @"\TLHelper\scripts.xml";
+            string scriptsPath = configDir + @"\scripts.xml";
             XmlNode ScriptsRoot = null;
             if (File.Exists(scriptsPath))
             {
@@ -64,7 +73,7 @@ namespace TLHelper.XML
             }
 
             var XmlSettings = new XmlDocument();
-            string settingsPath = configDir + @"\TLHelper\settings.xml";
+            string settingsPath = configDir + @"\settings.xml";
             XmlNode SettingsRoot = null;
             if (File.Exists(settingsPath))
             {
@@ -73,7 +82,7 @@ namespace TLHelper.XML
             }
 
             var XmlActions = new XmlDocument();
-            string actionsPath = configDir + @"\TLHelper\actions.xml";
+            string actionsPath = configDir + @"\actions.xml";
             XmlNode ActionsRoot = null;
             if (File.Exists(actionsPath))
             {
@@ -98,16 +107,16 @@ namespace TLHelper.XML
             // SAVE SETTINGS
             //  SKILLS
             XmlDocument skillDoc = SkillManager.GetXml();
-            skillDoc.Save(configDir + @"\TLHelper\skills.xml");
+            skillDoc.Save(configDir + @"\skills.xml");
             //  SCRIPTS
             XmlDocument scriptDoc = ScriptManager.GetXml();
-            scriptDoc.Save(configDir + @"\TLHelper\scripts.xml");
+            scriptDoc.Save(configDir + @"\scripts.xml");
             //  SETTINGS
             XmlDocument settingsDoc = SettingsManager.GetXml();
-            settingsDoc.Save(configDir + @"\TLHelper\settings.xml");
+            settingsDoc.Save(configDir + @"\settings.xml");
             //  ACTIONS
             XmlDocument actionsDoc = ActiveMode.GetXml();
-            actionsDoc.Save(configDir + @"\TLHelper\actions.xml");
+            actionsDoc.Save(configDir + @"\actions.xml");
         }
 
     }
