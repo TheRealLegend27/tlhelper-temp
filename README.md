@@ -100,25 +100,25 @@
 
 ## Bugs to be fixed:
 
-- [ ] Helper not starting when no documents/tlhelper/scripts folder is present
+- [ ] Helper not starting when no documents/tlhelper/scripts folder is present **(tlb007)**
       On Startup: check if folder is present, if not create one
 
-- [x] Fix Auto Potion  
+- [x] Fix Auto Potion **(tlb001)**
        Fix the way the Potion key is pressed to not interfere Shift
 
-- [x] Macro Hotkeys  
+- [x] Macro Hotkeys **(tlb002)**
        Make sure CTRL is released after Hotkey completed
 
-- [ ] Shift on LMB  
+- [ ] Shift on LMB **(tlb006)**
        If needed press Shift for LMB-Actions
 
-- [x] Create config if not existing  
+- [x] Create config if not existing **(tlb003)**
        If no config exists in documents/TLHelper/config.ini, create an empty one
 
-- [x] Fix Skill-Slot 2:  
+- [x] Fix Skill-Slot 2: **(tlb004)**
        Skill Slot 2 not working for any Reason
 
-- [x] Fix Converter Scripts
+- [x] Fix Converter Scripts **(tlb005)**
       Fix the 1- and 2-Slot Converting Scripts (unregister and register MouseHandles before and after the Script)
 
 ## Better Script Support:
