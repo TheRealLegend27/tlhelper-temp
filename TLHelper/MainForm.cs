@@ -119,7 +119,7 @@ namespace TLHelper
             DialogResult dialogResult = MessageBox.Show("Do you want to logout of the current account?", "Logout?", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                SettingsManager.SetSetting("ath", "");
+                SettingsManager.SetSetting("license", "");
                 Close();
             }
         }

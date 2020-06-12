@@ -65,8 +65,8 @@ namespace TLHelper
             LoginPopup loginPopup = new LoginPopup();
             if (loginPopup.ShowDialog() == DialogResult.OK)
             {
-                var username = loginPopup.username;
-                SettingsManager.SetSetting("license", username);
+                var license = loginPopup.license;
+                SettingsManager.SetSetting("license", license);
             }
             else
             {

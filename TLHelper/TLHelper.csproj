@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="API\Users.cs" />
     <Compile Include="Coords\Coords.cs" />
+    <Compile Include="Environment.cs" />
     <Compile Include="Player\Inventory.cs" />
     <Compile Include="Player\InventoryIterator.cs" />
     <Compile Include="Player\Player.cs" />

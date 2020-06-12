@@ -41,7 +41,7 @@ namespace TLHelper.API
 
         static Users()
         {
-            client.BaseAddress = new Uri("https://tlhelper.fischer-enterprise.de/api/");
+            client.BaseAddress = new Uri(Environment_Variables.API_ROOT);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(
                 new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
@@ -49,7 +49,7 @@ namespace TLHelper.API
 
         public static async Task<bool> AuthLicense()
         {
-            HttpResponseMessage response = await client.GetAsync($"helper/authenticate?license={License}");
+            HttpResponseMessage response = await client.GetAsync($"helper/authenticate?version={Environment_Variables.CURRENT_VERSION}&license={License}");
 
             if (response.IsSuccessStatusCode)
             {
@@ -85,7 +85,7 @@ namespace TLHelper.API
             }
             expect *= mult;
 
-            HttpResponseMessage response = await client.GetAsync($"users/auth-server?str={str}");
+            HttpResponseMessage response = await client.GetAsync($"users/auth-server?version={Environment_Variables.CURRENT_VERSION}&str={str}");
 
             if (response.IsSuccessStatusCode)
                 r = await response.Content.ReadAsAsync<Response>();

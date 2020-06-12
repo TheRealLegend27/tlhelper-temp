@@ -13,8 +13,7 @@ namespace TLHelper.UI.Popups
     public partial class LoginPopup : Form
     {
 
-        public string username = "";
-        public string password = "";
+        public string license = "";
 
         public LoginPopup()
         {
@@ -25,18 +24,13 @@ namespace TLHelper.UI.Popups
 
         private void TryLogin()
         {
-            if (tbUsername.Text.Length <= 0)
+            if (tbLicense.Text.Length <= 0)
             {
-                DisplayError("Username");
-            }
-            else if (tbPassword.Text.Length <= 0)
-            {
-                DisplayError("Password");
+                DisplayError("License");
             }
             else
             {
-                username = tbUsername.Text;
-                password = tbPassword.Text;
+                license = tbLicense.Text;
                 DialogResult = DialogResult.OK;
             }
         }
@@ -47,6 +41,11 @@ namespace TLHelper.UI.Popups
         {
             if(e.KeyChar == (char)Keys.Enter)
                 TryLogin();
+        }
+
+        private void llGetALicense_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(Environment_Variables.WEBSITE_LINK);
         }
     }
 }
