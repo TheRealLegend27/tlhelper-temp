@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Xml;
 
 namespace TLHelper.Settings
 {
     public static class SettingsManager
     {
+        private static string[] validSettings = new string[] { "thud-exe", "d3-exe", "license" };
         private static readonly Dictionary<string, string> Settings = new Dictionary<string, string>();
 
 #pragma warning disable IDE0052 // Ungelesene private Member entfernen
@@ -25,22 +27,18 @@ namespace TLHelper.Settings
         public static void LoadSettings(XmlNode n)
         {
             foreach (XmlElement s in n.ChildNodes)
-                Settings[s.GetAttribute("id")] = s.GetAttribute("value");
+            {
+                if (Array.Exists(validSettings, element => element == s.GetAttribute("id")))
+                    Settings[s.GetAttribute("id")] = s.GetAttribute("value");
+            }
         }
 
         public static void CreateMissingSettings()
         {
-            (string, string)[] defaultSettings = new (string, string)[]
-            {
-                ("thud-exe", ""),
-                ("d3-exe", ""),
-                ("license", "")
-            };
-
-            foreach ((string key, string def) in defaultSettings)
+            foreach (string key in validSettings)
             {
                 if (!Settings.ContainsKey(key))
-                    Settings.Add(key, def);
+                    Settings.Add(key, "");
             }
 
         }
