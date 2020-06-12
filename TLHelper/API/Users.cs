@@ -3,6 +3,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TLHelper.Settings;
+using static TLHelper.API.Variables;
 
 namespace TLHelper.API
 {
@@ -28,14 +29,6 @@ namespace TLHelper.API
         }
 
         public static AuthResultModel AuthResult;
-        private static string _license = "";
-        public static string License {
-            get { return _license; }
-            set {
-                _license = value;
-                SettingsManager.SetSetting("license", _license);
-            }
-        }
 
         private static readonly HttpClient client = new HttpClient();
 

@@ -56,7 +56,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="API\Scripts.cs" />
     <Compile Include="API\Users.cs" />
+    <Compile Include="API\Variables.cs" />
     <Compile Include="Coords\Coords.cs" />
     <Compile Include="Environment.cs" />
     <Compile Include="Player\Inventory.cs" />
@@ -165,6 +167,12 @@
     <Compile Include="UI\Popups\KeySelectionPopup.Designer.cs">
       <DependentUpon>KeySelectionPopup.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Popups\LoadingPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Popups\LoadingPopup.Designer.cs">
+      <DependentUpon>LoadingPopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Popups\LoginPopup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Popups\KeySelectionPopup.resx">
       <DependentUpon>KeySelectionPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Popups\LoadingPopup.resx">
+      <DependentUpon>LoadingPopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Popups\LoginPopup.resx">
       <DependentUpon>LoginPopup.cs</DependentUpon>

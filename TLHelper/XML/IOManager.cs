@@ -13,7 +13,7 @@ namespace TLHelper.XML
 {
     public static class IOManager
     {
-        public static readonly string configDir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/TLHelper";
+        public static readonly string configDir = Environment_Variables.CONFIG_DIR;
 
         public static bool CreateConfigDir()
         {

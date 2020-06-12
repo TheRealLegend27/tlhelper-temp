@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
+using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 using System.Xml;
@@ -44,18 +47,62 @@ namespace TLHelper
             {
                 if (!GetLicense()) Environment.Exit(-1);
             }
-            API.Users.License = SettingsManager.License;
+            API.Variables.License = SettingsManager.License;
 
             bool authSuccess = API.Users.AuthLicense().GetAwaiter().GetResult();
             if (authSuccess)
             {
-                if (CheckServer()) Run(xml);
+                if (CheckServer())
+                {
+                    if (!Directory.Exists(Environment_Variables.CONFIG_DIR))
+                        Directory.CreateDirectory(Environment_Variables.CONFIG_DIR);
+                    if (!Directory.Exists(Environment_Variables.SCRIPTS_DIR))
+                        Directory.CreateDirectory(Environment_Variables.SCRIPTS_DIR);
+
+                    UpdateScripts();
+                    DeleteScripts();
+
+                    Run(xml);
+                }
                 else Environment.Exit(-1);
             }
             else
             {
                 Environment.Exit(-1);
             }
+        }
+
+        private static void UpdateScripts()
+        {
+            List<string> outdated = API.Scripts.GetOutdatedScripts().GetAwaiter().GetResult();
+            if (outdated.Count > 0)
+            {
+                string message = string.Format("You have {0} outdated scripts. Do you want to update them?", outdated.Count);
+                if (MessageBox.Show(message, "Outdated scripts", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    foreach (string script in outdated)
+                    {
+                        var content = API.Scripts.DownloadScript(script).GetAwaiter().GetResult();
+                        File.WriteAllText(Environment_Variables.SCRIPTS_DIR + "/" + script + ".tls", content);
+                    }
+                }
+            }
+        }
+
+        public static void DeleteScripts()
+        {
+            List<string> toDelete = API.Scripts.GetScriptsToDelete().GetAwaiter().GetResult();
+            if (toDelete.Count > 0)
+            {
+                string message = string.Format("You have {0} scripts that are not in your list. Do you want to delete them?", toDelete.Count);
+                if (MessageBox.Show(message, "Unknown scripts", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    foreach (string file in toDelete)
+                        File.Delete(file);
+                }
+            }
+            foreach (string file in toDelete)
+                File.Delete(file);
         }
 
         private static bool CheckServer() => API.Users.AuthServer().GetAwaiter().GetResult();
