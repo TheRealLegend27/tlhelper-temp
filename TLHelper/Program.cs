@@ -40,13 +40,13 @@ namespace TLHelper
 
             InitSettings(xml.settings);
 
-            if (SettingsManager.Ath.Length == 0)
+            if (SettingsManager.License.Length == 0)
             {
-                if (!TryLogin()) Environment.Exit(-1);
+                if (!GetLicense()) Environment.Exit(-1);
             }
-            API.Users.Token = SettingsManager.Ath;
+            API.Users.License = SettingsManager.License;
 
-            bool authSuccess = API.Users.Authenticate().GetAwaiter().GetResult();
+            bool authSuccess = API.Users.AuthLicense().GetAwaiter().GetResult();
             if (authSuccess)
             {
                 if (CheckServer()) Run(xml);
@@ -54,29 +54,19 @@ namespace TLHelper
             }
             else
             {
-                if (!TryLogin()) Environment.Exit(-1);
-                else
-                {
-                    authSuccess = API.Users.Authenticate().GetAwaiter().GetResult();
-                    if (!authSuccess) Environment.Exit(-1);
-                    else Run(xml);
-                }
+                Environment.Exit(-1);
             }
         }
 
         private static bool CheckServer() => API.Users.AuthServer().GetAwaiter().GetResult();
 
-        private static bool TryLogin()
+        private static bool GetLicense()
         {
             LoginPopup loginPopup = new LoginPopup();
             if (loginPopup.ShowDialog() == DialogResult.OK)
             {
                 var username = loginPopup.username;
-                var password = loginPopup.password;
-
-                bool loginSuccess = API.Users.Login(username, password).GetAwaiter().GetResult();
-                if (!loginSuccess)
-                    return false;
+                SettingsManager.SetSetting("license", username);
             }
             else
             {
@@ -149,7 +139,7 @@ namespace TLHelper
 
 
             // INIT MAINFORM
-            mainForm.Init(username: API.Users.CurrentUser.username);
+            mainForm.Init(username: API.Users.AuthResult.user);
 
             // LOAD SCRIPTS
             ScriptManager.LoadScripts();
@@ -260,7 +250,7 @@ namespace TLHelper
                 }
                 counter = 0;
                 // AUTHENTICATE
-                bool authed = API.Users.Authenticate().GetAwaiter().GetResult();
+                bool authed = API.Users.AuthLicense().GetAwaiter().GetResult();
                 if (!authed)
                 {
                     MessageBox.Show("Could not authenticate your account. Maybe its used by another person or expired.");

@@ -34,7 +34,7 @@ namespace TLHelper.Settings
             {
                 ("thud-exe", ""),
                 ("d3-exe", ""),
-                ("ath", "")
+                ("license", "")
             };
 
             foreach ((string key, string def) in defaultSettings)
@@ -45,7 +45,7 @@ namespace TLHelper.Settings
 
         }
 
-        public static string Ath => Settings["ath"];
+        public static string License => Settings["license"];
 
         public static XmlDocument GetXml()
         {

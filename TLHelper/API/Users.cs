@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TLHelper.Settings;
@@ -21,22 +18,22 @@ namespace TLHelper.API
             public string response { get; set; }
 #pragma warning restore IDE1006 // Benennungsstile
         }
-        public class UserModel
+
+        public class AuthResultModel
         {
 #pragma warning disable IDE1006 // Benennungsstile
-            public string username { get; set; }
-            public string type { get; set; }
-            public int auth_lvl { get; set; }
+            public string user { get; set; }
+            public string license_type { get; set; }
 #pragma warning restore IDE1006 // Benennungsstile
         }
 
-        public static UserModel CurrentUser;
-        private static string _token = "";
-        public static string Token {
-            get { return _token; }
+        public static AuthResultModel AuthResult;
+        private static string _license = "";
+        public static string License {
+            get { return _license; }
             set {
-                _token = value;
-                SettingsManager.SetSetting("ath", _token);
+                _license = value;
+                SettingsManager.SetSetting("license", _license);
             }
         }
 
@@ -50,42 +47,23 @@ namespace TLHelper.API
                 new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        public static async Task<bool> Login(string username, string password)
+        public static async Task<bool> AuthLicense()
         {
-            Response r = DefaultResponse;
-            HttpResponseMessage response = await client.GetAsync($"users/login?username={username}&password={password}");
-
-            if (response.IsSuccessStatusCode)
-                r = await response.Content.ReadAsAsync<Response>();
-
-            if (HandleError(r))
-            {
-                // REQUEST SUCCESS
-                Token = r.response;
-                return true;
-            }
-            return false;
-        }
-
-        public static async Task<bool> Authenticate()
-        {
-            if (Token.Length == 0) return false;
-
-            HttpResponseMessage response = await client.GetAsync($"users/authenticate?token={Token}");
+            HttpResponseMessage response = await client.GetAsync($"helper/authenticate?license={License}");
 
             if (response.IsSuccessStatusCode)
             {
                 try
                 {
-                    UserModel user = await response.Content.ReadAsAsync<UserModel>();
-                    CurrentUser = user;
-                    if (user.auth_lvl >= 1) return true;
+                    AuthResult = await response.Content.ReadAsAsync<AuthResultModel>();
+                    return true;
                 } catch (Exception)
                 {
                     HandleError(response.Content.ReadAsAsync<Response>().Result);
                     return false;
                 }
             }
+            HandleError(DefaultResponse);
             return false;
         }
 
@@ -103,11 +81,11 @@ namespace TLHelper.API
             {
                 var cr = strParts[randPart.Next(0, strParts.Length - 1)];
                 str += cr;
-                expect += (int)cr;
+                expect += cr;
             }
             expect *= mult;
 
-            HttpResponseMessage response = await client.GetAsync($"users/auth-server?token={Token}&str={str}");
+            HttpResponseMessage response = await client.GetAsync($"users/auth-server?str={str}");
 
             if (response.IsSuccessStatusCode)
                 r = await response.Content.ReadAsAsync<Response>();
@@ -126,7 +104,7 @@ namespace TLHelper.API
         {
             error = true,
             errorCode = "tl:connection-failed",
-            errorMsg = "connection-failed",
+            errorMsg = "Connection to the server failed",
             response = null
         };
 

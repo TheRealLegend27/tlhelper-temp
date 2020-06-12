@@ -22,7 +22,7 @@ namespace TLHelper.UI
                 H4 = new Font(fontFamily, 18, FontStyle.Bold, GraphicsUnit.Pixel);
                 H5 = new Font(fontFamily, 14, FontStyle.Bold, GraphicsUnit.Pixel);
                 H6 = new Font(fontFamily, 12, FontStyle.Bold, GraphicsUnit.Pixel);
-                H6 = new Font(fontFamily, 16, FontStyle.Regular, GraphicsUnit.Pixel);
+                P = new Font(fontFamily, 16, FontStyle.Regular, GraphicsUnit.Pixel);
             }
 
             public static readonly Font H1;
