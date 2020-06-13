@@ -48,7 +48,7 @@ namespace TLHelper.Skills
                     if (key.IsMouse)
                     {
                         if (key.CurrentKey == Keys.LButton)
-                            HardwareRobot.DoLeftClick();
+                            HardwareRobot.DoLeftClickShift();
                         else if (key.CurrentKey == Keys.RButton)
                             HardwareRobot.DoRightClick();
                     }

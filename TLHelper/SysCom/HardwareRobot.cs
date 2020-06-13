@@ -31,12 +31,19 @@ namespace TLHelper.SysCom
             // BASIC
             public const uint WM_KEYDOWN = 0x0100;
             public const uint WM_KEYUP = 0x0101;
+
+            // KEYBOARD
+            public const byte KEYBDEVENTF_SHIFTVIRTUAL = 0x10;
+            public const byte KEYBDEVENTF_SHIFTSCANCODE = 0x2A;
+            public const int KEYBDEVENTF_KEYDOWN = 0;
+            public const int KEYBDEVENTF_KEYUP = 2;
         }
         #endregion WM_Keys
 
         #region DLLImports
         [DllImport("user32.dll", CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]
-        public static extern void mouse_event(uint dwFlags, uint dx, uint dy, uint cButtons, uint dwExtraInfo);
+        public static extern void mouse_event(uint dwFlags, uint dx, uint dy, uint cButtons, uint dwExtraInfo);[DllImport("user32.dll", EntryPoint = "keybd_event", CharSet = CharSet.Auto, ExactSpelling = true)]
+        public static extern void keybd_event(byte vk, byte scan, int flags, int extrainfo);
         [DllImport("user32.dll")]
         public static extern void PostMessage(IntPtr hWnd, UInt32 Msg, int wParam, int lParam);
         [DllImport("user32.dll")]
@@ -171,6 +178,19 @@ namespace TLHelper.SysCom
         }
 
         #endregion DoMouseClick
+
+        #region DoMouseClickShift
+
+        public static void DoLeftClickShift()
+        {
+            uint _x = (uint)Cursor.Position.X;
+            uint _y = (uint)Cursor.Position.Y;
+            keybd_event(WM.KEYBDEVENTF_SHIFTVIRTUAL, WM.KEYBDEVENTF_SHIFTSCANCODE, WM.KEYBDEVENTF_KEYDOWN, 0);
+            mouse_event(WM.MOUSEEVENTF_LEFTDOWN | WM.MOUSEEVENTF_LEFTUP, _x, _y, 0, 0);
+            keybd_event(WM.KEYBDEVENTF_SHIFTVIRTUAL, WM.KEYBDEVENTF_SHIFTSCANCODE, WM.KEYBDEVENTF_KEYUP, 0);
+        }
+
+        #endregion DoMouseClickShift
 
         #region PressKey
 
