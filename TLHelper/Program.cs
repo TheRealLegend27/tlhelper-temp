@@ -36,6 +36,7 @@ namespace TLHelper
             {
                 // CREATE SCRIPTS DIR IF NOT PRESENT
                 CreateScriptsDir();
+                CreateAHKScriptsDir();
                 // LOAD ALL SETTINGS
                 xml = LoadAllSettings();
                 Console.WriteLine("[Program]:: Settings Loaded");

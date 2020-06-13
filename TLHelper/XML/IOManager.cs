@@ -24,10 +24,15 @@ namespace TLHelper.XML
 
         public static bool CreateScriptsDir()
         {
-            Console.WriteLine(configDir + "/scripts");
-            Console.WriteLine(Directory.Exists(configDir + "/scripts"));
             if (Directory.Exists(configDir + "/scripts")) return false;
             else Directory.CreateDirectory(configDir + "/scripts");
+            return true;
+        }
+
+        public static bool CreateAHKScriptsDir()
+        {
+            if (Directory.Exists(configDir + "/scripts/ahk")) return false;
+            else Directory.CreateDirectory(configDir + "/scripts/ahk");
             return true;
         }
 
