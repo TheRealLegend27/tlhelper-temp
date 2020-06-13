@@ -51,6 +51,10 @@ namespace TLHelper.Skills
                             HardwareRobot.DoLeftClickShift();
                         else if (key.CurrentKey == Keys.RButton)
                             HardwareRobot.DoRightClick();
+                        else if (key.CurrentKey == Keys.XButton1)
+                            HardwareRobot.DoXButton1Click();
+                        else if (key.CurrentKey == Keys.XButton2)
+                            HardwareRobot.DoXButton2Click();
                     }
                     else
                     {

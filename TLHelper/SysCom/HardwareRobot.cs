@@ -20,6 +20,12 @@ namespace TLHelper.SysCom
             public const int MOUSEEVENTF_LEFTUP = 0x04;
             public const int MOUSEEVENTF_RIGHTDOWN = 0x08;
             public const int MOUSEEVENTF_RIGHTUP = 0x10;
+            public const int MOUSEEVENTF_XDOWN = 0x80;
+            public const int MOUSEEVENTF_XUP = 0x100;
+
+            // XBUTTONS
+            public const int XBUTTON1 = 0x1;
+            public const int XBUTTON2 = 0x2;
 
             // WM
             public const int WM_MOUSEMOVE = 0x200;
@@ -191,6 +197,24 @@ namespace TLHelper.SysCom
         }
 
         #endregion DoMouseClickShift
+
+        #region DoXButtonClick
+
+        public static void DoXButton1Click()
+        {
+            uint x = (uint)Cursor.Position.X;
+            uint y = (uint)Cursor.Position.Y;
+            mouse_event(WM.MOUSEEVENTF_XDOWN | WM.MOUSEEVENTF_XUP, x, y, WM.XBUTTON1, 0);
+        }
+
+        public static void DoXButton2Click()
+        {
+            uint x = (uint)Cursor.Position.X;
+            uint y = (uint)Cursor.Position.Y;
+            mouse_event(WM.MOUSEEVENTF_XDOWN | WM.MOUSEEVENTF_XUP, x, y, WM.XBUTTON2, 0);
+        }
+
+        #endregion DoXButtonClick
 
         #region PressKey
 
