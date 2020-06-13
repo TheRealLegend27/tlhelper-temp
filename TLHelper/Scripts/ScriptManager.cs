@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 using System.Xml;
@@ -20,7 +21,13 @@ namespace TLHelper.Scripts
         {
             InternalScripts.RegisterScripts();
             foreach (string file in Directory.GetFiles(ScriptCompiler.ScriptRoot))
-                ScriptCompiler.InterpretScript(file);
+            {
+                Console.WriteLine(Path.GetExtension(file));
+                if (Path.GetExtension(file) == ".tls")
+                    ScriptCompiler.InterpretScript(file);
+                else if (Path.GetExtension(file) == ".ahk-tl")
+                    AHKScript.ParseFromFile(file);
+            }
         }
 
 
@@ -82,6 +89,13 @@ namespace TLHelper.Scripts
         public static void AddScript((string id, string name, HotKey key, bool enabled, ScriptOrigins origin, RunScript run) values)
         {
             AddScript(values.id, values.name, values.key, values.enabled, values.origin, values.run);
+        }
+        public static void AddScript(string id, Script script)
+        {
+            MainFormRef.OverviewContainer.SideBarContainer.AddScriptDescription(script.Name + ": " + script.HotKey.GetString());
+            MainFormRef.ScriptContainer.AddScript(script);
+
+            LoadedScripts.Add(id, script);
         }
 
         public static (string name, HotKey key, bool enabled, ScriptOrigins origin, RunScript run) LoadScript(string path)

@@ -102,8 +102,6 @@ namespace TLHelper
                         File.Delete(file);
                 }
             }
-            foreach (string file in toDelete)
-                File.Delete(file);
         }
 
         private static bool CheckServer() => API.Users.AuthServer().GetAwaiter().GetResult();

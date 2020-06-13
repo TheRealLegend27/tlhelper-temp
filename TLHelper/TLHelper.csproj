@@ -64,6 +64,7 @@
     <Compile Include="Player\Inventory.cs" />
     <Compile Include="Player\InventoryIterator.cs" />
     <Compile Include="Player\Player.cs" />
+    <Compile Include="Scripts\AHKScript.cs" />
     <Compile Include="Scripts\HotkeyManager.cs" />
     <Compile Include="Scripts\InternalScripts.cs" />
     <Compile Include="Scripts\ScriptCompiler.cs" />
