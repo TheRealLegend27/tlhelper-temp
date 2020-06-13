@@ -6,7 +6,7 @@ namespace TLHelper.Settings
 {
     public static class SettingsManager
     {
-        private static string[] validSettings = new string[] { "thud-exe", "d3-exe", "license" };
+        private static string[] validSettings = new string[] { "thud-exe", "d3-exe", "license", "ahk-exe" };
         private static readonly Dictionary<string, string> Settings = new Dictionary<string, string>();
 
 #pragma warning disable IDE0052 // Ungelesene private Member entfernen
@@ -42,8 +42,6 @@ namespace TLHelper.Settings
             }
 
         }
-
-        public static string License => Settings["license"];
 
         public static XmlDocument GetXml()
         {

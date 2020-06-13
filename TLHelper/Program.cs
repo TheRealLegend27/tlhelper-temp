@@ -44,11 +44,11 @@ namespace TLHelper
 
             InitSettings(xml.settings);
 
-            if (SettingsManager.License.Length == 0)
+            if (SettingsManager.GetSetting("license").Length == 0)
             {
                 if (!GetLicense()) Environment.Exit(-1);
             }
-            API.Variables.License = SettingsManager.License;
+            API.Variables.License = SettingsManager.GetSetting("license");
 
             bool authSuccess = API.Users.AuthLicense().GetAwaiter().GetResult();
             if (authSuccess)
