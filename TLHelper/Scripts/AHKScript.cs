@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TLHelper.HotKeys;
+using TLHelper.Settings;
 
 namespace TLHelper.Scripts
 {
@@ -24,6 +25,11 @@ namespace TLHelper.Scripts
 
         public void Start()
         {
+            if (SettingsManager.GetSetting("ahk-exe").Length == 0)
+            {
+                MessageBox.Show("You need to install AutoHotkey and set the path to your AutoHotkey.exe in settings", "AutoHotkey.exe not set!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                return;
+            }
             if (IsRunning())
             {
                 Process.GetProcessById(PID).Kill();

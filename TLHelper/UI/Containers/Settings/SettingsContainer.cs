@@ -21,6 +21,12 @@ namespace TLHelper.UI.Containers.Settings
         private readonly TextBox TBD3;
         private readonly Button BD3;
 
+        // AHK
+        private readonly FlowLayoutPanel PAHK;
+        private readonly Label SLAHK;
+        private readonly TextBox TBAHK;
+        private readonly Button BAHK;
+
         public SettingsContainer()
         {
             BackColor = Theme.Background;
@@ -148,6 +154,61 @@ namespace TLHelper.UI.Containers.Settings
             PD3.Controls.Add(BD3);
 
             #endregion D3 EXE
+
+            #region AHK EXE
+            PAHK = new FlowLayoutPanel
+            {
+                Size = UI.Layout.MainControl.Settings.Rect.Size,
+                BackColor = Theme.Background,
+                FlowDirection = FlowDirection.LeftToRight
+            };
+            Controls.Add(PAHK);
+
+            SLAHK = new Label
+            {
+                Text = "AutoHotkey.exe location",
+                Font = Theme.Fonts.H4,
+                Size = UI.Layout.MainControl.Settings.Name.Rect.Size,
+                Anchor = AnchorStyles.None,
+                Top = UI.Layout.MainControl.Settings.Name.Top
+            };
+            PAHK.Controls.Add(SLAHK);
+
+            TBAHK = new TextBox
+            {
+                ReadOnly = true,
+                Font = Theme.Fonts.P,
+                Size = UI.Layout.MainControl.Settings.Textbox.Rect.Size,
+                Anchor = AnchorStyles.None,
+                Top = UI.Layout.MainControl.Settings.Textbox.Top,
+                Text = SettingsManager.GetSetting("ahk-exe")
+            };
+            PAHK.Controls.Add(TBAHK);
+
+            BAHK = new Button
+            {
+                Text = "...",
+                Font = Theme.Fonts.H6,
+                Size = UI.Layout.MainControl.Settings.BrowserButton.Rect.Size,
+                Anchor = AnchorStyles.None,
+                Top = UI.Layout.MainControl.Settings.BrowserButton.Top,
+                TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+            };
+            BAHK.Click += (object sender, EventArgs e) =>
+            {
+                OpenFileDialog fileDialog = new OpenFileDialog
+                {
+                    Filter = "AutoHotkey.exe|AutoHotkey.exe"
+                };
+                if (fileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    var ahk = fileDialog.FileName;
+                    TBAHK.Text = ahk;
+                    SettingsManager.SetSetting("ahk-exe", ahk);
+                }
+            };
+            PAHK.Controls.Add(BAHK);
+            #endregion AHK EXE
 
         }
     }
