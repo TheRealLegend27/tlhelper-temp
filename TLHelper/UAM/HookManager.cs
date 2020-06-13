@@ -1,7 +1,8 @@
 using System;
 using System.Windows.Forms;
 
-namespace Gma.UserActivityMonitor {
+namespace Gma.UserActivityMonitor
+{
 
     /// <summary>
     /// This class monitors all mouse activities globally (also outside of the application) 
@@ -104,10 +105,10 @@ namespace Gma.UserActivityMonitor {
         /// <summary>
         /// Occurs when the mouse a mouse button is pressed. 
         /// </summary>
-        public static event MouseEventHandler  MouseDown
+        public static event MouseEventHandler MouseDown
         {
-            add 
-            { 
+            add
+            {
                 EnsureSubscribedToGlobalMouseEvents();
                 s_MouseDown += value;
             }
@@ -228,11 +229,11 @@ namespace Gma.UserActivityMonitor {
         private static void OnMouseUp(object sender, MouseEventArgs e)
         {
             //This should not heppen
-            if (e.Clicks < 1) { return;}
+            if (e.Clicks < 1) { return; }
             //If the secon click heppened on the same button
             if (e.Button.Equals(s_PrevClickedButton))
             {
-                if (s_MouseDoubleClick!=null)
+                if (s_MouseDoubleClick != null)
                 {
                     //Fire double click
                     s_MouseDoubleClick.Invoke(null, e);

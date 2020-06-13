@@ -41,8 +41,8 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Waiting for input...\r\n(Escape to cancel)";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Enter += new System.EventHandler(this.label1_Enter);
-            this.label1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.label1_MouseClick);
+            this.label1.Enter += new System.EventHandler(this.Label1_Enter);
+            this.label1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Label1_MouseClick);
             // 
             // button1
             // 
@@ -54,8 +54,8 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Set Hotkey";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            this.button1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.button1_KeyDown);
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.button1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Button1_KeyDown);
             // 
             // HotkeySelectionPopup
             // 

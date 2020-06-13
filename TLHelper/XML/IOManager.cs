@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 using System.Xml;
 using TLHelper.Scripts;
 using TLHelper.Settings;
@@ -13,7 +8,7 @@ namespace TLHelper.XML
 {
     public static class IOManager
     {
-        public static readonly string configDir = Environment_Variables.CONFIG_DIR;
+        public static readonly string configDir = EnvironmentVariables.CONFIG_DIR;
 
         public static bool CreateConfigDir()
         {

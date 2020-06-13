@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using TLHelper.UI.Controls;
 
 namespace TLHelper.UI.Containers.Actions
 {

@@ -2,7 +2,6 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TLHelper.Settings;
 using static TLHelper.API.Variables;
 
 namespace TLHelper.API
@@ -34,7 +33,7 @@ namespace TLHelper.API
 
         static Users()
         {
-            client.BaseAddress = new Uri(Environment_Variables.API_ROOT);
+            client.BaseAddress = new Uri(EnvironmentVariables.API_ROOT);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(
                 new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
@@ -42,7 +41,7 @@ namespace TLHelper.API
 
         public static async Task<bool> AuthLicense()
         {
-            HttpResponseMessage response = await client.GetAsync($"helper/authenticate?version={Environment_Variables.CURRENT_VERSION}&license={License}");
+            HttpResponseMessage response = await client.GetAsync($"helper/authenticate?version={EnvironmentVariables.CURRENT_VERSION}&license={License}");
 
             if (response.IsSuccessStatusCode)
             {
@@ -50,7 +49,8 @@ namespace TLHelper.API
                 {
                     AuthResult = await response.Content.ReadAsAsync<AuthResultModel>();
                     return true;
-                } catch (Exception)
+                }
+                catch (Exception)
                 {
                     HandleError(response.Content.ReadAsAsync<Response>().Result);
                     return false;
@@ -78,7 +78,7 @@ namespace TLHelper.API
             }
             expect *= mult;
 
-            HttpResponseMessage response = await client.GetAsync($"users/auth-server?version={Environment_Variables.CURRENT_VERSION}&str={str}");
+            HttpResponseMessage response = await client.GetAsync($"users/auth-server?version={EnvironmentVariables.CURRENT_VERSION}&str={str}");
 
             if (response.IsSuccessStatusCode)
                 r = await response.Content.ReadAsAsync<Response>();

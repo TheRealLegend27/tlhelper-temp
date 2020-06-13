@@ -44,7 +44,7 @@ namespace TLHelper.Skills
 
                 if (skill.IsActive && skill.CanPress(skill.Slot, SkillCoords.GetPxlColor(skill)))
                 {
-                    var key = skill.key;
+                    var key = skill.Key;
                     if (key.IsMouse)
                     {
                         if (key.CurrentKey == Keys.LButton)

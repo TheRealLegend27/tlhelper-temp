@@ -109,7 +109,7 @@ namespace Gma.UserActivityMonitor
                         button = MouseButtons.Left;
                         clickCount = 1;
                         break;
-                    case WM_LBUTTONDBLCLK: 
+                    case WM_LBUTTONDBLCLK:
                         button = MouseButtons.Left;
                         clickCount = 2;
                         break;
@@ -123,7 +123,7 @@ namespace Gma.UserActivityMonitor
                         button = MouseButtons.Right;
                         clickCount = 1;
                         break;
-                    case WM_RBUTTONDBLCLK: 
+                    case WM_RBUTTONDBLCLK:
                         button = MouseButtons.Right;
                         clickCount = 2;
                         break;
@@ -132,8 +132,8 @@ namespace Gma.UserActivityMonitor
                         //One wheel click is defined as WHEEL_DELTA, which is 120. 
                         //(value >> 16) & 0xffff; retrieves the high-order word from the given 32-bit value
                         mouseDelta = (short)((mouseHookStruct.MouseData >> 16) & 0xffff);
-                       
-                    //TODO: X BUTTONS (I havent them so was unable to test)
+
+                        //TODO: X BUTTONS (I havent them so was unable to test)
                         //If the message is WM_XBUTTONDOWN, WM_XBUTTONUP, WM_XBUTTONDBLCLK, WM_NCXBUTTONDOWN, WM_NCXBUTTONUP, 
                         //or WM_NCXBUTTONDBLCLK, the high-order word specifies which X button was pressed or released, 
                         //and the low-order word is reserved. This value can be one or more of the following values. 
@@ -150,7 +150,7 @@ namespace Gma.UserActivityMonitor
                                                    mouseDelta);
 
                 //Mouse up
-                if (s_MouseUp!=null && mouseUp)
+                if (s_MouseUp != null && mouseUp)
                 {
                     s_MouseUp.Invoke(null, e);
                 }
@@ -162,7 +162,7 @@ namespace Gma.UserActivityMonitor
                 }
 
                 //If someone listens to click and a click is heppened
-                if (s_MouseClick != null && clickCount>0)
+                if (s_MouseClick != null && clickCount > 0)
                 {
                     s_MouseClick.Invoke(null, e);
                 }
@@ -180,13 +180,13 @@ namespace Gma.UserActivityMonitor
                 }
 
                 //Wheel was moved
-                if (s_MouseWheel!=null && mouseDelta!=0)
+                if (s_MouseWheel != null && mouseDelta != 0)
                 {
                     s_MouseWheel.Invoke(null, e);
                 }
 
                 //If someone listens to move and there was a change in coordinates raise move event
-                if ((s_MouseMove!=null || s_MouseMoveExt!=null) && (m_OldX != mouseHookStruct.Point.X || m_OldY != mouseHookStruct.Point.Y))
+                if ((s_MouseMove != null || s_MouseMoveExt != null) && (m_OldX != mouseHookStruct.Point.X || m_OldY != mouseHookStruct.Point.Y))
                 {
                     m_OldX = mouseHookStruct.Point.X;
                     m_OldY = mouseHookStruct.Point.Y;
@@ -273,7 +273,7 @@ namespace Gma.UserActivityMonitor
                 }
             }
         }
-        
+
         #endregion
 
         //##############################################################################

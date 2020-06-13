@@ -75,7 +75,7 @@
             this.llGetALicense.TabStop = true;
             this.llGetALicense.Text = "Get a license key";
             this.llGetALicense.VisitedLinkColor = System.Drawing.Color.Blue;
-            this.llGetALicense.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llGetALicense_LinkClicked);
+            this.llGetALicense.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LLGetALicense_LinkClicked);
             // 
             // LoginPopup
             // 

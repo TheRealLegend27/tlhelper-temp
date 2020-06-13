@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using static TLHelper.Coords.Coords;
 
@@ -47,9 +43,11 @@ namespace TLHelper.SysCom
         #endregion WM_Keys
 
         #region DLLImports
+#pragma warning disable IDE1006 // Benennungsstile
         [DllImport("user32.dll", CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]
         public static extern void mouse_event(uint dwFlags, uint dx, uint dy, uint cButtons, uint dwExtraInfo);[DllImport("user32.dll", EntryPoint = "keybd_event", CharSet = CharSet.Auto, ExactSpelling = true)]
         public static extern void keybd_event(byte vk, byte scan, int flags, int extrainfo);
+#pragma warning restore IDE1006 // Benennungsstile
         [DllImport("user32.dll")]
         public static extern void PostMessage(IntPtr hWnd, UInt32 Msg, int wParam, int lParam);
         [DllImport("user32.dll")]

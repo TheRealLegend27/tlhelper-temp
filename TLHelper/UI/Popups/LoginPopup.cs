@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TLHelper.UI.Popups
@@ -39,13 +32,13 @@ namespace TLHelper.UI.Popups
 
         private void TextField_KeyPressed(object sender, KeyPressEventArgs e)
         {
-            if(e.KeyChar == (char)Keys.Enter)
+            if (e.KeyChar == (char)Keys.Enter)
                 TryLogin();
         }
 
-        private void llGetALicense_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void LLGetALicense_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start(Environment_Variables.WEBSITE_LINK);
+            System.Diagnostics.Process.Start(EnvironmentVariables.WEBSITE_LINK);
         }
     }
 }

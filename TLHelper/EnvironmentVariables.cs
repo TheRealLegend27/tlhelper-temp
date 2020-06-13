@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TLHelper
 {
-    public static class Environment_Variables
+    public static class EnvironmentVariables
     {
         public static readonly string CURRENT_VERSION = "a1.2.0";
         public static readonly string API_ROOT = "https://tlhelper.fischer-enterprise.de/api/";

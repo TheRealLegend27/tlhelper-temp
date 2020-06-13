@@ -19,12 +19,12 @@ namespace TLHelper.UI.Popups
 
         public HotKey SelectedHotKey = new HotKey(new Key(Keys.None), false, false, false);
 
-        private void label1_Enter(object sender, EventArgs e)
+        private void Label1_Enter(object sender, EventArgs e)
         {
             ActiveControl = this;
         }
 
-        private void label1_MouseClick(object sender, MouseEventArgs e)
+        private void Label1_MouseClick(object sender, MouseEventArgs e)
         {
             HotkeySelectionPopup_MouseClick(sender, e);
         }
@@ -89,7 +89,7 @@ namespace TLHelper.UI.Popups
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             if (SelectedHotKey.CurrentKey.CurrentKey != Keys.None)
                 DialogResult = DialogResult.OK;
@@ -97,7 +97,7 @@ namespace TLHelper.UI.Popups
                 DialogResult = DialogResult.Cancel;
         }
 
-        private void button1_KeyDown(object sender, KeyEventArgs e)
+        private void Button1_KeyDown(object sender, KeyEventArgs e)
         {
             HotkeySelectionPopup_KeyDown(sender, e);
         }

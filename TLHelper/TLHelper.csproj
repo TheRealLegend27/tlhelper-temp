@@ -60,7 +60,7 @@
     <Compile Include="API\Users.cs" />
     <Compile Include="API\Variables.cs" />
     <Compile Include="Coords\Coords.cs" />
-    <Compile Include="Environment.cs" />
+    <Compile Include="EnvironmentVariables.cs" />
     <Compile Include="Player\Inventory.cs" />
     <Compile Include="Player\InventoryIterator.cs" />
     <Compile Include="Player\Player.cs" />
@@ -102,11 +102,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources\UIIcons.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UIIcons.resx</DependentUpon>
     </Compile>
     <Compile Include="Scripts\Script.cs" />
     <Compile Include="Scripts\ScriptManager.cs" />
@@ -202,11 +197,6 @@
     <EmbeddedResource Include="Resources\Strings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\UIIcons.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>UIIcons.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Popups\HotkeySelectionPopup.resx">
       <DependentUpon>HotkeySelectionPopup.cs</DependentUpon>

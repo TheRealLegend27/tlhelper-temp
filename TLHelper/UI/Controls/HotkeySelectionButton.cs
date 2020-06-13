@@ -50,12 +50,12 @@ namespace TLHelper.UI.Controls
             }
         }
 
-        private Color _buttonColor = Theme.Accent;
-        private Color _hoverButtonColor = Theme.AccentLight;
-        private Color _borderColor = Theme.Accent;
-        private Color _textColor = Theme.Background;
-        private Color _hoverTextColor = Theme.Background;
-        private int _borderWidth = 1;
+        private readonly Color _buttonColor = Theme.Accent;
+        private readonly Color _hoverButtonColor = Theme.AccentLight;
+        private readonly Color _borderColor = Theme.Accent;
+        private readonly Color _textColor = Theme.Background;
+        private readonly Color _hoverTextColor = Theme.Background;
+        private readonly int _borderWidth = 1;
 
         protected override void OnPaint(PaintEventArgs e)
         {

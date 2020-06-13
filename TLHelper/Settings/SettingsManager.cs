@@ -6,14 +6,8 @@ namespace TLHelper.Settings
 {
     public static class SettingsManager
     {
-        private static string[] validSettings = new string[] { "thud-exe", "d3-exe", "license", "ahk-exe" };
+        private static readonly string[] validSettings = new string[] { "thud-exe", "d3-exe", "license", "ahk-exe" };
         private static readonly Dictionary<string, string> Settings = new Dictionary<string, string>();
-
-#pragma warning disable IDE0052 // Ungelesene private Member entfernen
-        private static MainForm MainFormRef;
-#pragma warning restore IDE0052 // Ungelesene private Member entfernen
-
-        public static void SetFormRef(MainForm Ref) => MainFormRef = Ref;
 
         public static bool Contains(string key) => Settings.ContainsKey(key) && Settings[key].Length > 0;
         public static string GetSetting(string key) => Settings[key];

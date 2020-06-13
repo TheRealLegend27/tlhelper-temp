@@ -298,9 +298,9 @@ namespace Gma.UserActivityMonitor
         {
             add
             {
-                if (m_KeyPress==null)
+                if (m_KeyPress == null)
                 {
-                    HookManager.KeyPress +=HookManager_KeyPress;
+                    HookManager.KeyPress += HookManager_KeyPress;
                 }
                 m_KeyPress += value;
             }
@@ -387,6 +387,6 @@ namespace Gma.UserActivityMonitor
 
         #endregion
 
-        
+
     }
 }

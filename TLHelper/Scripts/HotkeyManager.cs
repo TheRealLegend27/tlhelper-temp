@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Windows.Forms;
 using TLHelper.HotKeys;
 using TLHelper.Skills;
@@ -9,8 +8,8 @@ namespace TLHelper.Scripts
 {
     public static class HotkeyManager
     {
-        private static Dictionary<int, string> KeyboardHotkeys = new Dictionary<int, string>();
-        private static Dictionary<(MouseButtons, bool, bool, bool), string> MouseHotkeys =
+        private static readonly Dictionary<int, string> KeyboardHotkeys = new Dictionary<int, string>();
+        private static readonly Dictionary<(MouseButtons, bool, bool, bool), string> MouseHotkeys =
             new Dictionary<(MouseButtons, bool, bool, bool), string>();
 
         public static void RegisterKey(HotKey key, string id)

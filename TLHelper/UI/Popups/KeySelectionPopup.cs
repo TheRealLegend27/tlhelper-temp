@@ -13,7 +13,7 @@ namespace TLHelper.UI.Popups
 
         public Keys SelectedKey = Keys.None;
 
-        private void label1_Enter(object sender, EventArgs e)
+        private void Label1_Enter(object sender, EventArgs e)
         {
             ActiveControl = this;
         }

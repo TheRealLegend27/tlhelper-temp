@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace TLHelper.UI.Controls
 {
     class SidebarButton : Button
     {
-        private Color _buttonColor = Theme.Accent;
-        private Color _onHoverButtonColor = Theme.AccentLight;
-        private Color _textColor = Theme.Background;
+        private readonly Color _buttonColor = Theme.Accent;
+        private readonly Color _onHoverButtonColor = Theme.AccentLight;
+        private readonly Color _textColor = Theme.Background;
 
         private Image _ChevronIcon;
         private Image _SpecialIcon;
@@ -45,7 +40,7 @@ namespace TLHelper.UI.Controls
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
             Brush brush = new SolidBrush(_isHovering || _Active ? _onHoverButtonColor : _buttonColor);
-            g.FillRectangle(brush, new Rectangle(-1, -1, Width+1, Height+1));
+            g.FillRectangle(brush, new Rectangle(-1, -1, Width + 1, Height + 1));
 
             brush.Dispose();
             brush = new SolidBrush(_textColor);
@@ -55,7 +50,7 @@ namespace TLHelper.UI.Controls
 
             if (_ChevronIcon != null)
             {
-                g.DrawImage(_ChevronIcon, new Point(Width -  _ChevronIcon.Width - 10, (Height - _ChevronIcon.Height) / 2));
+                g.DrawImage(_ChevronIcon, new Point(Width - _ChevronIcon.Width - 10, (Height - _ChevronIcon.Height) / 2));
             }
             if (_SpecialIcon != null)
             {

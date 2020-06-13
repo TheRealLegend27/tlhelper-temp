@@ -1,7 +1,6 @@
 ﻿using System.Windows.Forms;
 using System.Xml;
 using TLHelper.HotKeys;
-using TLHelper.SysCom;
 
 namespace TLHelper.Scripts
 {

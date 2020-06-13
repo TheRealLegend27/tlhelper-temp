@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TLHelper.HotKeys;
 using TLHelper.Settings;
@@ -34,10 +30,11 @@ namespace TLHelper.Scripts
             {
                 Process.GetProcessById(PID).Kill();
             }
-            else {
+            else
+            {
                 Process p = new Process();
                 p.StartInfo.FileName = @"C:\Program Files\AutoHotkey\AutoHotkey.exe"; // TODO: Get AHK-Executable from Settings
-                p.StartInfo.Arguments = Environment_Variables.SCRIPTS_DIR + @"\ahk\" + ScriptFile;
+                p.StartInfo.Arguments = EnvironmentVariables.SCRIPTS_DIR + @"\ahk\" + ScriptFile;
                 p.Start();
                 PID = p.Id;
             }
@@ -53,7 +50,7 @@ namespace TLHelper.Scripts
         {
             if (!File.Exists(scriptFile)) return;
             string content = File.ReadAllText(scriptFile);
-            string name = "Unnamed", description = "A TL-AHK-Script", script = "";
+            string name = "Unnamed", script = "";
             char key = char.MinValue;
             bool ctrl = false, shift = false, alt = false;
 
@@ -78,10 +75,9 @@ namespace TLHelper.Scripts
                 while (val.StartsWith(" ")) val = val.Substring(1);
                 while (val.EndsWith(" ")) val = val.Substring(0, val.Length - 1);
 
-                switch(id)
+                switch (id)
                 {
                     case "name": name = val; break;
-                    case "description": description = val; break;
                     case "key": key = val.ToCharArray()[0]; break;
                     case "script": script = val; break;
 

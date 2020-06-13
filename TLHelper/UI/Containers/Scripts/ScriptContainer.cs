@@ -5,8 +5,8 @@ namespace TLHelper.UI.Containers.Scripts
 {
     public class ScriptContainer : Panel
     {
-        private Label HeadLine;
-        private FlowLayoutPanel ScriptList;
+        private readonly Label HeadLine;
+        private readonly FlowLayoutPanel ScriptList;
 
         public ScriptContainer()
         {

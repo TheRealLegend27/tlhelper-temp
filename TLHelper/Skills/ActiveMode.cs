@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 using System.Xml;
 using TLHelper.Scripts;
-using TLHelper.SysCom;
 using TLHelper.UI.Containers.Actions;
 
 namespace TLHelper.Skills
@@ -35,7 +29,7 @@ namespace TLHelper.Skills
             foreach (XmlElement e in n.ChildNodes)
             {
                 var key = int.Parse(e.GetAttribute("key"));
-                if (e.GetAttribute("id") == "active-mode-never")    neverKey = new HotKeys.Key((Keys)key);
+                if (e.GetAttribute("id") == "active-mode-never") neverKey = new HotKeys.Key((Keys)key);
                 if (e.GetAttribute("id") == "active-mode-auto") autoKey = new HotKeys.Key((Keys)key);
                 if (e.GetAttribute("id") == "active-mode-always") alwaysKey = new HotKeys.Key((Keys)key);
             }
@@ -67,7 +61,8 @@ namespace TLHelper.Skills
 
         public static void KeyPressed(string id)
         {
-            switch(id) {
+            switch (id)
+            {
                 case "active-mode-always":
                     CurrentMode = Mode.AlwaysActive;
                     MainFormRef.OverviewContainer.SideBarContainer.ChangeCurrentMode("Always active");

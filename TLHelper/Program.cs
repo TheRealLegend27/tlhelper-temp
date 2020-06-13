@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Threading;
@@ -19,7 +18,6 @@ namespace TLHelper
     static class Program
     {
         private static bool Running = false;
-        private static MainForm MainFormRef;
         /// <summary>
         /// Der Haupteinstiegspunkt für die Anwendung.
         /// </summary>
@@ -55,10 +53,10 @@ namespace TLHelper
             {
                 if (CheckServer())
                 {
-                    if (!Directory.Exists(Environment_Variables.CONFIG_DIR))
-                        Directory.CreateDirectory(Environment_Variables.CONFIG_DIR);
-                    if (!Directory.Exists(Environment_Variables.SCRIPTS_DIR))
-                        Directory.CreateDirectory(Environment_Variables.SCRIPTS_DIR);
+                    if (!Directory.Exists(EnvironmentVariables.CONFIG_DIR))
+                        Directory.CreateDirectory(EnvironmentVariables.CONFIG_DIR);
+                    if (!Directory.Exists(EnvironmentVariables.SCRIPTS_DIR))
+                        Directory.CreateDirectory(EnvironmentVariables.SCRIPTS_DIR);
 
                     UpdateScripts();
                     DeleteScripts();
@@ -86,12 +84,13 @@ namespace TLHelper
                         var content = API.Scripts.DownloadScript(script.id).GetAwaiter().GetResult();
                         if (script.script_type == "tls")
                         {
-                            File.WriteAllText(Environment_Variables.SCRIPTS_DIR + "\\" + script.id + ".tls", content);
-                        } else if (script.script_type == "ahk")
+                            File.WriteAllText(EnvironmentVariables.SCRIPTS_DIR + "\\" + script.id + ".tls", content);
+                        }
+                        else if (script.script_type == "ahk")
                         {
                             string tls = string.Format("name:{0}\ndescription:{1}\nctrl:{2}\nshift:{3}\nalt:{4}\nkey:{5}\nscript:{6}.ahk", script.name, script.description, "1", "1", "1", "S", script.id);
-                            File.WriteAllText(Environment_Variables.SCRIPTS_DIR + "\\" + script.id + ".ahk-tl", tls);
-                            File.WriteAllText(Environment_Variables.SCRIPTS_DIR + "\\ahk\\" + script.id + ".ahk", content);
+                            File.WriteAllText(EnvironmentVariables.SCRIPTS_DIR + "\\" + script.id + ".ahk-tl", tls);
+                            File.WriteAllText(EnvironmentVariables.SCRIPTS_DIR + "\\ahk\\" + script.id + ".ahk", content);
                         }
                     }
                 }
@@ -110,7 +109,7 @@ namespace TLHelper
                     {
                         if (Path.GetExtension(file) == ".ahk-tl")
                         {
-                            string ahkfile = Environment_Variables.SCRIPTS_DIR + "\\ahk\\" + Path.GetFileNameWithoutExtension(file) + ".ahk";
+                            string ahkfile = EnvironmentVariables.SCRIPTS_DIR + "\\ahk\\" + Path.GetFileNameWithoutExtension(file) + ".ahk";
                             if (File.Exists(ahkfile))
                                 File.Delete(ahkfile);
                         }
@@ -142,7 +141,6 @@ namespace TLHelper
             // CREATE MAIN FORM
             MainForm mainForm = new MainForm();
             mainForm.FormClosing += (object s, FormClosingEventArgs e) => ShutDown();
-            MainFormRef = mainForm;
 
             // INITIALIZE
             SetFormRefs(mainForm);

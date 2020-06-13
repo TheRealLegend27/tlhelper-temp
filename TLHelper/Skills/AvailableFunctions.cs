@@ -50,7 +50,7 @@ namespace TLHelper.Skills
             return Error;
         }
 
-        public static bool Error (int i, Color c) { Console.Error.WriteLine("Unknown AvailableType!"); return false; }
+        public static bool Error(int i, Color c) { Console.Error.WriteLine("Unknown AvailableType!"); return false; }
 
         static readonly Color DefaultProfile = Color.FromArgb(83, 85, 66);
         static readonly Color MouseProfile = Color.FromArgb(28, 32, 27);

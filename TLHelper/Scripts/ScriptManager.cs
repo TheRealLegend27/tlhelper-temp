@@ -11,7 +11,7 @@ namespace TLHelper.Scripts
     {
 
         private static MainForm MainFormRef;
-        private static Dictionary<string, Script> LoadedScripts = new Dictionary<string, Script>();
+        private static readonly Dictionary<string, Script> LoadedScripts = new Dictionary<string, Script>();
 
         public static void SetFormRef(MainForm Ref) => MainFormRef = Ref;
 
@@ -96,12 +96,6 @@ namespace TLHelper.Scripts
             MainFormRef.ScriptContainer.AddScript(script);
 
             LoadedScripts.Add(id, script);
-        }
-
-        public static (string name, HotKey key, bool enabled, ScriptOrigins origin, RunScript run) LoadScript(string path)
-        {
-            return ("", new HotKey(new Key(Keys.None), false, false, false), false, ScriptOrigins.INT, () => { }
-            );
         }
 
         public static XmlDocument GetXml()

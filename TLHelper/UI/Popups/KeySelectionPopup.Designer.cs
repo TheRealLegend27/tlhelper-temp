@@ -41,7 +41,7 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Press a Button\r\n(Escape to cancel)";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Enter += new System.EventHandler(this.label1_Enter);
+            this.label1.Enter += new System.EventHandler(this.Label1_Enter);
             this.label1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.KeySelectionPopup_MouseClick);
             // 
             // KeySelectionPopup

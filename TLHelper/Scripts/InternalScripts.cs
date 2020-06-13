@@ -1,11 +1,10 @@
-﻿using System.Threading;
+﻿using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
+using TLHelper.HotKeys;
 using TLHelper.Player;
 using TLHelper.SysCom;
 using static TLHelper.Coords.Coords;
-using TLHelper.HotKeys;
-using System;
-using System.Drawing;
 
 namespace TLHelper.Scripts
 {
@@ -208,11 +207,11 @@ namespace TLHelper.Scripts
             HardwareListener.RegisterMouseHooks();
         }
 
-        private static EventWaitHandle sltWait = new ManualResetEvent(initialState: false);
-        private static EventWaitHandle srtWait = new ManualResetEvent(initialState: false);
+        private static readonly EventWaitHandle sltWait = new ManualResetEvent(initialState: false);
+        private static readonly EventWaitHandle srtWait = new ManualResetEvent(initialState: false);
 
-        private static Thread slt = new Thread(new ParameterizedThreadStart(SLT));
-        private static Thread srt = new Thread(new ParameterizedThreadStart(SRT));
+        private static readonly Thread slt = new Thread(new ParameterizedThreadStart(SLT));
+        private static readonly Thread srt = new Thread(new ParameterizedThreadStart(SRT));
 
         private static bool sltRunning = false;
         private static bool srtRunning = false;

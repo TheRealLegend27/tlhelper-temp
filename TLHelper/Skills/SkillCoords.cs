@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using TLHelper.SysCom;
 using static TLHelper.Coords.Coords;
 
@@ -11,7 +6,7 @@ namespace TLHelper.Skills
 {
     public static class SkillCoords
     {
-        private static Position[] skillSlots = new Position[6];
+        private static readonly Position[] skillSlots = new Position[6];
 
         public static void Init()
         {

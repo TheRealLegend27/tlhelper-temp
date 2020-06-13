@@ -9,10 +9,10 @@ namespace TLHelper.UI.Containers.Scripts
     class ScriptBar : FlowLayoutPanel
     {
 
-        private Label NameLabel;
-        private HotkeySelectionButton KeySelect;
-        private ComboBox ActiveSelect;
-        private Label Src;
+        private readonly Label NameLabel;
+        private readonly HotkeySelectionButton KeySelect;
+        private readonly ComboBox ActiveSelect;
+        private readonly Label Src;
 
         public ScriptBar(Script s, bool even = false)
         {

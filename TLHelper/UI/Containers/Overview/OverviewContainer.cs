@@ -4,7 +4,7 @@ namespace TLHelper.UI.Containers
 {
     public class OverviewContainer : Panel
     {
-        private Label HeadLine;
+        private readonly Label HeadLine;
         public SkillContainer SkillContainer { get; private set; }
         public SideBarContainer SideBarContainer { get; private set; }
 
