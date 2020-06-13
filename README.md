@@ -97,28 +97,28 @@
 
 - [ ] add settings for ingame buttons (open map, close all windows, etc.)
 
-- [ ] add support for AHK scripts
+- [x] add support for AHK scripts
   - ahk scripts can be created and added like normal scripts
-  - script mode can be set to:
-    - automatic (run script on startup / kill script on close)
-    - hotkey (run / kill script with a given hotkey)
-    
 - [ ] add online settings
+
   - settings are stored online and can be edited on the website, aswell as in TLHelper itself
   - settings are synchronized when the helper starts
   - changed settings are synchronized when the helper exits
-  
+
 - [ ] move ticketing to website
+
   - create an own ticketing system on the website
-  
+
 - [ ] trial license MAC check
+
   - allow only one trial license per device
   - if a device already used a trial before, trial licenses wont be accepted
-  
+
 - [ ] change the appearence of error popups
+
   - make the popups bigger
   - split error-code from error-message
-  
+
 - [ ] users can create their own scripts
   - add a function on the website to create new scripts
     - scripts are private by default and can be changed to public
