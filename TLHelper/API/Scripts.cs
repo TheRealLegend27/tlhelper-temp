@@ -30,6 +30,7 @@ namespace TLHelper.API
             public string description { get; set; }
             public string last_updated { get; set; }
             public string status_id { get; set; }
+            public string script_type { get; set; }
 #pragma warning restore IDE1006 // Benennungsstile
         }
 
@@ -37,6 +38,7 @@ namespace TLHelper.API
         {
             public string id { get; set; }
             public string script { get; set; }
+            public string script_type { get; set; }
         }
 
         private static readonly HttpClient client = new HttpClient();
@@ -49,10 +51,10 @@ namespace TLHelper.API
                 new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        public static async Task<List<string>> GetOutdatedScripts()
+        public static async Task<List<FullScript>> GetOutdatedScripts()
         {
             HttpResponseMessage response = await client.GetAsync($"helper/scripts/list?version={Environment_Variables.CURRENT_VERSION}&license={License}");
-            List<string> result = new List<string>();
+            List<FullScript> result = new List<FullScript>();
 
             if (response.IsSuccessStatusCode)
             {
@@ -61,18 +63,18 @@ namespace TLHelper.API
                     FullScript[] res = response.Content.ReadAsAsync<FullScript[]>().Result;
                     foreach (FullScript script in res)
                     {
-                        var file = Environment_Variables.SCRIPTS_DIR + "/" + script.id + ".tls";
-                        if (File.Exists(file))
-                        {
-                            var lastUpdated = Convert.ToDateTime(script.last_updated);
-                            if (File.GetLastWriteTime(file) < lastUpdated)
-                            {
-                                result.Add(script.id);
-                            }
-                        }
+                        var file = Environment_Variables.SCRIPTS_DIR + "/" + script.id;
+                        if (File.Exists(file + ".tls")) file += ".tls";
+                        else if (File.Exists(file + ".ahk-tl")) file += ".ahk-tl";
                         else
                         {
-                            result.Add(script.id);
+                            result.Add(script);
+                            continue;
+                        }
+                        var lastUpdated = Convert.ToDateTime(script.last_updated);
+                        if (File.GetLastWriteTime(file) < lastUpdated)
+                        {
+                            result.Add(script);
                         }
                     }
                 } catch (Exception)
@@ -95,11 +97,11 @@ namespace TLHelper.API
                     FullScript[] res = response.Content.ReadAsAsync<FullScript[]>().Result;
                     foreach (string scriptFile in Directory.GetFiles(Environment_Variables.SCRIPTS_DIR))
                     {
-                        string file = scriptFile.Split('\\')[scriptFile.Split('\\').Length - 1];
-                        file = file.Substring(0, file.Length - 4);
+                        string file = Path.GetFileNameWithoutExtension(scriptFile);
                         bool keep = false;
                         foreach (FullScript script in res)
                         {
+                            Console.WriteLine(script.id + " => " + file);
                             if (script.id.Equals(file))
                             {
                                 keep = true;

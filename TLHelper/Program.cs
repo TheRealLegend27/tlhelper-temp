@@ -75,16 +75,24 @@ namespace TLHelper
 
         private static void UpdateScripts()
         {
-            List<string> outdated = API.Scripts.GetOutdatedScripts().GetAwaiter().GetResult();
+            List<API.Scripts.FullScript> outdated = API.Scripts.GetOutdatedScripts().GetAwaiter().GetResult();
             if (outdated.Count > 0)
             {
                 string message = string.Format("You have {0} outdated scripts. Do you want to update them?", outdated.Count);
                 if (MessageBox.Show(message, "Outdated scripts", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    foreach (string script in outdated)
+                    foreach (var script in outdated)
                     {
-                        var content = API.Scripts.DownloadScript(script).GetAwaiter().GetResult();
-                        File.WriteAllText(Environment_Variables.SCRIPTS_DIR + "/" + script + ".tls", content);
+                        var content = API.Scripts.DownloadScript(script.id).GetAwaiter().GetResult();
+                        if (script.script_type == "tls")
+                        {
+                            File.WriteAllText(Environment_Variables.SCRIPTS_DIR + "\\" + script.id + ".tls", content);
+                        } else if (script.script_type == "ahk")
+                        {
+                            string tls = string.Format("name:{0}\ndescription:{1}\nctrl:{2}\nshift:{3}\nalt:{4}\nkey:{5}\nscript:{6}.ahk", script.name, script.description, "1", "1", "1", "S", script.id);
+                            File.WriteAllText(Environment_Variables.SCRIPTS_DIR + "\\" + script.id + ".ahk-tl", tls);
+                            File.WriteAllText(Environment_Variables.SCRIPTS_DIR + "\\ahk\\" + script.id + ".ahk", content);
+                        }
                     }
                 }
             }
@@ -99,7 +107,15 @@ namespace TLHelper
                 if (MessageBox.Show(message, "Unknown scripts", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     foreach (string file in toDelete)
+                    {
+                        if (Path.GetExtension(file) == ".ahk-tl")
+                        {
+                            string ahkfile = Environment_Variables.SCRIPTS_DIR + "\\ahk\\" + Path.GetFileNameWithoutExtension(file) + ".ahk";
+                            if (File.Exists(ahkfile))
+                                File.Delete(ahkfile);
+                        }
                         File.Delete(file);
+                    }
                 }
             }
         }
