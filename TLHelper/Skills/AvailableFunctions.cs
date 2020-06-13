@@ -53,6 +53,7 @@ namespace TLHelper.Skills
         public static bool Error (int i, Color c) { Console.Error.WriteLine("Unknown AvailableType!"); return false; }
 
         static readonly Color DefaultProfile = Color.FromArgb(83, 85, 66);
+        static readonly Color MouseProfile = Color.FromArgb(28, 32, 27);
         static readonly Color PotionColor = Color.FromArgb(1, 1, 1);
         static readonly int PotionMinRed = 100;
 
@@ -63,7 +64,10 @@ namespace TLHelper.Skills
         public static bool ByColor(int skillSlot, Color pxl)
         {
             bool isMouse = skillSlot == 1 || skillSlot == 0;
-            if (isMouse) return false;
+            if (isMouse)
+            {
+                return pxl.Equals(MouseProfile);
+            }
             else
             {
                 return pxl.Equals(DefaultProfile);
