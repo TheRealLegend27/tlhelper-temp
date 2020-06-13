@@ -55,7 +55,7 @@ namespace TLHelper.UI.Containers
             {
                 DropDownStyle = ComboBoxStyle.DropDownList,
                 Size = UI.Layout.MainControl.SkillContainer.SkillBar.SlotSelect.Rect.Size,
-                Font = Theme.Fonts.H6,
+                Font = Theme.Fonts.H5,
                 BackColor = Theme.Background,
                 DrawMode = DrawMode.OwnerDrawFixed,
                 Margin = new Padding(3, comboMargin, 3, comboMargin),
@@ -75,7 +75,7 @@ namespace TLHelper.UI.Containers
             {
                 DropDownStyle = ComboBoxStyle.DropDownList,
                 Size = UI.Layout.MainControl.SkillContainer.SkillBar.ActiveSelect.Rect.Size,
-                Font = Theme.Fonts.H6,
+                Font = Theme.Fonts.H5,
                 BackColor = Theme.Background,
                 DrawMode = DrawMode.OwnerDrawFixed,
                 Margin = new Padding(3, comboMargin, 3, comboMargin),

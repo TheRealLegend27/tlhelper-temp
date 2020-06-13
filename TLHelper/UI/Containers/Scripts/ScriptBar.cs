@@ -46,7 +46,7 @@ namespace TLHelper.UI.Containers.Scripts
             {
                 DropDownStyle = ComboBoxStyle.DropDownList,
                 Size = UI.Layout.MainControl.ScriptList.ScriptBar.Active.Rect.Size,
-                Font = Theme.Fonts.H6,
+                Font = Theme.Fonts.H5,
                 BackColor = Theme.Background,
                 DrawMode = DrawMode.OwnerDrawFixed,
                 Margin = new Padding(3, comboMargin, 3, comboMargin),

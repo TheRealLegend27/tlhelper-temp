@@ -76,7 +76,7 @@ namespace TLHelper.UI.Containers.Settings
             BThud = new Button
             {
                 Text = "...",
-                Font = Theme.Fonts.H6,
+                Font = Theme.Fonts.H5,
                 Size = UI.Layout.MainControl.Settings.BrowserButton.Rect.Size,
                 Anchor = AnchorStyles.None,
                 Top = UI.Layout.MainControl.Settings.BrowserButton.Top,
@@ -132,7 +132,7 @@ namespace TLHelper.UI.Containers.Settings
             BD3 = new Button
             {
                 Text = "...",
-                Font = Theme.Fonts.H6,
+                Font = Theme.Fonts.H5,
                 Size = UI.Layout.MainControl.Settings.BrowserButton.Rect.Size,
                 Anchor = AnchorStyles.None,
                 Top = UI.Layout.MainControl.Settings.BrowserButton.Top,
@@ -188,7 +188,7 @@ namespace TLHelper.UI.Containers.Settings
             BAHK = new Button
             {
                 Text = "...",
-                Font = Theme.Fonts.H6,
+                Font = Theme.Fonts.H5,
                 Size = UI.Layout.MainControl.Settings.BrowserButton.Rect.Size,
                 Anchor = AnchorStyles.None,
                 Top = UI.Layout.MainControl.Settings.BrowserButton.Top,

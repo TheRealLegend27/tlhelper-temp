@@ -108,7 +108,7 @@ namespace TLHelper.UI.Containers
                 DropDownStyle = ComboBoxStyle.DropDownList,
                 Size = UI.Layout.MainControl.SideBar.AutoPotionBox.ActiveSelection.Rect.Size,
                 Location = UI.Layout.MainControl.SideBar.AutoPotionBox.ActiveSelection.Rect.Location,
-                Font = Theme.Fonts.H6,
+                Font = Theme.Fonts.H5,
                 BackColor = Theme.Background,
                 DrawMode = DrawMode.OwnerDrawFixed,
                 Margin = new Padding(3, comboMargin, 3, comboMargin)
