@@ -81,8 +81,6 @@ namespace TLHelper.Scripts
             }
             var id = Path.GetFileNameWithoutExtension(name);
             ScriptManager.AddScript(id, scriptName, new HotKey(new Key((Keys)(int)scriptKey), scriptCtrl, scriptShift, scriptAlt), true, ScriptOrigins.EXT, () => { RunScript(scriptLine); });
-
-            Console.WriteLine("Added Script: " + name);
         }
 
         private static void RunScript(string script)

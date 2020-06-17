@@ -37,7 +37,6 @@ namespace TLHelper
                 CreateAHKScriptsDir();
                 // LOAD ALL SETTINGS
                 xml = LoadAllSettings();
-                Console.WriteLine("[Program]:: Settings Loaded");
             }
 
             InitSettings(xml.settings);
@@ -48,10 +47,24 @@ namespace TLHelper
             }
             API.Variables.License = SettingsManager.GetSetting("license");
 
-            bool authSuccess = API.Users.AuthLicense().GetAwaiter().GetResult();
-            if (authSuccess)
+            if (TryAuthenticate() && CheckServer())
             {
-                if (CheckServer())
+                if (!Directory.Exists(EnvironmentVariables.CONFIG_DIR))
+                    Directory.CreateDirectory(EnvironmentVariables.CONFIG_DIR);
+                if (!Directory.Exists(EnvironmentVariables.SCRIPTS_DIR))
+                    Directory.CreateDirectory(EnvironmentVariables.SCRIPTS_DIR);
+
+                UpdateScripts();
+                DeleteScripts();
+
+                Run(xml);
+            }
+            else
+            {
+                if (!GetLicense()) Environment.Exit(-1);
+                API.Variables.License = SettingsManager.GetSetting("license");
+
+                if (TryAuthenticate() && CheckServer())
                 {
                     if (!Directory.Exists(EnvironmentVariables.CONFIG_DIR))
                         Directory.CreateDirectory(EnvironmentVariables.CONFIG_DIR);
@@ -63,12 +76,25 @@ namespace TLHelper
 
                     Run(xml);
                 }
-                else Environment.Exit(-1);
+                else
+                {
+                    Environment.Exit(-1);
+                }
             }
-            else
+        }
+
+        private static bool TryAuthenticate()
+        {
+            bool authSuccess = API.Users.AuthLicense().GetAwaiter().GetResult();
+            if (authSuccess)
             {
-                Environment.Exit(-1);
+                if (CheckServer())
+                {
+                    return true;
+                }
+                else return false;
             }
+            return false;
         }
 
         private static void UpdateScripts()
@@ -128,12 +154,9 @@ namespace TLHelper
             {
                 var license = loginPopup.license;
                 SettingsManager.SetSetting("license", license);
+                return true;
             }
-            else
-            {
-                return false;
-            }
-            return true;
+            return false;
         }
 
         private static void Run(SettingsBundle xml)

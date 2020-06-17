@@ -26,7 +26,6 @@ namespace TLHelper.UI.Containers.Actions
         public void AddActionKeyBar(ChangeModeRow r)
         {
             Controls.Add(r);
-            Console.WriteLine("Added Bar");
         }
 
     }

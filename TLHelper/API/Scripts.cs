@@ -99,7 +99,6 @@ namespace TLHelper.API
                         bool keep = false;
                         foreach (FullScript script in res)
                         {
-                            Console.WriteLine(script.id + " => " + file);
                             if (script.id.Equals(file))
                             {
                                 keep = true;

@@ -22,7 +22,6 @@ namespace TLHelper.Scripts
             InternalScripts.RegisterScripts();
             foreach (string file in Directory.GetFiles(ScriptCompiler.ScriptRoot))
             {
-                Console.WriteLine(Path.GetExtension(file));
                 if (Path.GetExtension(file) == ".tls")
                     ScriptCompiler.InterpretScript(file);
                 else if (Path.GetExtension(file) == ".ahk-tl")

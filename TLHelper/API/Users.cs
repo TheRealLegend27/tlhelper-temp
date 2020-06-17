@@ -9,23 +9,31 @@ namespace TLHelper.API
     public class Users
     {
 
+#pragma warning disable IDE1006 // Benennungsstile
         public class Response
         {
-#pragma warning disable IDE1006 // Benennungsstile
             public string errorCode { get; set; }
             public string errorMsg { get; set; }
             public bool error { get; set; }
             public string response { get; set; }
-#pragma warning restore IDE1006 // Benennungsstile
+        }
+
+        public class AuthResultResponseModel
+        {
+            public string user { get; set; }
+            public string license_type { get; set; }
+            public string errorCode { get; set; }
+            public string errorMsg { get; set; }
+            public bool error { get; set; } = false;
+            public string response { get; set; }
         }
 
         public class AuthResultModel
         {
-#pragma warning disable IDE1006 // Benennungsstile
             public string user { get; set; }
             public string license_type { get; set; }
-#pragma warning restore IDE1006 // Benennungsstile
         }
+#pragma warning restore IDE1006 // Benennungsstile
 
         public static AuthResultModel AuthResult;
 
@@ -48,6 +56,7 @@ namespace TLHelper.API
                 try
                 {
                     AuthResult = await response.Content.ReadAsAsync<AuthResultModel>();
+                    if (AuthResult.user == null) return false;
                     return true;
                 }
                 catch (Exception)
@@ -110,6 +119,8 @@ namespace TLHelper.API
             }
             return true;
         }
+
+        private static bool IsError(Response r) => r.error || false;
 
     }
 }
