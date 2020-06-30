@@ -284,7 +284,7 @@ namespace TLHelper
         {
             if (SettingsManager.Contains("thud-exe"))
             {
-                Process.Start(SettingsManager.GetSetting("thud-exe"));
+                Process.Start("CMD.exe", "/C start " + SettingsManager.GetSetting("thud-exe"));
                 return true;
             }
             return false;
