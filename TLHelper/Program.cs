@@ -308,7 +308,7 @@ namespace TLHelper
         {
             while (Running)
             {
-                SkillManager.ProcessSkills();
+                SkillManager.ProcessLoop();
                 Thread.Sleep(5);
             }
             Thread.CurrentThread.Join();

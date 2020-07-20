@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using TLHelper.Coords;
 using TLHelper.Settings;
 
 namespace TLHelper.UI.Containers.Settings
@@ -26,6 +27,21 @@ namespace TLHelper.UI.Containers.Settings
         private readonly Label SLAHK;
         private readonly TextBox TBAHK;
         private readonly Button BAHK;
+
+        // Salvage Normals
+        private readonly FlowLayoutPanel PSalvageNormals;
+        private readonly Label SLSalvageNormals;
+        private readonly ComboBox CBSalvageNromals;
+
+        // Kadala Auto Gamble
+        private readonly FlowLayoutPanel PKadala;
+        private readonly Label SLKadala;
+        private readonly ComboBox CBKadala;
+
+        // Auto Gemups
+        private readonly FlowLayoutPanel PGemups;
+        private readonly Label SLGemups;
+        private readonly ComboBox CBGemups;
 
         public SettingsContainer()
         {
@@ -210,6 +226,133 @@ namespace TLHelper.UI.Containers.Settings
             PAHK.Controls.Add(BAHK);
             #endregion AHK EXE
 
+            #region Spacer #1
+            Controls.Add(new Panel()
+            {
+                Size = UI.Layout.MainControl.Settings.Rect.Size,
+                BackColor = Theme.Background,
+            });
+            #endregion Spacer #1
+
+            #region Salvage Normals
+            PSalvageNormals = new FlowLayoutPanel()
+            {
+                Size = UI.Layout.MainControl.Settings.Rect.Size,
+                BackColor = Theme.Background,
+                FlowDirection = FlowDirection.LeftToRight
+            };
+            Controls.Add(PSalvageNormals);
+
+            SLSalvageNormals = new Label
+            {
+                Text = "Automatic salvage normal items",
+                Font = Theme.Fonts.H4,
+                Size = UI.Layout.MainControl.Settings.Name.Rect.Size,
+                Anchor = AnchorStyles.None,
+                Top = UI.Layout.MainControl.Settings.Name.Top
+            };
+            PSalvageNormals.Controls.Add(SLSalvageNormals);
+
+            CBSalvageNromals = new ComboBox()
+            {
+                DropDownStyle = ComboBoxStyle.DropDownList,
+                Font = Theme.Fonts.P,
+                Size = UI.Layout.MainControl.Settings.Textbox.Rect.Size,
+                Anchor = AnchorStyles.None,
+                Top = UI.Layout.MainControl.Settings.Textbox.Top
+            };
+            CBSalvageNromals.Items.AddRange(new string[] {"Inactive", "Active"});
+            CBSalvageNromals.SelectedIndex = int.Parse(SettingsManager.GetSetting("salvage-normals"));
+            CBSalvageNromals.SelectedIndexChanged += CBSalvageNromals_SelectedIndexChanged;
+            PSalvageNormals.Controls.Add(CBSalvageNromals);
+            #endregion Salvage Normals
+
+            #region Kadala Auto Gamble
+            PKadala = new FlowLayoutPanel()
+            {
+                Size = UI.Layout.MainControl.Settings.Rect.Size,
+                BackColor = Theme.Background,
+                FlowDirection = FlowDirection.LeftToRight
+            };
+            Controls.Add(PKadala);
+
+            SLKadala = new Label
+            {
+                Text = "Automatic Kadala gamble",
+                Font = Theme.Fonts.H4,
+                Size = UI.Layout.MainControl.Settings.Name.Rect.Size,
+                Anchor = AnchorStyles.None,
+                Top = UI.Layout.MainControl.Settings.Name.Top
+            };
+            PKadala.Controls.Add(SLKadala);
+
+            CBKadala = new ComboBox()
+            {
+                DropDownStyle = ComboBoxStyle.DropDownList,
+                Font = Theme.Fonts.P,
+                Size = UI.Layout.MainControl.Settings.Textbox.Rect.Size,
+                Anchor = AnchorStyles.None,
+                Top = UI.Layout.MainControl.Settings.Textbox.Top
+            };
+            CBKadala.Items.AddRange(Kadala.GetItemNames());
+            CBKadala.SelectedItem = Kadala.GetItemNameByCode(SettingsManager.GetSetting("kadala-gamble"));
+            CBKadala.SelectedIndexChanged += CBKadala_SelectedIndexChanged;
+            PKadala.Controls.Add(CBKadala);
+            #endregion Kadala Auto Gamble
+
+            #region Auto Gemups
+            PGemups = new FlowLayoutPanel()
+            {
+                Size = UI.Layout.MainControl.Settings.Rect.Size,
+                BackColor = Theme.Background,
+                FlowDirection = FlowDirection.LeftToRight
+            };
+            Controls.Add(PGemups);
+
+            SLGemups = new Label
+            {
+                Text = "Automatic Gemups",
+                Font = Theme.Fonts.H4,
+                Size = UI.Layout.MainControl.Settings.Name.Rect.Size,
+                Anchor = AnchorStyles.None,
+                Top = UI.Layout.MainControl.Settings.Name.Top
+            };
+            PGemups.Controls.Add(SLGemups);
+
+            CBGemups = new ComboBox()
+            {
+                DropDownStyle = ComboBoxStyle.DropDownList,
+                Font = Theme.Fonts.P,
+                Size = UI.Layout.MainControl.Settings.Textbox.Rect.Size,
+                Anchor = AnchorStyles.None,
+                Top = UI.Layout.MainControl.Settings.Textbox.Top
+            };
+            CBGemups.Items.AddRange(Urshi.GetStatusNames());
+            CBGemups.SelectedItem = Urshi.GetStatusNameByCode(SettingsManager.GetSetting("auto-gemups"));
+            CBGemups.SelectedIndexChanged += CBGemups_SelectedIndexChanged;
+            PGemups.Controls.Add(CBGemups);
+            #endregion Auto Gemups
+
+        }
+
+        private void CBGemups_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var cbb = (ComboBox)sender;
+            var item = Urshi.GetStatusCodeByName(cbb.SelectedItem.ToString());
+            SettingsManager.SetSetting("auto-gemups", item);
+        }
+
+        private void CBKadala_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var cbb = (ComboBox)sender;
+            var item = Kadala.GetItemCodeByName(cbb.SelectedItem.ToString());
+            SettingsManager.SetSetting("kadala-gamble", item);
+        }
+
+        private void CBSalvageNromals_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var cbb = (ComboBox)sender;
+            SettingsManager.SetSetting("salvage-normals", cbb.SelectedIndex.ToString());
         }
     }
 }

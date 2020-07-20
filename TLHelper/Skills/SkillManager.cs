@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Xml;
+using TLHelper.Coords;
 using TLHelper.HotKeys;
+using TLHelper.Ingame;
 using TLHelper.SysCom;
 using static TLHelper.Skills.AvailableFunctions;
 
@@ -23,20 +25,30 @@ namespace TLHelper.Skills
             MainFormRef = Ref;
         }
 
-        public static int ProcessSkills()
+        public static int ProcessLoop()
         {
             if (!ScreenTools.IsDiabloFocused()) return 1;
             if (ScreenTools.IsPorting()) return 3;
 
-            // RETURN IF MODE IS NEVER
-            if (ActiveMode.GetCurrentMode() == ActiveMode.Mode.NeverActive) return 4;
+            bool inRift = ScreenTools.IsInRift();
 
-            // CHECK IN RIFT IF AUTO
-            else if (ActiveMode.GetCurrentMode() == ActiveMode.Mode.Automatic)
-            {
-                if (!ScreenTools.IsInRift()) return 2;
-            }
+            // Conditions for Skill Activation
+            if (
+                ActiveMode.GetCurrentMode() == ActiveMode.Mode.AlwaysActive ||
+                (ActiveMode.GetCurrentMode() == ActiveMode.Mode.Automatic && inRift)
+            )   ProcessSkills();
 
+            // Conditions for Town Actions
+            if (ActiveMode.GetCurrentMode() != ActiveMode.Mode.AlwaysActive && !inRift)
+                ProcessTown();
+
+            // always process potion
+            PotionSkill.Process();
+            return 0;
+        }
+
+        private static void ProcessSkills()
+        {
             foreach (string id in ActiveSkills)
             {
                 var skill = Skills[id];
@@ -61,8 +73,20 @@ namespace TLHelper.Skills
                     }
                 }
             }
-            PotionSkill.Process();
-            return 0;
+        }
+
+        private static void ProcessTown()
+        {
+            var kadalaItem = Kadala.GetSelectedItem();
+            if (kadalaItem != Kadala.Items.NONE && OpenWindows.IsKadalaNewOpened())
+                Kadala.GambleItem(kadalaItem);
+
+            if (Smith.ShouldSalvage() && OpenWindows.IsSmithNewOpened())
+                Smith.SalvageNormals();
+
+            int urshiUp = Urshi.GetUpgradeCount();
+            if (urshiUp > 0 && OpenWindows.IsUrshiNewOpened())
+                Urshi.Upgrade(urshiUp);
         }
 
         public static void ClearActiveSkills()

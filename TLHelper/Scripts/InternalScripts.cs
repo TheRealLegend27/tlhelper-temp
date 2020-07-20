@@ -1,7 +1,9 @@
 ﻿using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
+using TLHelper.Coords;
 using TLHelper.HotKeys;
+using TLHelper.Ingame;
 using TLHelper.Player;
 using TLHelper.SysCom;
 using static TLHelper.Coords.Coords;
