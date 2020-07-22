@@ -48,6 +48,8 @@ namespace TLHelper.Settings
         {
             XmlDocument tdoc = new XmlDocument();
             var root = tdoc.CreateElement("TLHelper");
+            root.SetAttribute("version", EnvironmentVariables.CURRENT_VERSION_INT);
+
             var settings = tdoc.CreateElement("Settings");
 
             foreach (KeyValuePair<string, string> setting in Settings)

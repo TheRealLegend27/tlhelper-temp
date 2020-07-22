@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Xml;
 using TLHelper.Scripts;
 using TLHelper.Settings;
@@ -60,7 +61,8 @@ namespace TLHelper.XML
             if (File.Exists(skillsPath))
             {
                 XmlSkills.Load(skillsPath);
-                SkillsRoot = XmlSkills.DocumentElement;
+                if (XmlSkills.DocumentElement.HasAttribute("version") && int.Parse(XmlSkills.DocumentElement.GetAttribute("version")) >= EnvironmentVariables.MIN_SKILL_SETTINGS_VERSION)
+                    SkillsRoot = XmlSkills.DocumentElement;
             }
 
             var XmlScripts = new XmlDocument();
@@ -69,7 +71,8 @@ namespace TLHelper.XML
             if (File.Exists(scriptsPath))
             {
                 XmlScripts.Load(scriptsPath);
-                ScriptsRoot = XmlScripts.DocumentElement;
+                if (XmlScripts.DocumentElement.HasAttribute("version") && int.Parse(XmlScripts.DocumentElement.GetAttribute("version")) >= EnvironmentVariables.MIN_SKILL_SETTINGS_VERSION)
+                    ScriptsRoot = XmlScripts.DocumentElement;
             }
 
             var XmlSettings = new XmlDocument();
@@ -78,7 +81,8 @@ namespace TLHelper.XML
             if (File.Exists(settingsPath))
             {
                 XmlSettings.Load(settingsPath);
-                SettingsRoot = XmlSettings.DocumentElement;
+                if (XmlSettings.DocumentElement.HasAttribute("version") && int.Parse(XmlSettings.DocumentElement.GetAttribute("version")) >= EnvironmentVariables.MIN_SKILL_SETTINGS_VERSION)
+                    SettingsRoot = XmlSettings.DocumentElement;
             }
 
             var XmlActions = new XmlDocument();
@@ -87,7 +91,8 @@ namespace TLHelper.XML
             if (File.Exists(actionsPath))
             {
                 XmlActions.Load(actionsPath);
-                ActionsRoot = XmlActions.DocumentElement;
+                if (XmlActions.DocumentElement.HasAttribute("version") && int.Parse(XmlActions.DocumentElement.GetAttribute("version")) >= EnvironmentVariables.MIN_SKILL_SETTINGS_VERSION)
+                    ActionsRoot = XmlActions.DocumentElement;
             }
 
             if (SkillsRoot != null)

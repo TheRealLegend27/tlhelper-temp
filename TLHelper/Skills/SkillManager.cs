@@ -144,37 +144,27 @@ namespace TLHelper.Skills
 
         public static void CreateMissingSkills()
         {
-            Dictionary<string, string[]> RequiredFields = new Dictionary<string, string[]>
+            foreach (KeyValuePair<string, (string, AvailableType)[]> kvp in DefaultSkills.Skills)
             {
-                { "barb", new string[] { "overpower", "battle_rage", "threatening_shout", "sprint", "ignore_pain", "call_of_the_ancients", "war_cry", "wrath_of_the_berserker" } },
-                { "monk", new string[] { "blinding_flash", "breath_of_heaven", "serenity", "mantra_of_healing", "mantra_of_conviction", "mystical_ally", "epiphany" } },
-                { "wiz", new string[] { "frost_nova", "diamond_skin", "ice_armor", "storm_armor", "explosive_blast", "magic_weapon", "familiar", "energy_armor" } },
-                { "dh", new string[] { "smoke_screen", "preparation", "fan_of_knives", "shadow_power", "companion", "rain_of_vengeance", "vengeance" } },
-                { "crus", new string[] { "iron_skin", "provoke", "laws_of_valor", "laws_of_justice", "laws_of_hope", "condemn", "akarats_champion" } },
-                { "wd", new string[] { "horrify", "soul_harvest", "sacrifice", "gargantuan", "massconfusion", "fetish_army" } },
-                { "nec", new string[] { "skeletal_mages", "command_skeletons", "death_nova", "devour", "bone_armor", "land_of_the_dead", "simulacrum" } }
-            };
-
-            foreach (KeyValuePair<string, string[]> kvp in RequiredFields)
-            {
-                foreach (string skill in kvp.Value)
+                foreach ((string skill, AvailableType type) in kvp.Value)
                 {
                     var name = Resources.Strings.ResourceManager.GetString(skill);
                     var icon = (Image)Resources.SkillIcons.ResourceManager.GetObject(kvp.Key + "_" + skill);
                     if (!Skills.ContainsKey(kvp.Key + "_" + skill))
-                        Skills.Add(kvp.Key + "_" + skill, new Skill(name, icon, new Key(Keys.None), 0, false, AvailableType.InActive));
+                        Skills.Add(kvp.Key + "_" + skill, new Skill(name, icon, new Key(Keys.None), 0, false, type));
                 }
             }
 
+            // create potion skill
             if (PotionSkill == null)
                 PotionSkill = new PotionSkill(new Key(Keys.None), false);
-
         }
 
         public static XmlDocument GetXml()
         {
             XmlDocument doc = new XmlDocument();
             XmlElement root = doc.CreateElement("TLHelper");
+            root.SetAttribute("version", EnvironmentVariables.CURRENT_VERSION_INT);
             var skills = doc.CreateElement("Skills");
 
             var cBarb = doc.CreateElement("Class"); cBarb.SetAttribute("id", "barb");

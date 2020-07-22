@@ -77,6 +77,7 @@
     <Compile Include="Scripts\ScriptCompiler.cs" />
     <Compile Include="Skills\ActiveMode.cs" />
     <Compile Include="Skills\AvailableFunctions.cs" />
+    <Compile Include="Skills\DefaultSkills.cs" />
     <Compile Include="Skills\SkillCoords.cs" />
     <Compile Include="SysCom\HardwareRobot.cs" />
     <Compile Include="SysCom\ProcessManager.cs" />

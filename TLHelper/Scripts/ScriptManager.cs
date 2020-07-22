@@ -101,6 +101,7 @@ namespace TLHelper.Scripts
         {
             XmlDocument tdoc = new XmlDocument();
             var root = tdoc.CreateElement("TLHelper");
+            root.SetAttribute("version", EnvironmentVariables.CURRENT_VERSION_INT);
 
             var scripts = tdoc.CreateElement("Scripts");
 

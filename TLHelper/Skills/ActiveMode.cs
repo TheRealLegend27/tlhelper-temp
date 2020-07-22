@@ -102,6 +102,8 @@ namespace TLHelper.Skills
         {
             XmlDocument doc = new XmlDocument();
             XmlElement root = doc.CreateElement("TLHelper");
+            root.SetAttribute("version", EnvironmentVariables.CURRENT_VERSION_INT);
+
             var actions = doc.CreateElement("Actions");
 
             var activeModeNever = doc.CreateElement("Action"); activeModeNever.SetAttribute("id", "active-mode-never");
