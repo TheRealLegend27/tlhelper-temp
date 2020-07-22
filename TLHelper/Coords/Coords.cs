@@ -23,6 +23,8 @@ namespace TLHelper.Coords
         public static Position PotionSkill;
         public static Position Potion50;
 
+        public static Position ResourceCheck;
+
         public static void InitCoords()
         {
             coords.Add("cube_fill", new Coord(CoordType.LeftBased, 957, 1121));
@@ -30,6 +32,8 @@ namespace TLHelper.Coords
             coords.Add("smith_salvage", new Coord(CoordType.LeftBased, 220, 390));
             coords.Add("cube_switch", new Coord(CoordType.LeftBased, 180, 180));
             coords.Add("drop_item", new Coord(CoordType.MiddleBased, 720, 1720));
+            coords.Add("resource_top", new Coord(CoordType.MiddleBased, 2282, 1238));
+            coords.Add("resource_bottom", new Coord(CoordType.MiddleBased, 2282, 1405));
             dimCoords.Add("inventory", new DimCoord(CoordType.LeftBased, CoordType.RightBased, 2753, 748, 668, 394));
         }
         public static void ConvertCoords(int width, int height)
@@ -130,6 +134,15 @@ namespace TLHelper.Coords
 
             PotionSkill = new Position(1060, 1000);
             Potion50 = new Position(543, 979);
+
+            Coord resTop = coords["resource_top"];
+            Coord resBot = coords["resource_bottom"];
+
+            ResourceCheck = new Position
+            {
+                x = resTop.RealX,
+                y = (int)Math.Round(resBot.RealY - (resBot.RealY - resTop.RealY) * 0.9, 0)
+            };
         }
 
         #region Structs

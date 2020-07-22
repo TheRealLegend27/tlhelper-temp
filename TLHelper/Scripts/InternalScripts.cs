@@ -32,6 +32,7 @@ namespace TLHelper.Scripts
             ScriptManager.AddScript("drop-inventory", "Drop Inventory", new HotKey(new Key(Keys.J), true, false, false), true, ScriptOrigins.INT, DropItems);
             ScriptManager.AddScript("move-inventory", "Move Inventory", new HotKey(new Key(Keys.I), false, false, true), true, ScriptOrigins.INT, MoveInventory);
 
+            ScriptManager.AddScript("test-script", "Test", new HotKey(new Key(Keys.G), true, false, false), true, ScriptOrigins.INT, TestScript);
 
             ScriptManager.AddScript("spam-left", "Spam Left", new HotKey(new Key(Keys.LButton), false, false, true), true, ScriptOrigins.INT, SpamLeft);
             ScriptManager.AddScript("spam-right", "Spam Right", new HotKey(new Key(Keys.RButton), false, false, true), true, ScriptOrigins.INT, SpamRight);
@@ -39,6 +40,11 @@ namespace TLHelper.Scripts
 
         private static readonly int ScriptSleep = 40;
         public static void Sleep(int addMs) => Thread.Sleep(ScriptSleep + addMs);
+
+        public static void TestScript()
+        {
+            HardwareRobot.MovePhysicalCursor(ResourceCheck);
+        }
 
         public static void ClearInv1Space()
         {

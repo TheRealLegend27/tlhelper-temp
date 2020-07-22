@@ -14,6 +14,7 @@ namespace TLHelper.Skills
             InActive,
             Potion,
             FullEssence,
+            SkeletalMage,
             Error
         }
 
@@ -25,6 +26,7 @@ namespace TLHelper.Skills
                 case "inactive": return AvailableType.InActive;
                 case "potion": return AvailableType.Potion;
                 case "fullessence": return AvailableType.FullEssence;
+                case "skeletalmage": return AvailableType.SkeletalMage;
             }
             return AvailableType.Error;
         }
@@ -37,6 +39,7 @@ namespace TLHelper.Skills
                 case AvailableType.InActive: return "inactive";
                 case AvailableType.Potion: return "potion";
                 case AvailableType.FullEssence: return "fullessence";
+                case AvailableType.SkeletalMage: return "skeletalmage";
             }
             return "error";
         }
@@ -47,6 +50,7 @@ namespace TLHelper.Skills
             if (type == AvailableType.InActive) return ByColor;
             if (type == AvailableType.Potion) return Potion;
             if (type == AvailableType.FullEssence) return FullEssence;
+            if (type == AvailableType.SkeletalMage) return SkeletalMage;
             return Error;
         }
 
@@ -56,6 +60,8 @@ namespace TLHelper.Skills
         static readonly Color MouseProfile = Color.FromArgb(28, 32, 27);
         static readonly Color PotionColor = Color.FromArgb(1, 1, 1);
         static readonly int PotionMinRed = 100;
+        static readonly Color EssenceBase = Color.FromArgb(49, 160, 160);
+        static readonly int EssenceVariance = 60;
 
 #pragma warning disable IDE0060 // Nicht verwendete Parameter entfernen
         public static bool Trigger(int skillSlot, Color pxl) => true;
@@ -85,7 +91,44 @@ namespace TLHelper.Skills
         }
 
 #pragma warning disable IDE0060 // Nicht verwendete Parameter entfernen
-        public static bool FullEssence(int skillSlot, Color pxl) => false;
+        public static bool FullEssence(int skillSlot, Color pxl)
+        {
+            int px = Coords.Coords.ResourceCheck.x;
+            int py = Coords.Coords.ResourceCheck.y;
+            Color essCol1 = ScreenTools.GetPixelColor(px, py).Item1;
+            Color essCol2 = ScreenTools.GetPixelColor(px + 10, py).Item1;
+            Color essCol3 = ScreenTools.GetPixelColor(px - 10, py).Item1;
+
+            if (Math.Abs(essCol1.R - EssenceBase.R) > EssenceVariance) return false;
+            if (Math.Abs(essCol1.G - EssenceBase.G) > EssenceVariance) return false;
+            if (Math.Abs(essCol1.B - EssenceBase.B) > EssenceVariance) return false;
+
+            if (Math.Abs(essCol2.R - EssenceBase.R) > EssenceVariance) return false;
+            if (Math.Abs(essCol2.G - EssenceBase.G) > EssenceVariance) return false;
+            if (Math.Abs(essCol2.B - EssenceBase.B) > EssenceVariance) return false;
+
+            if (Math.Abs(essCol3.R - EssenceBase.R) > EssenceVariance) return false;
+            if (Math.Abs(essCol3.G - EssenceBase.G) > EssenceVariance) return false;
+            if (Math.Abs(essCol3.B - EssenceBase.B) > EssenceVariance) return false;
+
+
+            return true;
+        }
 #pragma warning restore IDE0060 // Nicht verwendete Parameter entfernen
+
+        private static int LastMage = 0;
+        private static int MinMageDelay = 1500;
+
+        public static bool SkeletalMage(int skillSlot, Color pxl)
+        {
+            if (Environment.TickCount - LastMage <= MinMageDelay) return false;
+            if (FullEssence(skillSlot, pxl))
+            {
+                LastMage = Environment.TickCount;
+                return true;
+            }
+            return false;
+        }
+
     }
 }
