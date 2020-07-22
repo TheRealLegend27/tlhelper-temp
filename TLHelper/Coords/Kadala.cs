@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using TLHelper.Settings;
 using TLHelper.SysCom;
@@ -111,6 +112,7 @@ namespace TLHelper.Coords
             int slot = GetSlot(item);
             if (SelectTab(tab))
             {
+                Thread.Sleep(50);
                 GambleSlot(slot, amount);
             }
         }
