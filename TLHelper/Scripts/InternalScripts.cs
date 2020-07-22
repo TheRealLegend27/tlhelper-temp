@@ -5,6 +5,7 @@ using TLHelper.Coords;
 using TLHelper.HotKeys;
 using TLHelper.Ingame;
 using TLHelper.Player;
+using TLHelper.Skills;
 using TLHelper.SysCom;
 using static TLHelper.Coords.Coords;
 
@@ -43,7 +44,7 @@ namespace TLHelper.Scripts
 
         public static void TestScript()
         {
-            HardwareRobot.MovePhysicalCursor(ResourceCheck);
+            HexingPantsSkill.Move();
         }
 
         public static void ClearInv1Space()

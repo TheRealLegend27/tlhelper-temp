@@ -29,6 +29,8 @@ namespace TLHelper.SysCom
             public const int WM_LBUTTONUP = 0x202;
             public const int WM_RBUTTONDOWN = 0x204;
             public const int WM_RBUTTONUP = 0x205;
+            public const int WM_MBUTTONDOWN = 0x207;
+            public const int WM_MBUTTONUP = 0x208;
 
             // BASIC
             public const uint WM_KEYDOWN = 0x0100;
@@ -70,6 +72,17 @@ namespace TLHelper.SysCom
         }
 
         #endregion Helper Functions
+
+        #region DoMButtonClick
+
+        public static void DoMButtonClick(int x, int y)
+        {
+            IntPtr d3Handle = ScreenTools.D3Handle;
+            PostMessage(d3Handle, WM.WM_MBUTTONDOWN, 1, MakeLParam(x, y));
+            PostMessage(d3Handle, WM.WM_MBUTTONUP, 1, MakeLParam(x, y));
+        }
+
+        #endregion DoMButtonClick
 
         #region DoMouseClick
 

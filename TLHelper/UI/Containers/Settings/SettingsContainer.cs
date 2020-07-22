@@ -28,6 +28,11 @@ namespace TLHelper.UI.Containers.Settings
         private readonly TextBox TBAHK;
         private readonly Button BAHK;
 
+        // Hexing Pants
+        private readonly FlowLayoutPanel PHexing;
+        private readonly Label SLHexing;
+        private readonly ComboBox CBHexing;
+
         // Salvage Normals
         private readonly FlowLayoutPanel PSalvageNormals;
         private readonly Label SLSalvageNormals;
@@ -234,6 +239,47 @@ namespace TLHelper.UI.Containers.Settings
             });
             #endregion Spacer #1
 
+            #region Hexing Pants
+            PHexing = new FlowLayoutPanel()
+            {
+                Size = UI.Layout.MainControl.Settings.Rect.Size,
+                BackColor = Theme.Background,
+                FlowDirection = FlowDirection.LeftToRight
+            };
+            Controls.Add(PHexing);
+
+            SLHexing = new Label
+            {
+                Text = "Hexing Pants",
+                Font = Theme.Fonts.H4,
+                Size = UI.Layout.MainControl.Settings.Name.Rect.Size,
+                Anchor = AnchorStyles.None,
+                Top = UI.Layout.MainControl.Settings.Name.Top
+            };
+            PHexing.Controls.Add(SLHexing);
+
+            CBHexing = new ComboBox()
+            {
+                DropDownStyle = ComboBoxStyle.DropDownList,
+                Font = Theme.Fonts.P,
+                Size = UI.Layout.MainControl.Settings.Textbox.Rect.Size,
+                Anchor = AnchorStyles.None,
+                Top = UI.Layout.MainControl.Settings.Textbox.Top
+            };
+            CBHexing.Items.AddRange(new string[] { "Inactive", "Active" });
+            CBHexing.SelectedIndex = int.Parse(SettingsManager.GetSetting("hexing-pants"));
+            CBHexing.SelectedIndexChanged += CBHexing_SelectedIndexChanged; ;
+            PHexing.Controls.Add(CBHexing);
+            #endregion Hexing Pants
+
+            #region Spacer #2
+            Controls.Add(new Panel()
+            {
+                Size = UI.Layout.MainControl.Settings.Rect.Size,
+                BackColor = Theme.Background,
+            });
+            #endregion Spacer #2
+
             #region Salvage Normals
             PSalvageNormals = new FlowLayoutPanel()
             {
@@ -333,6 +379,12 @@ namespace TLHelper.UI.Containers.Settings
             PGemups.Controls.Add(CBGemups);
             #endregion Auto Gemups
 
+        }
+
+        private void CBHexing_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var cbb = (ComboBox)sender;
+            SettingsManager.SetSetting("hexing-pants", cbb.SelectedIndex.ToString());
         }
 
         private void CBGemups_SelectedIndexChanged(object sender, EventArgs e)

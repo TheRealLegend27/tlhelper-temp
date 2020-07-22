@@ -62,7 +62,7 @@ namespace TLHelper.Skills
             {
                 "nec", new (string, AvailableType)[]
                 {
-                    ("skeletal_mages", AvailableType.InActive),
+                    ("skeletal_mages", AvailableType.SkeletalMage),
                     ("command_skeletons", AvailableType.Trigger),
                     ("death_nova", AvailableType.InActive),
                     ("devour", AvailableType.Trigger),

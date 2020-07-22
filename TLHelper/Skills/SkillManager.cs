@@ -6,6 +6,7 @@ using System.Xml;
 using TLHelper.Coords;
 using TLHelper.HotKeys;
 using TLHelper.Ingame;
+using TLHelper.Settings;
 using TLHelper.SysCom;
 using static TLHelper.Skills.AvailableFunctions;
 
@@ -73,6 +74,8 @@ namespace TLHelper.Skills
                     }
                 }
             }
+            if (SettingsManager.GetSetting("hexing-pants") == "1")
+                HexingPantsSkill.Move();
         }
 
         private static void ProcessTown()
