@@ -6,7 +6,7 @@ namespace TLHelper.Settings
 {
     public static class SettingsManager
     {
-        private static readonly string[] validSettings = new string[] { "thud-exe", "d3-exe", "license", "ahk-exe", "salvage-normals", "kadala-gamble", "auto-gemups", "hexing-pants" };
+        private static readonly string[] validSettings = new string[] { "thud-exe", "d3-exe", "license", "ahk-exe", "salvage-normals", "kadala-gamble", "auto-gemups", "hexing-pants", "auto-rift", "auto-accept" };
         private static readonly Dictionary<string, string> Settings = new Dictionary<string, string>();
 
         public static bool Contains(string key) => Settings.ContainsKey(key) && Settings[key].Length > 0;
@@ -43,6 +43,8 @@ namespace TLHelper.Settings
             if (Settings["hexing-pants"] == "") Settings["hexing-pants"] = "0";
             if (Settings["kadala-gamble"] == "") Settings["kadala-gamble"] = "none";
             if (Settings["auto-gemups"] == "") Settings["auto-gemups"] = "inactive";
+            if (Settings["auto-rift"] == "") Settings["auto-rift"] = "inactive";
+            if (Settings["auto-accept"] == "") Settings["auto-accept"] = "inactive";
         }
 
         public static XmlDocument GetXml()

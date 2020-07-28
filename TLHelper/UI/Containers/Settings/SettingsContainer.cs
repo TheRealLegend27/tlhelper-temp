@@ -48,6 +48,16 @@ namespace TLHelper.UI.Containers.Settings
         private readonly Label SLGemups;
         private readonly ComboBox CBGemups;
 
+        // Auto Rift Opener
+        private readonly FlowLayoutPanel PRift;
+        private readonly Label SLRift;
+        private readonly ComboBox CBRift;
+
+        // Auto Accept
+        private readonly FlowLayoutPanel PAccept;
+        private readonly Label SLAccept;
+        private readonly ComboBox CBAccept;
+
         public SettingsContainer()
         {
             BackColor = Theme.Background;
@@ -379,6 +389,86 @@ namespace TLHelper.UI.Containers.Settings
             PGemups.Controls.Add(CBGemups);
             #endregion Auto Gemups
 
+            #region Auto Rift
+            PRift = new FlowLayoutPanel()
+            {
+                Size = UI.Layout.MainControl.Settings.Rect.Size,
+                BackColor = Theme.Background,
+                FlowDirection = FlowDirection.LeftToRight
+            };
+            Controls.Add(PRift);
+
+            SLRift = new Label
+            {
+                Text = "Automatic open Rifts",
+                Font = Theme.Fonts.H4,
+                Size = UI.Layout.MainControl.Settings.Name.Rect.Size,
+                Anchor = AnchorStyles.None,
+                Top = UI.Layout.MainControl.Settings.Name.Top
+            };
+            PRift.Controls.Add(SLRift);
+
+            CBRift = new ComboBox()
+            {
+                DropDownStyle = ComboBoxStyle.DropDownList,
+                Font = Theme.Fonts.P,
+                Size = UI.Layout.MainControl.Settings.Textbox.Rect.Size,
+                Anchor = AnchorStyles.None,
+                Top = UI.Layout.MainControl.Settings.Textbox.Top
+            };
+            CBRift.Items.AddRange(Orek.GetStatusNames());
+            CBRift.SelectedItem = Orek.GetStatusNameByCode(SettingsManager.GetSetting("auto-rift"));
+            CBRift.SelectedIndexChanged += CBRift_SelectedIndexChanged; ;
+            PRift.Controls.Add(CBRift);
+            #endregion Auto Rift
+
+            #region Auto Accept
+            PAccept = new FlowLayoutPanel()
+            {
+                Size = UI.Layout.MainControl.Settings.Rect.Size,
+                BackColor = Theme.Background,
+                FlowDirection = FlowDirection.LeftToRight
+            };
+            Controls.Add(PAccept);
+
+            SLAccept = new Label
+            {
+                Text = "Automatic confirm dialogs",
+                Font = Theme.Fonts.H4,
+                Size = UI.Layout.MainControl.Settings.Name.Rect.Size,
+                Anchor = AnchorStyles.None,
+                Top = UI.Layout.MainControl.Settings.Name.Top
+            };
+            PAccept.Controls.Add(SLAccept);
+
+            CBAccept = new ComboBox()
+            {
+                DropDownStyle = ComboBoxStyle.DropDownList,
+                Font = Theme.Fonts.P,
+                Size = UI.Layout.MainControl.Settings.Textbox.Rect.Size,
+                Anchor = AnchorStyles.None,
+                Top = UI.Layout.MainControl.Settings.Textbox.Top
+            };
+            CBAccept.Items.AddRange(ConfirmDialog.GetStatusNames());
+            CBAccept.SelectedItem = ConfirmDialog.GetStatusNameByCode(SettingsManager.GetSetting("auto-accept"));
+            CBAccept.SelectedIndexChanged += CBAccept_SelectedIndexChanged; ; ;
+            PAccept.Controls.Add(CBAccept);
+            #endregion Auto Accept
+
+        }
+
+        private void CBAccept_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var cbb = (ComboBox)sender;
+            var item = ConfirmDialog.GetStatusCodeByName(cbb.SelectedItem.ToString());
+            SettingsManager.SetSetting("auto-accept", item);
+        }
+
+        private void CBRift_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var cbb = (ComboBox)sender;
+            var item = Orek.GetStatusCodeByName(cbb.SelectedItem.ToString());
+            SettingsManager.SetSetting("auto-rift", item);
         }
 
         private void CBHexing_SelectedIndexChanged(object sender, EventArgs e)

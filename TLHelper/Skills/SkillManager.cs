@@ -90,6 +90,12 @@ namespace TLHelper.Skills
             int urshiUp = Urshi.GetUpgradeCount();
             if (urshiUp > 0 && OpenWindows.IsUrshiNewOpened())
                 Urshi.Upgrade(urshiUp);
+
+            if (Orek.ShouldOpen() && OpenWindows.IsOrekNewOpened())
+                Orek.Open();
+
+            if (ConfirmDialog.ShouldAccept() && OpenWindows.IsConfirmDialogNewOpened())
+                ConfirmDialog.Accept();
         }
 
         public static void ClearActiveSkills()

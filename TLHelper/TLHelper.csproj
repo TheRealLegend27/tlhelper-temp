@@ -62,8 +62,11 @@
     <Compile Include="API\Scripts.cs" />
     <Compile Include="API\Users.cs" />
     <Compile Include="API\Variables.cs" />
+    <Compile Include="Coords\WarningDialog.cs" />
+    <Compile Include="Coords\ConfirmDialog.cs" />
     <Compile Include="Coords\Coords.cs" />
     <Compile Include="Coords\Kadala.cs" />
+    <Compile Include="Coords\Orek.cs" />
     <Compile Include="Coords\Smith.cs" />
     <Compile Include="Coords\Urshi.cs" />
     <Compile Include="EnvironmentVariables.cs" />
